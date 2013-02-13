@@ -1,0 +1,1110 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     29762,       1101]
+NotebookOptionsPosition[     23231,        905]
+NotebookOutlinePosition[     23672,        924]
+CellTagsIndexPosition[     23629,        921]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Intro to Mathematica", "Title"],
+
+Cell["\<\
+PLB 809 -- Pop and Comm Theory Lab
+Chris Klausmeier\
+\>", "SmallText",
+ CellChangeTimes->{{3.397348875512601*^9, 3.397348891709231*^9}, {
+  3.428838212094524*^9, 3.428838212405426*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Getting Started", "Section"],
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " consists of two parts: the kernel and the front end.  The kernel does the \
+actual computation.  The front end organizes your input and output into a \
+notebook and goes between you and the kernel.  The kernel is the brains, the \
+front end provides the good looks.\n\nTo do an operation, just type in your \
+command and ",
+ StyleBox["hit shift-return",
+  FontWeight->"Bold"],
+ "."
+}], "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Getting Help", "Section"],
+
+Cell["For quick questions of syntax, type ?<command>.", "Text"],
+
+Cell[BoxData[
+ RowBox[{"?", "Integrate"}]], "Input"],
+
+Cell["For a list of commands, use ? with the wild card *.", "Text"],
+
+Cell[BoxData[
+ RowBox[{"?", "Integ*"}]], "Input"],
+
+Cell["For more extensive help, use the online manual under Help.", "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Arithmetic", "Section"],
+
+Cell[TextData[{
+ "Arithmetic in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " works as you would expect."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"1", "+", "1"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"3", "-", "2"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"2", "*", "4"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"2", "+", "3"}], ")"}], "*", "5"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"3", "/", "7"}]], "Input"],
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " stores fractions exactly if possible. To get a decimal version of an \
+expression, use N[]."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"3", "/", "7"}], "]"}]], "Input"],
+
+Cell[TextData[{
+ "Three special numbers ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " uses are Pi, E, and I (note capitalization!).  Again, use N[] to see \
+decimal versions."
+}], "Text"],
+
+Cell[BoxData["Pi"], "Input"],
+
+Cell[BoxData[
+ RowBox[{"N", "[", "Pi", "]"}]], "Input"],
+
+Cell["\<\
+Powers are obtained by using a ^ symbol.  An alternative way to get a square \
+root is to use the function Sqrt[].\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"3", "^", "2"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Sqrt", "[", "9", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Sqrt", "[", 
+  RowBox[{"-", "1"}], "]"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Some Words on Syntax", "Section"],
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " is case-sensitive.",
+ StyleBox[" Mathematica",
+  FontSlant->"Italic"],
+ "'s commands and functions capitalize every word.  To avoid conflicts, ",
+ StyleBox["try to stick to small letters for your variables",
+  FontWeight->"Bold"],
+ " (particularly vexing: N and D are reserved keywords and can not be used as \
+variables; n and d are ok though)."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"N", "=", "3"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"n", "=", "3"}]], "Input"],
+
+Cell["\<\
+Multiple instructions can be put in a cell.  If a statement ends with a \
+semicolon, output is suppressed.\
+\>", "Text"],
+
+Cell[BoxData[{
+ RowBox[{"1", "+", "2"}], "\n", 
+ RowBox[{"3", "/", "4"}]}], "Input"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "3"}], ";"}], "\n", 
+ RowBox[{"n", "^", "2"}]}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Substituion", "Section",
+ CellChangeTimes->{{3.4149226921649857`*^9, 3.414922697530982*^9}}],
+
+Cell[TextData[{
+ "If you want to make a temporary substitution without changing a value, you \
+can use a \"substitution rule\".  These have the form  /.variable->value.  \
+[Notice how ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " changes the -> characters into ",
+ "\[Rule] when you type!]"
+}], "Text",
+ CellChangeTimes->{{3.4149227008794003`*^9, 3.41492281017023*^9}}],
+
+Cell[BoxData[
+ RowBox[{"x", "^", "2"}]], "Input",
+ CellChangeTimes->{{3.414922763478814*^9, 3.414922764153449*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x", "^", "2"}], "/.", 
+  RowBox[{"x", "\[Rule]", "3"}]}]], "Input",
+ CellChangeTimes->{{3.414922766691772*^9, 3.414922772632875*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Assignment", "Section",
+ CellChangeTimes->{{3.414922819582233*^9, 3.41492282152289*^9}}],
+
+Cell[TextData[{
+ "There are two ways to assign values in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ".  One is immediate using =, the other is delayed using :=.  See the \
+difference below"
+}], "Text",
+ CellChangeTimes->{{3.41492283755722*^9, 3.4149228773101683`*^9}, {
+  3.4149229135926857`*^9, 3.414922938809616*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"x", "=", "3"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"y", "=", "x"}], 
+  ";"}], "\[IndentingNewLine]", "y", "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"x", "=", "4"}], ";"}], "\[IndentingNewLine]", "y"}], "Input",
+ CellChangeTimes->{{3.414922922159409*^9, 3.4149229487933483`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", 
+  RowBox[{"x", ",", "y"}], "]"}]], "Input",
+ CellChangeTimes->{{3.414922992150867*^9, 3.414922994918662*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"x", "=", "3"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"y", ":=", "x"}], 
+  ";"}], "\[IndentingNewLine]", "y", "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"x", "=", "4"}], ";"}], "\[IndentingNewLine]", "y"}], "Input",
+ CellChangeTimes->{{3.414922922159409*^9, 3.4149229487933483`*^9}, 
+   3.414922998873226*^9}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", 
+  RowBox[{"x", ",", "y"}], "]"}]], "Input",
+ CellChangeTimes->{{3.414922992150867*^9, 3.414922994918662*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Graphics", "Section"],
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " has a number of graphics commands.  The most common is Plot[]."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"?", "Plot"}]], "Input"],
+
+Cell["First we will plot Sin[x] from x=0 to x=2*Pi.", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", 
+     RowBox[{"2", "*", "Pi"}]}], "}"}]}], "]"}]], "Input"],
+
+Cell["\<\
+Next, let's plot two functions, Sin[x] and Cos[x], on the same graph.  To do \
+this, we give Plot[] a list of functions.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Sin", "[", "x", "]"}], ",", 
+     RowBox[{"Cos", "[", "x", "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", 
+     RowBox[{"2", "*", "Pi"}]}], "}"}]}], "]"}]], "Input"],
+
+Cell["\<\
+To change the appearance of each function, we use the option PlotStyle-> \
+after the domain.  Common PlotStyles are Dashing[] and various colors such as \
+Blue, Red, and Green.  Since we are plotting a list of functions, we need a \
+list of PlotStyles.\
+\>", "Text",
+ CellChangeTimes->{{3.397349044436225*^9, 3.397349056866856*^9}, 
+   3.397349102799979*^9}],
+
+Cell[BoxData[
+ RowBox[{"?", "Blue"}]], "Input",
+ CellChangeTimes->{{3.397349060421503*^9, 3.39734906074128*^9}}],
+
+Cell[BoxData[
+ RowBox[{"?", "Dashing"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Sin", "[", "x", "]"}], ",", 
+     RowBox[{"Cos", "[", "x", "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", 
+     RowBox[{"2", "*", "Pi"}]}], "}"}], ",", 
+   RowBox[{"PlotStyle", "->", 
+    RowBox[{"{", 
+     RowBox[{"Red", ",", 
+      RowBox[{"Dashing", "[", 
+       RowBox[{"{", "0.05", "}"}], "]"}]}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.3973490925196753`*^9, 3.397349092901772*^9}}],
+
+Cell["\<\
+We can also directly specify the range of the plot using the option \
+PlotRange->, which takes either {ymin, ymax} or All for all of the functions.\
+\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"?", "PlotRange"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", 
+     RowBox[{"2", "*", "Pi"}]}], "}"}], ",", 
+   RowBox[{"PlotRange", "->", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1"}], "}"}]}]}], "]"}]], "Input"],
+
+Cell["\<\
+When you have a list of points you want to plot instead of an algebraically \
+defined function, use ListPlot[].\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"?", "ListPlot"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"{", 
+   RowBox[{"2", ",", "4", ",", "6", ",", "8", ",", "6"}], "}"}], 
+  "]"}]], "Input"],
+
+Cell["To connect the dots, use the option Joined->True.", "Text",
+ CellChangeTimes->{3.397348914958405*^9}],
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"2", ",", "4", ",", "6", ",", "8", ",", "6"}], "}"}], ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.397348909924801*^9, 3.397348912661248*^9}}],
+
+Cell["Plotting {x,y} pairs with ListPlot[]:", "Text"],
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0.1", ",", "0.1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.25", ",", "0.0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.3", ",", "0.1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.5", ",", "0.05"}], "}"}]}], "}"}], ",", 
+   RowBox[{"Joined", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.397348919893483*^9, 3.3973489221802187`*^9}}],
+
+Cell["\<\
+When you have a function of two variables, you can use Plot3D[], \
+ContourPlot[], or DensityPlot[].\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"?", "Plot3D"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Plot3D", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    RowBox[{"x", "*", "y"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", 
+     RowBox[{"2", "*", "Pi"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", "0", ",", 
+     RowBox[{"2", "*", "Pi"}]}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"ContourPlot", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    RowBox[{"x", "*", "y"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", 
+     RowBox[{"2", "*", "Pi"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", "0", ",", 
+     RowBox[{"2", "*", "Pi"}]}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"DensityPlot", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    RowBox[{"x", "*", "y"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", 
+     RowBox[{"2", "*", "Pi"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", "0", ",", 
+     RowBox[{"2", "*", "Pi"}]}], "}"}]}], "]"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Algebra", "Section"],
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " can do a lot of algebraic tricks for you.  One especially handy trick is \
+solving algebraic equations using Solve[]."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"?", "Solve"}]], "Input"],
+
+Cell["\<\
+For example, where do the lines y=x and y=1-2x cross?  First we'll plot these \
+functions, then use Solve[].\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"1", "-", 
+      RowBox[{"2", "*", "x"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "1"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"y", "==", "x"}], ",", 
+     RowBox[{"y", "==", 
+      RowBox[{"1", "-", 
+       RowBox[{"2", "*", "x"}]}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input"],
+
+Cell[TextData[{
+ StyleBox["Note the use of double equal signs (==).",
+  FontWeight->"Bold"],
+ "  A single equal sign means assignment in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ", double means equality."
+}], "Text"],
+
+Cell[TextData[{
+ "We can leave some variables in the equations.  Let's have ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " give us the quadratic formula, where a, b, and c are unspecified \
+constants."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"a", "*", 
+      RowBox[{"x", "^", "2"}]}], "+", 
+     RowBox[{"b", "*", "x"}], "+", "c"}], "==", "0"}], ",", "x"}], 
+  "]"}]], "Input"],
+
+Cell[TextData[{
+ "Notice that ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " gives its answer as a substitution rule.  We can save the result by \
+assigning it to a variable \"sol\", then extract x with \"/.\"."
+}], "Text",
+ CellChangeTimes->{{3.414922628001902*^9, 3.414922685858295*^9}, {
+  3.414923023555029*^9, 3.414923065177022*^9}}],
+
+Cell[BoxData[
+ RowBox[{"sol", "=", 
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"a", "*", 
+       RowBox[{"x", "^", "2"}]}], "+", 
+      RowBox[{"b", "*", "x"}], "+", "c"}], "==", "0"}], ",", "x"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.414922600697213*^9, 3.41492260121422*^9}}],
+
+Cell[BoxData[
+ RowBox[{"x", "/.", "sol"}]], "Input",
+ CellChangeTimes->{{3.4149226034228773`*^9, 3.4149226052543364`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Linear Algebra", "Section"],
+
+Cell[TextData[{
+ "A vector in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " is given as a list; a matrix is an array.  The"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"vector", "=", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "4", ",", "9"}], "}"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"identitymatrix", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}]], "Input"],
+
+Cell["\<\
+The suffix //MatrixForm displays a list as a vector or matrix.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"identitymatrix", "//", "MatrixForm"}]], "Input"],
+
+Cell["To extract element number n, use the suffix[[n]].", "Text"],
+
+Cell[BoxData[
+ RowBox[{"vector", "[", 
+  RowBox[{"[", "2", "]"}], "]"}]], "Input"],
+
+Cell["\<\
+Scalar multiplication uses \"*\"; matrix multiplication uses \".\".\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"2", "*", "identitymatrix"}], "//", "MatrixForm"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"mat", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"3", ",", "4"}], "}"}]}], "}"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"mat", ".", "mat"}]], "Input"],
+
+Cell["Eigenvalues and eigenvectors:", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Eigenvalues", "[", "mat", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Eigenvectors", "[", "mat", "]"}]], "Input"],
+
+Cell["Inverse:", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Inverse", "[", "mat", "]"}]], "Input"],
+
+Cell["Determinant:", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Det", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"a", ",", "b"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"c", ",", "d"}], "}"}]}], "}"}], "]"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Calculus", "Section"],
+
+Cell["\<\
+Calculus is about two things: derivatives and integrals.  First, derivatives \
+with D[].\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"?", "D"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"D", "[", 
+  RowBox[{
+   RowBox[{"x", "^", "2"}], ",", "x"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"D", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Tan", "[", "x", "]"}], "*", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"Sqrt", "[", "x", "]"}], "]"}], ")"}], "^", "2"}]}], ",", 
+   "x"}], "]"}]], "Input"],
+
+Cell["Remember the product rule?", "Text"],
+
+Cell[BoxData[
+ RowBox[{"D", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"f", "[", "x", "]"}], "*", 
+    RowBox[{"g", "[", "x", "]"}]}], ",", "x"}], "]"}]], "Input"],
+
+Cell["\<\
+Another way to do derivatives is with primes.  First clear out the old \
+definition of n, define n as a function, then find its derivative.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "n", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"n", "[", "t_", "]"}], "=", 
+  RowBox[{"n0", "*", 
+   RowBox[{"E", "^", 
+    RowBox[{"(", 
+     RowBox[{"r", "*", "t"}], ")"}]}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"n", "'"}], "[", "t", "]"}]], "Input"],
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " can integrate too, using Integrate[] and NIntegrate[]."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"?", "Integrate"}]], "Input"],
+
+Cell["Indefinite integrals do not have a range specified.", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{"Cos", "[", "x", "]"}], ",", "x"}], "]"}]], "Input"],
+
+Cell["Definite integrals do have a range specified.", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "1"}], "}"}]}], "]"}]], "Input"],
+
+Cell["If you just want a numerical answer, use NIntegrate[].", "Text"],
+
+Cell[BoxData[
+ RowBox[{"NIntegrate", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "1"}], "}"}]}], "]"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Differential Equations", "Section"],
+
+Cell[TextData[{
+ "Differential equations (DEs) are extremely important in theoretical \
+ecology.  ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " can solve some of them exactly (using DSolve[]) and all of them \
+numerically (using NDSolve[]).  However, most DEs we will encounter are \
+nonlinear and can not be solved exactly, so we must resort to numerical \
+solution.  First, a DE which can be solved using DSolve[], the equation for \
+exponential growth.  In the output, \"#1\" stands for the independent \
+variable, t."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"?", "DSolve"}]], "Input"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "n", "]"}], ";"}], "\n", 
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"n", "'"}], "[", "t", "]"}], "==", 
+      RowBox[{"r", "*", 
+       RowBox[{"n", "[", "t", "]"}]}]}], ",", 
+     RowBox[{
+      RowBox[{"n", "[", "0", "]"}], "==", "n0"}]}], "}"}], ",", "n", ",", 
+   "t"}], "]"}]}], "Input"],
+
+Cell["Now let's solve this equation numerically using NDSolve.", "Text"],
+
+Cell[BoxData[
+ RowBox[{"?", "NDSolve"}]], "Input"],
+
+Cell["\<\
+First, we define constants.  Then we put the solution into a variable called \
+\"sol\".\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n0", "=", "0.1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"tmax", "=", "10"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"r", "=", "1"}], ";"}], "\n"}], "\n", 
+ RowBox[{"sol", "=", 
+  RowBox[{"NDSolve", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"n", "'"}], "[", "t", "]"}], "==", 
+       RowBox[{"r", "*", 
+        RowBox[{"n", "[", "t", "]"}]}]}], ",", 
+      RowBox[{
+       RowBox[{"n", "[", "0", "]"}], "==", "n0"}]}], "}"}], ",", "n", ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", "0", ",", "tmax"}], "}"}]}], "]"}]}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"n", "\[Rule]", 
+    TagBox[
+     RowBox[{"InterpolatingFunction", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"0.`", ",", "10.`"}], "}"}], "}"}], ",", "\<\"<>\"\>"}], 
+      "]"}],
+     False,
+     Editable->False]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.414922507415766*^9}]
+}, Open  ]],
+
+Cell["\<\
+To see the solution, we need to plot it. \"n[t]/.sol\" means to substitute \
+the definition of n[t] from the variable \"sol\", which is where we put our \
+numerical solution.\
+\>", "Text",
+ CellChangeTimes->{{3.4149225480595903`*^9, 3.414922550401104*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"n", "[", "t", "]"}], "/.", "sol"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "tmax"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.414922496387014*^9, 3.414922498798843*^9}}],
+
+Cell["\<\
+We can also get the numerical value of n at a given time using Evaluate[].\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Evaluate", "[", 
+  RowBox[{
+   RowBox[{"n", "[", "tmax", "]"}], "/.", "sol"}], "]"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Programming", "Section"],
+
+Cell["Comments can be put in an input cell between (* and *).", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"this", " ", "is", " ", "a", " ", "comment"}], " ", "*)"}], "\n", 
+  RowBox[{"4", "!"}]}]], "Input"],
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " has many of the some commands as programming languages such as C and \
+Fortran.  Loops can be made with Do[], While[], and For[].  Do[] is my \
+favorite."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"?", "Do"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"?", "While"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"?", "For"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Do", "[", "\n", "\t", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"t", ",", "\"\< \>\"", ",", 
+      RowBox[{"t", "^", "2"}]}], "]"}], ";"}], "\n", "\t", ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "5"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Do", "[", "\n", "\t", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"t", ",", "\"\< \>\"", ",", 
+      RowBox[{"t", "^", "2"}]}], "]"}], ";"}], "\n", "\t", ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "10", ",", "2"}], "}"}]}], "]"}]], "Input"],
+
+Cell["Another familiar control structure is If[].", "Text"],
+
+Cell[BoxData[
+ RowBox[{"?", "If"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"1", "+", "1"}], "==", "2"}], ",", 
+   RowBox[{"Print", "[", "\"\<this is true\>\"", "]"}], ",", 
+   RowBox[{"Print", "[", "\"\<this is false\>\"", "]"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"1", "+", "1"}], "==", "3"}], ",", 
+   RowBox[{"Print", "[", "\"\<this is true\>\"", "]"}], ",", 
+   RowBox[{"Print", "[", "\"\<this is false\>\"", "]"}]}], "]"}]], "Input"],
+
+Cell["Which[] acts as a case command.", "Text"],
+
+Cell[BoxData[
+ RowBox[{"?", "Which"}]], "Input"],
+
+Cell["\<\
+Logical operators: AND (&&), OR (||), equal (==), not equal (!=).\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"?", "&&"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"?", "||"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"?", "=="}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"?", "!="}]], "Input"]
+}, Open  ]]
+}, Open  ]]
+},
+Evaluator->"Local",
+WindowSize->{1024, 686},
+WindowMargins->{{242, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+ShowSelection->True,
+FrontEndVersion->"6.0 for Mac OS X x86 (32-bit) (March 13, 2008)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 37, 0, 76, "Title"],
+Cell[630, 25, 195, 5, 35, "SmallText"],
+Cell[CellGroupData[{
+Cell[850, 34, 34, 0, 67, "Section"],
+Cell[887, 36, 461, 11, 71, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1385, 52, 31, 0, 67, "Section"],
+Cell[1419, 54, 63, 0, 26, "Text"],
+Cell[1485, 56, 52, 1, 27, "Input"],
+Cell[1540, 59, 67, 0, 26, "Text"],
+Cell[1610, 61, 49, 1, 27, "Input"],
+Cell[1662, 64, 74, 0, 26, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1773, 69, 29, 0, 67, "Section"],
+Cell[1805, 71, 126, 5, 26, "Text"],
+Cell[1934, 78, 49, 1, 27, "Input"],
+Cell[1986, 81, 49, 1, 27, "Input"],
+Cell[2038, 84, 49, 1, 27, "Input"],
+Cell[2090, 87, 96, 3, 27, "Input"],
+Cell[2189, 92, 49, 1, 27, "Input"],
+Cell[2241, 95, 172, 5, 26, "Text"],
+Cell[2416, 102, 77, 2, 27, "Input"],
+Cell[2496, 106, 196, 6, 26, "Text"],
+Cell[2695, 114, 28, 0, 27, "Input"],
+Cell[2726, 116, 55, 1, 27, "Input"],
+Cell[2784, 119, 138, 3, 26, "Text"],
+Cell[2925, 124, 49, 1, 27, "Input"],
+Cell[2977, 127, 57, 1, 27, "Input"],
+Cell[3037, 130, 75, 2, 27, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3149, 137, 39, 0, 67, "Section"],
+Cell[3191, 139, 426, 11, 41, "Text"],
+Cell[3620, 152, 49, 1, 27, "Input"],
+Cell[3672, 155, 49, 1, 27, "Input"],
+Cell[3724, 158, 130, 3, 26, "Text"],
+Cell[3857, 163, 84, 2, 43, "Input"],
+Cell[3944, 167, 102, 3, 43, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4083, 175, 98, 1, 67, "Section"],
+Cell[4184, 178, 378, 9, 41, "Text"],
+Cell[4565, 189, 115, 2, 27, "Input"],
+Cell[4683, 193, 168, 4, 27, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4888, 202, 94, 1, 67, "Section"],
+Cell[4985, 205, 329, 8, 26, "Text"],
+Cell[5317, 215, 332, 8, 88, "Input"],
+Cell[5652, 225, 147, 3, 27, "Input"],
+Cell[5802, 230, 359, 9, 88, "Input"],
+Cell[6164, 241, 147, 3, 27, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6348, 249, 27, 0, 67, "Section"],
+Cell[6378, 251, 143, 4, 26, "Text"],
+Cell[6524, 257, 47, 1, 27, "Input"],
+Cell[6574, 260, 61, 0, 26, "Text"],
+Cell[6638, 262, 197, 6, 27, "Input"],
+Cell[6838, 270, 144, 3, 26, "Text"],
+Cell[6985, 275, 281, 9, 27, "Input"],
+Cell[7269, 286, 368, 7, 41, "Text"],
+Cell[7640, 295, 112, 2, 27, "Input"],
+Cell[7755, 299, 50, 1, 27, "Input"],
+Cell[7808, 302, 514, 15, 27, "Input"],
+Cell[8325, 319, 173, 4, 26, "Text"],
+Cell[8501, 325, 52, 1, 27, "Input"],
+Cell[8556, 328, 291, 9, 27, "Input"],
+Cell[8850, 339, 135, 3, 26, "Text"],
+Cell[8988, 344, 51, 1, 27, "Input"],
+Cell[9042, 347, 141, 4, 27, "Input"],
+Cell[9186, 353, 107, 1, 26, "Text"],
+Cell[9296, 356, 267, 6, 27, "Input"],
+Cell[9566, 364, 53, 0, 26, "Text"],
+Cell[9622, 366, 489, 14, 27, "Input"],
+Cell[10114, 382, 123, 3, 26, "Text"],
+Cell[10240, 387, 49, 1, 27, "Input"],
+Cell[10292, 390, 320, 10, 27, "Input"],
+Cell[10615, 402, 325, 10, 27, "Input"],
+Cell[10943, 414, 325, 10, 27, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11305, 429, 26, 0, 67, "Section"],
+Cell[11334, 431, 198, 5, 26, "Text"],
+Cell[11535, 438, 48, 1, 27, "Input"],
+Cell[11586, 441, 132, 3, 26, "Text"],
+Cell[11721, 446, 241, 8, 27, "Input"],
+Cell[11965, 456, 288, 10, 27, "Input"],
+Cell[12256, 468, 228, 7, 26, "Text"],
+Cell[12487, 477, 221, 6, 26, "Text"],
+Cell[12711, 485, 223, 8, 27, "Input"],
+Cell[12937, 495, 346, 8, 26, "Text"],
+Cell[13286, 505, 320, 10, 27, "Input"],
+Cell[13609, 517, 122, 2, 27, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13768, 524, 33, 0, 67, "Section"],
+Cell[13804, 526, 144, 5, 26, "Text"],
+Cell[13951, 533, 111, 3, 27, "Input"],
+Cell[14065, 538, 302, 9, 27, "Input"],
+Cell[14370, 549, 86, 2, 26, "Text"],
+Cell[14459, 553, 72, 1, 27, "Input"],
+Cell[14534, 556, 65, 0, 26, "Text"],
+Cell[14602, 558, 82, 2, 27, "Input"],
+Cell[14687, 562, 91, 2, 26, "Text"],
+Cell[14781, 566, 95, 2, 27, "Input"],
+Cell[14879, 570, 200, 7, 27, "Input"],
+Cell[15082, 579, 53, 1, 27, "Input"],
+Cell[15138, 582, 45, 0, 26, "Text"],
+Cell[15186, 584, 66, 1, 27, "Input"],
+Cell[15255, 587, 67, 1, 27, "Input"],
+Cell[15325, 590, 24, 0, 26, "Text"],
+Cell[15352, 592, 62, 1, 27, "Input"],
+Cell[15417, 595, 28, 0, 26, "Text"],
+Cell[15448, 597, 205, 7, 27, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15690, 609, 27, 0, 67, "Section"],
+Cell[15720, 611, 112, 3, 26, "Text"],
+Cell[15835, 616, 44, 1, 27, "Input"],
+Cell[15882, 619, 101, 3, 27, "Input"],
+Cell[15986, 624, 258, 9, 27, "Input"],
+Cell[16247, 635, 42, 0, 26, "Text"],
+Cell[16292, 637, 161, 5, 27, "Input"],
+Cell[16456, 644, 163, 3, 26, "Text"],
+Cell[16622, 649, 58, 1, 27, "Input"],
+Cell[16683, 652, 177, 6, 27, "Input"],
+Cell[16863, 660, 72, 2, 27, "Input"],
+Cell[16938, 664, 135, 4, 26, "Text"],
+Cell[17076, 670, 52, 1, 27, "Input"],
+Cell[17131, 673, 67, 0, 26, "Text"],
+Cell[17201, 675, 116, 3, 27, "Input"],
+Cell[17320, 680, 61, 0, 26, "Text"],
+Cell[17384, 682, 175, 5, 27, "Input"],
+Cell[17562, 689, 70, 0, 26, "Text"],
+Cell[17635, 691, 176, 5, 27, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17848, 701, 41, 0, 67, "Section"],
+Cell[17892, 703, 542, 11, 56, "Text"],
+Cell[18437, 716, 49, 1, 27, "Input"],
+Cell[18489, 719, 409, 14, 43, "Input"],
+Cell[18901, 735, 72, 0, 26, "Text"],
+Cell[18976, 737, 50, 1, 27, "Input"],
+Cell[19029, 740, 111, 3, 26, "Text"],
+Cell[CellGroupData[{
+Cell[19165, 747, 625, 21, 88, "Input"],
+Cell[19793, 770, 378, 13, 27, "Output"]
+}, Open  ]],
+Cell[20186, 786, 266, 5, 26, "Text"],
+Cell[20455, 793, 265, 7, 27, "Input"],
+Cell[20723, 802, 98, 2, 26, "Text"],
+Cell[20824, 806, 119, 3, 27, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20980, 814, 30, 0, 67, "Section"],
+Cell[21013, 816, 71, 0, 26, "Text"],
+Cell[21087, 818, 157, 4, 43, "Input"],
+Cell[21247, 824, 234, 6, 26, "Text"],
+Cell[21484, 832, 45, 1, 27, "Input"],
+Cell[21532, 835, 48, 1, 27, "Input"],
+Cell[21583, 838, 46, 1, 27, "Input"],
+Cell[21632, 841, 285, 8, 58, "Input"],
+Cell[21920, 851, 296, 8, 58, "Input"],
+Cell[22219, 861, 59, 0, 26, "Text"],
+Cell[22281, 863, 45, 1, 27, "Input"],
+Cell[22329, 866, 243, 6, 27, "Input"],
+Cell[22575, 874, 243, 6, 27, "Input"],
+Cell[22821, 882, 47, 0, 26, "Text"],
+Cell[22871, 884, 48, 1, 27, "Input"],
+Cell[22922, 887, 89, 2, 26, "Text"],
+Cell[23014, 891, 45, 1, 27, "Input"],
+Cell[23062, 894, 45, 1, 27, "Input"],
+Cell[23110, 897, 45, 1, 27, "Input"],
+Cell[23158, 900, 45, 1, 27, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

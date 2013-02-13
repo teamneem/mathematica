@@ -1,0 +1,1359 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     44458,       1350]
+NotebookOptionsPosition[     42048,       1265]
+NotebookOutlinePosition[     42423,       1282]
+CellTagsIndexPosition[     42380,       1279]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Lab 4: Competition", "Title",
+ CellChangeTimes->{{3.399156883657976*^9, 3.39915689025331*^9}, 
+   3.462694677609378*^9, {3.557645841017211*^9, 3.557645843860984*^9}}],
+
+Cell["Lotka-Volterra Competition", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Consider two competing populations that follow the Lotka-Volterra \
+competition equations\n\n",
+ Cell[BoxData[
+  FormBox[GridBox[{
+     {
+      RowBox[{
+       FractionBox[
+        SubscriptBox["dn", "1"], "dt"], "=", 
+       RowBox[{
+        FormBox[
+         RowBox[{
+          SubscriptBox["r", "1"], 
+          SubscriptBox["n", "1"]}],
+         TraditionalForm], 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          FormBox[
+           RowBox[{
+            FractionBox[
+             SubscriptBox["n", "1"], 
+             SubscriptBox["k", "1"]], "-", 
+            RowBox[{
+             SubscriptBox["\[Alpha]", "12"], 
+             FractionBox[
+              SubscriptBox["n", "2"], 
+              SubscriptBox["k", "1"]]}]}],
+           TraditionalForm]}], ")"}]}]}]},
+     {
+      RowBox[{
+       FractionBox[
+        SubscriptBox["dn", "2"], "dt"], "=", 
+       RowBox[{
+        FormBox[
+         RowBox[{
+          SubscriptBox["r", "2"], 
+          SubscriptBox["n", "2"]}],
+         TraditionalForm], 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          FormBox[
+           RowBox[{
+            FractionBox[
+             SubscriptBox["n", "2"], 
+             SubscriptBox["k", "2"]], "-", 
+            RowBox[{
+             SubscriptBox["\[Alpha]", "21"], 
+             FractionBox[
+              SubscriptBox["n", "1"], 
+              SubscriptBox["k", "2"]]}]}],
+           TraditionalForm]}], ")"}]}]}]}
+    }], TraditionalForm]]]
+}], "Subsubtitle",
+ CellChangeTimes->{{3.399157002810933*^9, 3.399157057683333*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Solve for equilibria analytically.  How many are they and what do they \
+represent?\
+\>", "Subsection",
+ CellChangeTimes->{{3.399158977162401*^9, 3.399159015806711*^9}, {
+  3.399159088590233*^9, 3.399159100002857*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"set", " ", "up", " ", "right", " ", "hand", " ", "sides"}], " ", 
+   "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"f1", ":=", 
+     RowBox[{"r1", "*", "n1", "*", 
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        RowBox[{"n1", "/", "k1"}], "-", 
+        RowBox[{"\[Alpha]12", "*", 
+         RowBox[{"n2", "/", "k1"}]}]}], ")"}]}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"f2", ":=", 
+     RowBox[{"r2", "*", "n2", "*", 
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        RowBox[{"n2", "/", "k2"}], "-", 
+        RowBox[{"\[Alpha]21", "*", 
+         RowBox[{"n1", "/", "k2"}]}]}], ")"}]}]}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.399159027544194*^9, 3.3991590566815233`*^9}, {
+  3.3991591575220137`*^9, 3.3991591833370247`*^9}, {3.3991597610118723`*^9, 
+  3.39915977870851*^9}, {3.399161752191474*^9, 3.399161762125301*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"solve", " ", "for", " ", "equilibria"}], " ", "*)"}], "\n", 
+  "\[IndentingNewLine]", 
+  RowBox[{"eq", "=", 
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"f1", "\[Equal]", "0"}], ",", 
+       RowBox[{"f2", "\[Equal]", "0"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n1", ",", "n2"}], "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.3991617662665777`*^9, 3.3991617875764437`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Find the Jacobian matrix", "Subsection",
+ CellChangeTimes->{{3.399159144533195*^9, 3.3991591490002613`*^9}, {
+  3.399159418676037*^9, 3.399159441735168*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"j", ":=", 
+   RowBox[{"D", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"f1", ",", "f2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"n1", ",", "n2"}], "}"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"j", "//", "MatrixForm"}]}], "Input",
+ CellChangeTimes->{{3.399159542950547*^9, 3.3991595431706142`*^9}, {
+  3.3991595744632607`*^9, 3.399159627635407*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Evaluate the Jacobian at all of the different equilibria.  Derive analytical \
+conditions for the stability of the boundary equilibria and interpret them \
+biologically.\
+\>", "Subsection",
+ CellChangeTimes->{{3.39915974013124*^9, 3.399159755046178*^9}, {
+  3.3991599377788963`*^9, 3.399159968106894*^9}, {3.399160017627611*^9, 
+  3.399160046473126*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"j", "/.", 
+   RowBox[{"eq", "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.399159756755185*^9, 3.39915980206854*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Eigenvalues", "[", 
+  RowBox[{"j", "/.", 
+   RowBox[{"eq", "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{3.399159930145673*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Numerically solve the model for five different sets of parameters to \
+illustrate the five possible outcomes (1 beats 2, 2 beats 1, 1 and 2 coexist, \
+founder control, equivalent species).    Code is provided, just add \
+parameters.  Use multiple different initial conditions to show different \
+outcomes if they exist (founder control, equivalent species).  Then verify \
+equilibrium densities and eigenvalues numerically.\
+\>", "Subsection",
+ CellChangeTimes->{{3.3991585836809483`*^9, 3.399158611724058*^9}, {
+  3.399158861630262*^9, 3.399158893021276*^9}, {3.399160173067751*^9, 
+  3.3991601734808598`*^9}, {3.399160292409515*^9, 3.399160304541976*^9}, {
+  3.3991603720603247`*^9, 3.399160398226152*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"tmax", "=", "100"}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"how", " ", "long", " ", "to", " ", "run"}], " ", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", "parameters", " ", "*)"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"r1", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"r2", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"k1", "="}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"k2", "="}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Alpha]12", "="}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Alpha]21", "="}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"initial", " ", "population", " ", "sizes"}], " ", "*)"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n10", "=", "0.02"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"n20", "=", "0.01"}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"numerically", " ", "solve", " ", "model"}], " ", "*)"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sol", "=", 
+    RowBox[{"NDSolve", "[", 
+     RowBox[{
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"n1", "'"}], "[", "t", "]"}], "\[Equal]", 
+         RowBox[{"r1", "*", 
+          RowBox[{"n1", "[", "t", "]"}], "*", 
+          RowBox[{"(", 
+           RowBox[{"1", "-", 
+            RowBox[{
+             RowBox[{"n1", "[", "t", "]"}], "/", "k1"}], "-", 
+            RowBox[{"\[Alpha]12", "*", 
+             RowBox[{
+              RowBox[{"n2", "[", "t", "]"}], "/", "k1"}]}]}], ")"}]}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"n2", "'"}], "[", "t", "]"}], "\[Equal]", 
+         RowBox[{"r2", "*", 
+          RowBox[{"n2", "[", "t", "]"}], "*", 
+          RowBox[{"(", 
+           RowBox[{"1", "-", 
+            RowBox[{
+             RowBox[{"n2", "[", "t", "]"}], "/", "k2"}], "-", 
+            RowBox[{"\[Alpha]21", "*", 
+             RowBox[{
+              RowBox[{"n1", "[", "t", "]"}], "/", "k2"}]}]}], ")"}]}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"n1", "[", "0", "]"}], "\[Equal]", "n10"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"n2", "[", "0", "]"}], "\[Equal]", "n20"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"n1", ",", "n2"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "tmax"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"plot", " ", "n1", " ", 
+    RowBox[{"(", "green", ")"}], " ", "and", " ", "n2", " ", 
+    RowBox[{"(", "blue", ")"}], " ", "vs", " ", "t"}], " ", "*)"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{"Evaluate", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"n1", "[", "t", "]"}], ",", 
+        RowBox[{"n2", "[", "t", "]"}]}], "}"}], "/.", "sol"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", "0", ",", "tmax"}], "}"}], ",", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"Green", ",", "Blue"}], "}"}]}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<t\>\"", ",", "\"\<n\>\""}], "}"}]}]}], "]"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "plot", " ", "isoclines", " ", "and", " ", "n2", " ", "vs", " ", "n1"}], 
+   " ", "*)"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"isoplot", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"k1", "/", "\[Alpha]12"}], "-", 
+        RowBox[{"n1", "/", "\[Alpha]12"}]}], ",", 
+       RowBox[{"k2", "-", 
+        RowBox[{"\[Alpha]21", "*", "n1"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n1", ",", "0", ",", "k1"}], "}"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Green", ",", "Blue"}], "}"}]}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "k2"}], "}"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dynplot", "=", 
+   RowBox[{"ParametricPlot", "[", 
+    RowBox[{
+     RowBox[{"Evaluate", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"n1", "[", "t", "]"}], ",", 
+         RowBox[{"n2", "[", "t", "]"}]}], "}"}], "/.", "sol"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "tmax"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Show", "[", 
+  RowBox[{"isoplot", ",", "dynplot", ",", 
+   RowBox[{"DisplayFunction", "\[Rule]", "$DisplayFunction"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "k1"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "k2"}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<n1\>\"", ",", "\"\<n2\>\""}], "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.399158444250602*^9, 3.3991585311933126`*^9}, {
+  3.399158962969199*^9, 3.399158966336972*^9}, {3.399160058533679*^9, 
+  3.399160108082533*^9}, {3.399160203312461*^9, 3.399160240630211*^9}, {
+  3.399160496111902*^9, 3.399160502650592*^9}, {3.399161870581005*^9, 
+  3.399161873828039*^9}, {3.399192790929306*^9, 3.399192796787238*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"evaluate", " ", "equilibria", " ", "numerically"}], " ", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", "eq"}]], "Input",
+ CellChangeTimes->{{3.3991602443195*^9, 3.399160244492917*^9}, {
+  3.39916041895105*^9, 3.399160429103065*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"eigenvalues", " ", "for", " ", "eq", " ", "#1"}], " ", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"Eigenvalues", "[", 
+   RowBox[{"j", "/.", 
+    RowBox[{"eq", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.3991602465022306`*^9, 3.399160267925264*^9}, {
+  3.399160407915861*^9, 3.399160415026689*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Bonus: Three species intransitive Lotka-Volterra competition\
+\>", "Section",
+ CellDingbat->"\[Wolf]",
+ CellChangeTimes->{{3.3991608922276907`*^9, 3.399160904019662*^9}, {
+  3.557645875912044*^9, 3.557645876845292*^9}}],
+
+Cell[TextData[{
+ "Use ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " to replicate the numerical results from following paper (on web) : \n\nMay \
+and Leonard 1975.  Nonlinear aspects of comptition between three species.  \
+SIAM Journal on Applied Mathemetics 29: 243-253."
+}], "Subsection",
+ CellChangeTimes->{{3.3991610959595823`*^9, 3.399161116196854*^9}, {
+  3.3991612480886106`*^9, 3.399161321611768*^9}, {3.399161623388289*^9, 
+  3.399161636095819*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["One Resource, One Species, Fixed Yield", "Section",
+ CellChangeTimes->{{3.3910830813685837`*^9, 3.391083087229896*^9}}],
+
+Cell[TextData[{
+ "Consider the model for one species in a chemostat with one limiting \
+resource that we studied in class.\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["dR", "dt"], "=", 
+     RowBox[{
+      RowBox[{"a", "(", 
+       RowBox[{
+        SubscriptBox["R", "in"], "-", "R"}], ")"}], "-", 
+      RowBox[{
+       SubscriptBox["v", "max"], 
+       FractionBox["R", 
+        RowBox[{"R", "+", "K"}]], "P"}]}]}], "\[IndentingNewLine]"}], 
+   TraditionalForm]]],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["dP", "dt"], "="}], TraditionalForm]]],
+ "Y",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["v", "max"], 
+    FractionBox["R", 
+     RowBox[{"R", "+", "K"}]], "P"}], TraditionalForm]]],
+ "-mP"
+}], "Subsection",
+ CellChangeTimes->{{3.391096063373557*^9, 3.391096073696117*^9}, {
+  3.3910973026412077`*^9, 3.3910973131520157`*^9}}],
+
+Cell[TextData[{
+ "Either by hand or with ",
+ StyleBox["Mathematica'",
+  FontSlant->"Italic"],
+ "s help, investigate this model's equilibria and their stability."
+}], "Subsection",
+ CellChangeTimes->{{3.391083574640005*^9, 3.391083580858553*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Plot the growth rate vs R and calculate R* using the species parameters \
+below.  \[Mu]: green, m: red.\
+\>", "Subsection"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"vmax", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"k", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"y", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"m", "=", "1"}], ";"}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"m", ",", 
+     RowBox[{"y", "*", "vmax", "*", 
+      RowBox[{"r", "/", 
+       RowBox[{"(", 
+        RowBox[{"r", "+", "k"}], ")"}]}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "0", ",", "10"}], "}"}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"RGBColor", "[", 
+       RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+      RowBox[{"RGBColor", "[", 
+       RowBox[{"0", ",", "1", ",", "0"}], "]"}]}], "}"}]}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<R\>\"", ",", "\"\<\[Mu], m\>\""}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{3.3910832457346077`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Numerically solve the model using the species parameters above and the \
+chemostat parameters below.  Try a nutrient inflow concentration, Rin, below \
+and above R*.  What happens in each case?  Compare the growth of biomass with \
+the logistic equation.  R: blue, N: green.\
+\>", "Subsection"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"rin", "=", "20"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"tmax", "=", "25"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sol", "=", 
+    RowBox[{"NDSolve", "[", 
+     RowBox[{
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"r", "'"}], "[", "t", "]"}], "\[Equal]", 
+         RowBox[{
+          RowBox[{"a", "*", 
+           RowBox[{"(", 
+            RowBox[{"rin", "-", 
+             RowBox[{"r", "[", "t", "]"}]}], ")"}]}], "-", 
+          RowBox[{"vmax", "*", 
+           RowBox[{
+            RowBox[{"r", "[", "t", "]"}], "/", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"r", "[", "t", "]"}], "+", "k"}], ")"}]}], "*", 
+           RowBox[{"p", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"p", "'"}], "[", "t", "]"}], "\[Equal]", 
+         RowBox[{
+          RowBox[{"y", "*", "vmax", "*", 
+           RowBox[{
+            RowBox[{"r", "[", "t", "]"}], "/", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"r", "[", "t", "]"}], "+", "k"}], ")"}]}], "*", 
+           RowBox[{"p", "[", "t", "]"}]}], "-", 
+          RowBox[{"m", "*", 
+           RowBox[{"p", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"r", "[", "0", "]"}], "\[Equal]", "rin"}], ",", 
+        RowBox[{
+         RowBox[{"p", "[", "0", "]"}], "\[Equal]", "0.001"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"r", ",", "p"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "tmax"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"Evaluate", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"r", "[", "t", "]"}], ",", 
+       RowBox[{"p", "[", "t", "]"}]}], "}"}], "/.", "sol"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "tmax"}], "}"}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"RGBColor", "[", 
+       RowBox[{"0", ",", "0", ",", "1"}], "]"}], ",", 
+      RowBox[{"RGBColor", "[", 
+       RowBox[{"0", ",", "1", ",", "0"}], "]"}]}], "}"}]}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<t\>\"", ",", "\"\<R,P\>\""}], "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.391083249997347*^9, {3.391096084257079*^9, 3.391096097623077*^9}, {
+   3.391097318980698*^9, 3.3910973332169743`*^9}, {3.391128794065805*^9, 
+   3.391128794921093*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["One Resource, Two Species Competition, Fixed Yields", "Section",
+ CellChangeTimes->{{3.3910839129819183`*^9, 3.391083922285544*^9}, {
+  3.391086979669289*^9, 3.391086980755763*^9}}],
+
+Cell[TextData[{
+ "Now consider competition of two species in a chemostat with one limiting \
+resource.\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["dR", "dt"], "=", 
+     RowBox[{
+      RowBox[{"a", "(", 
+       RowBox[{
+        SubscriptBox["R", "in"], "-", "R"}], ")"}], "-", 
+      RowBox[{
+       SubscriptBox["v", "max1"], 
+       FractionBox["R", 
+        RowBox[{"R", "+", 
+         SubscriptBox["K", "1"]}]], 
+       SubscriptBox["P", "1"]}], "-", 
+      RowBox[{
+       SubscriptBox["v", "max2"], 
+       FractionBox["R", 
+        RowBox[{"R", "+", 
+         SubscriptBox["K", "2"]}]], 
+       SubscriptBox["P", "2"]}]}]}], "\[IndentingNewLine]"}], 
+   TraditionalForm]]],
+ "\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox[
+     SubscriptBox["dP", "1"], "dt"], "="}], TraditionalForm]]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["Y", "1"], TraditionalForm]]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["v", "max1"], 
+    FractionBox["R", 
+     RowBox[{"R", "+", 
+      SubscriptBox["K", "1"]}]], 
+    SubscriptBox["P", "1"]}], TraditionalForm]]],
+ "-",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["m", "1"], 
+    SubscriptBox["P", "1"]}], TraditionalForm]]],
+ "\n\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox[
+     SubscriptBox["dP", "2"], "dt"], "="}], TraditionalForm]]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["Y", "2"], TraditionalForm]]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["v", "max2"], 
+    FractionBox["R", 
+     RowBox[{"R", "+", 
+      SubscriptBox["K", "2"]}]], 
+    SubscriptBox["P", "2"]}], TraditionalForm]]],
+ "-",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["m", "2"], 
+    SubscriptBox["P", "2"]}], TraditionalForm]]]
+}], "Subsection",
+ CellChangeTimes->{{3.391096208539613*^9, 3.391096229265637*^9}, {
+  3.3910973528202267`*^9, 3.39109737007126*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Plot the growth rate vs R and calculate R* using the parameters for both \
+species below.  Which species grows faster at high resource levels?  Which \
+species is the better competitor at equilibrium?  \[Mu]1: light green, \
+\[Mu]2: dark green, m: red.\
+\>", "Subsection"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"vmax1", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"k1", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"y1", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"m1", "=", "1"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"vmax2", "=", "3"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"k2", "=", "4"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"y2", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"m2", "=", "1"}], ";"}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"m1", ",", 
+     RowBox[{"y1", "*", "vmax1", "*", 
+      RowBox[{"r", "/", 
+       RowBox[{"(", 
+        RowBox[{"r", "+", "k1"}], ")"}]}]}], ",", 
+     RowBox[{"y2", "*", "vmax2", "*", 
+      RowBox[{"r", "/", 
+       RowBox[{"(", 
+        RowBox[{"r", "+", "k2"}], ")"}]}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "0", ",", "20"}], "}"}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"RGBColor", "[", 
+       RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+      RowBox[{"RGBColor", "[", 
+       RowBox[{"0", ",", "1", ",", "0"}], "]"}], ",", 
+      RowBox[{"RGBColor", "[", 
+       RowBox[{"0", ",", "0.5", ",", "0"}], "]"}]}], "}"}]}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<R\>\"", ",", "\"\<\[Mu]1, \[Mu]2, m\>\""}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{3.391085872514504*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Numerically solve the model using the species parameters above and the \
+chemostat parameters below.  Does the outcome agree with your expectations?  \
+R: blue, N1: light green, N2: dark green.\
+\>", "Subsection"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"rin", "=", "20"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"tmax", "=", "40"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sol", "=", 
+    RowBox[{"NDSolve", "[", 
+     RowBox[{
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"r", "'"}], "[", "t", "]"}], "\[Equal]", 
+         RowBox[{
+          RowBox[{"a", "*", 
+           RowBox[{"(", 
+            RowBox[{"rin", "-", 
+             RowBox[{"r", "[", "t", "]"}]}], ")"}]}], "-", 
+          RowBox[{"vmax1", "*", 
+           RowBox[{
+            RowBox[{"r", "[", "t", "]"}], "/", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"r", "[", "t", "]"}], "+", "k1"}], ")"}]}], "*", 
+           RowBox[{"p1", "[", "t", "]"}]}], "-", 
+          RowBox[{"vmax2", "*", 
+           RowBox[{
+            RowBox[{"r", "[", "t", "]"}], "/", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"r", "[", "t", "]"}], "+", "k2"}], ")"}]}], "*", 
+           RowBox[{"p2", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"p1", "'"}], "[", "t", "]"}], "\[Equal]", 
+         RowBox[{
+          RowBox[{"y1", "*", "vmax1", "*", 
+           RowBox[{
+            RowBox[{"r", "[", "t", "]"}], "/", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"r", "[", "t", "]"}], "+", "k1"}], ")"}]}], "*", 
+           RowBox[{"p1", "[", "t", "]"}]}], "-", 
+          RowBox[{"m1", "*", 
+           RowBox[{"p1", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"p2", "'"}], "[", "t", "]"}], "\[Equal]", 
+         RowBox[{
+          RowBox[{"y2", "*", "vmax2", "*", 
+           RowBox[{
+            RowBox[{"r", "[", "t", "]"}], "/", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"r", "[", "t", "]"}], "+", "k2"}], ")"}]}], "*", 
+           RowBox[{"p2", "[", "t", "]"}]}], "-", 
+          RowBox[{"m2", "*", 
+           RowBox[{"p2", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"r", "[", "0", "]"}], "\[Equal]", "rin"}], ",", 
+        RowBox[{
+         RowBox[{"p1", "[", "0", "]"}], "\[Equal]", "0.001"}], ",", 
+        RowBox[{
+         RowBox[{"p2", "[", "0", "]"}], "\[Equal]", "0.001"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"r", ",", "p1", ",", "p2"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "tmax"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"Evaluate", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"r", "[", "t", "]"}], ",", 
+       RowBox[{"p1", "[", "t", "]"}], ",", 
+       RowBox[{"p2", "[", "t", "]"}]}], "}"}], "/.", "sol"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "tmax"}], "}"}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"RGBColor", "[", 
+       RowBox[{"0", ",", "0", ",", "1"}], "]"}], ",", 
+      RowBox[{"RGBColor", "[", 
+       RowBox[{"0", ",", "1", ",", "0"}], "]"}], ",", 
+      RowBox[{"RGBColor", "[", 
+       RowBox[{"0", ",", "0.5", ",", "0"}], "]"}]}], "}"}]}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<t\>\"", ",", "\"\<R, P1, P2\>\""}], "}"}]}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{
+  3.39108681997782*^9, {3.3910967357680817`*^9, 3.391096760804933*^9}, {
+   3.391097382080249*^9, 3.391097414955393*^9}}]
+}, Open  ]],
+
+Cell["\<\
+Can you adjust the values of m (leave m1=m2=m so that both species have the \
+same mortaliy rate) to change the outcome of competition?  What might the \
+ecological implication of this be?   Can you solve for the value of m where \
+this switch should occur?\
+\>", "Subsection",
+ CellChangeTimes->{{3.39108682305138*^9, 3.3910868847745132`*^9}, {
+  3.391128882859563*^9, 3.3911288834046593`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Two Resources, Two Species Competion, Fixed Yield", "Section",
+ CellChangeTimes->{{3.391086986524169*^9, 3.391087015014045*^9}, {
+  3.3910908622531023`*^9, 3.391090866103319*^9}, {3.391092453921973*^9, 
+  3.391092455488164*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Here are two species competing for two essential resources.  Which is the \
+better competitor for R1? R2?  Vary the nutrient supply point (r1in, r2in) to \
+illustrate how the outcome of competition depends on the resource supply \
+ratio (show 1 wins, 2 wins, 1 and 2 coexist).\
+\>", "Subsection"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"a", "=", "1"}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"k11", "=", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"k21", "=", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"q11", "=", "2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"q21", "=", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"vmax11", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"vmax21", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"m1", "=", "0.4"}], ";"}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"k12", "=", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"k22", "=", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"q12", "=", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"q22", "=", "2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"vmax12", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"vmax22", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"m2", "=", "0.4"}], ";"}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"rstar11", "=", 
+   RowBox[{"m1", "*", 
+    RowBox[{"k11", "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"vmax11", "/", "q11"}], "-", "m1"}], ")"}]}]}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"rstar21", "=", 
+   RowBox[{"m1", "*", 
+    RowBox[{"k21", "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"vmax21", "/", "q21"}], "-", "m1"}], ")"}]}]}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"rstar12", "=", 
+   RowBox[{"m2", "*", 
+    RowBox[{"k12", "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"vmax12", "/", "q12"}], "-", "m2"}], ")"}]}]}]}], ";"}], "\n", 
+
+ RowBox[{
+  RowBox[{
+   RowBox[{"rstar22", "=", 
+    RowBox[{"m2", "*", 
+     RowBox[{"k22", "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"vmax22", "/", "q22"}], "-", "m2"}], ")"}]}]}]}], ";"}], 
+  "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"tmax", "=", "1000"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"r1in", "=", "4"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"r2in", "=", "8"}], ";"}], "\n"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sol", "=", 
+    RowBox[{"NDSolve", "[", 
+     RowBox[{
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"r1", "'"}], "[", "t", "]"}], "\[Equal]", 
+         RowBox[{
+          RowBox[{"a", "*", 
+           RowBox[{"(", 
+            RowBox[{"r1in", "-", 
+             RowBox[{"r1", "[", "t", "]"}]}], ")"}]}], "-", 
+          RowBox[{
+           RowBox[{"Min", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"vmax11", "/", "q11"}], "*", 
+              RowBox[{
+               RowBox[{"r1", "[", "t", "]"}], "/", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"r1", "[", "t", "]"}], "+", "k11"}], ")"}]}]}], ",", 
+             
+             RowBox[{
+              RowBox[{"vmax21", "/", "q21"}], "*", 
+              RowBox[{
+               RowBox[{"r2", "[", "t", "]"}], "/", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"r2", "[", "t", "]"}], "+", "k21"}], ")"}]}]}]}], 
+            "]"}], "*", 
+           RowBox[{"p1", "[", "t", "]"}], "*", "q11"}], "-", 
+          RowBox[{
+           RowBox[{"Min", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"vmax12", "/", "q12"}], "*", 
+              RowBox[{
+               RowBox[{"r1", "[", "t", "]"}], "/", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"r1", "[", "t", "]"}], "+", "k12"}], ")"}]}]}], ",", 
+             
+             RowBox[{
+              RowBox[{"vmax22", "/", "q22"}], "*", 
+              RowBox[{
+               RowBox[{"r2", "[", "t", "]"}], "/", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"r2", "[", "t", "]"}], "+", "k22"}], ")"}]}]}]}], 
+            "]"}], "*", 
+           RowBox[{"p2", "[", "t", "]"}], "*", "q12"}]}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"r2", "'"}], "[", "t", "]"}], "\[Equal]", 
+         RowBox[{
+          RowBox[{"a", "*", 
+           RowBox[{"(", 
+            RowBox[{"r2in", "-", 
+             RowBox[{"r2", "[", "t", "]"}]}], ")"}]}], "-", 
+          RowBox[{
+           RowBox[{"Min", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"vmax11", "/", "q11"}], "*", 
+              RowBox[{
+               RowBox[{"r1", "[", "t", "]"}], "/", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"r1", "[", "t", "]"}], "+", "k11"}], ")"}]}]}], ",", 
+             
+             RowBox[{
+              RowBox[{"vmax21", "/", "q21"}], "*", 
+              RowBox[{
+               RowBox[{"r2", "[", "t", "]"}], "/", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"r2", "[", "t", "]"}], "+", "k21"}], ")"}]}]}]}], 
+            "]"}], "*", 
+           RowBox[{"p1", "[", "t", "]"}], "*", "q21"}], "-", 
+          RowBox[{
+           RowBox[{"Min", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"vmax12", "/", "q12"}], "*", 
+              RowBox[{
+               RowBox[{"r1", "[", "t", "]"}], "/", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"r1", "[", "t", "]"}], "+", "k12"}], ")"}]}]}], ",", 
+             
+             RowBox[{
+              RowBox[{"vmax22", "/", "q22"}], "*", 
+              RowBox[{
+               RowBox[{"r2", "[", "t", "]"}], "/", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"r2", "[", "t", "]"}], "+", "k22"}], ")"}]}]}]}], 
+            "]"}], "*", 
+           RowBox[{"p2", "[", "t", "]"}], "*", "q22"}]}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"p1", "'"}], "[", "t", "]"}], "\[Equal]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Min", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"vmax11", "/", "q11"}], "*", 
+              RowBox[{
+               RowBox[{"r1", "[", "t", "]"}], "/", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"r1", "[", "t", "]"}], "+", "k11"}], ")"}]}]}], ",", 
+             
+             RowBox[{
+              RowBox[{"vmax21", "/", "q21"}], "*", 
+              RowBox[{
+               RowBox[{"r2", "[", "t", "]"}], "/", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"r2", "[", "t", "]"}], "+", "k21"}], ")"}]}]}]}], 
+            "]"}], "*", 
+           RowBox[{"p1", "[", "t", "]"}]}], "-", 
+          RowBox[{"m1", "*", 
+           RowBox[{"p1", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"p2", "'"}], "[", "t", "]"}], "\[Equal]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Min", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"vmax12", "/", "q12"}], "*", 
+              RowBox[{
+               RowBox[{"r1", "[", "t", "]"}], "/", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"r1", "[", "t", "]"}], "+", "k12"}], ")"}]}]}], ",", 
+             
+             RowBox[{
+              RowBox[{"vmax22", "/", "q22"}], "*", 
+              RowBox[{
+               RowBox[{"r2", "[", "t", "]"}], "/", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"r2", "[", "t", "]"}], "+", "k22"}], ")"}]}]}]}], 
+            "]"}], "*", 
+           RowBox[{"p2", "[", "t", "]"}]}], "-", 
+          RowBox[{"m2", "*", 
+           RowBox[{"p2", "[", "t", "]"}]}]}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"r1", "[", "0", "]"}], "\[Equal]", "r1in"}], ",", 
+        RowBox[{
+         RowBox[{"r2", "[", "0", "]"}], "\[Equal]", "r2in"}], ",", 
+        RowBox[{
+         RowBox[{"p1", "[", "0", "]"}], "\[Equal]", "0.01"}], ",", 
+        RowBox[{
+         RowBox[{"p2", "[", "0", "]"}], "\[Equal]", "0.01"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"r1", ",", "r2", ",", "p1", ",", "p2"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"t", ",", "0", ",", "tmax"}], "}"}]}], "]"}]}], ";"}], 
+  "\n"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"Evaluate", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"p1", "[", "t", "]"}], ",", 
+       RowBox[{"p2", "[", "t", "]"}]}], "}"}], "/.", "sol"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "tmax"}], "}"}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"RGBColor", "[", 
+       RowBox[{"0", ",", "1", ",", "0"}], "]"}], ",", 
+      RowBox[{"RGBColor", "[", 
+       RowBox[{"0", ",", "0.5", ",", "0"}], "]"}]}], "}"}]}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<t\>\"", ",", "\"\<P1, P2\>\""}], "}"}]}]}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{"ssplot", "=", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"r1in", ",", "r2in"}], "}"}], "}"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"PointSize", "[", "0.03", "]"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"zngiplot1", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"10", "^", "5"}], "*", 
+         RowBox[{"(", 
+          RowBox[{"r1", "-", "rstar11"}], ")"}]}], "+", "rstar21"}], ",", 
+       "rstar21"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"r1", ",", "rstar11", ",", "12"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", "12"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "12"}], "}"}]}], "}"}]}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"RGBColor", "[", 
+       RowBox[{"0", ",", "1", ",", "0"}], "]"}]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"zngiplot2", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"10", "^", "5"}], "*", 
+         RowBox[{"(", 
+          RowBox[{"r1", "-", "rstar12"}], ")"}]}], "+", "rstar22"}], ",", 
+       "rstar22"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"r1", ",", "rstar12", ",", "12"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", "12"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "12"}], "}"}]}], "}"}]}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"RGBColor", "[", 
+       RowBox[{"0", ",", "0.5", ",", "0"}], "]"}]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"rplot", "=", 
+   RowBox[{"ParametricPlot", "[", 
+    RowBox[{
+     RowBox[{"Evaluate", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"r1", "[", "t", "]"}], ",", 
+         RowBox[{"r2", "[", "t", "]"}]}], "}"}], "/.", "sol"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "tmax"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", "12"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "12"}], "}"}]}], "}"}]}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"RGBColor", "[", 
+       RowBox[{"0", ",", "0", ",", "1"}], "]"}]}], ",", 
+     RowBox[{"PlotPoints", "\[Rule]", "100"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{"Show", "[", 
+  RowBox[{"ssplot", ",", "zngiplot1", ",", "zngiplot2", ",", "rplot", ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "12"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "12"}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<R1\>\"", ",", "\"\<R2\>\""}], "}"}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.391087061096842*^9, 3.391087175813476*^9, {3.39109676623877*^9, 
+   3.391096803714263*^9}, {3.391097429221353*^9, 3.391097475430243*^9}, {
+   3.391097645852006*^9, 3.391097650985158*^9}, {3.3911107756184797`*^9, 
+   3.391110855810857*^9}, {3.391110940993668*^9, 3.391110962884688*^9}, {
+   3.391111220823801*^9, 3.391111318959476*^9}, {3.3911290542906237`*^9, 
+   3.391129069171637*^9}, {3.391129146815467*^9, 3.391129174474655*^9}, {
+   3.3911292391301947`*^9, 3.39112924329735*^9}, {3.391129283013957*^9, 
+   3.391129423151181*^9}, {3.391129458444613*^9, 3.3911295194834223`*^9}, {
+   3.423213827116437*^9, 3.423213842718609*^9}}]
+}, Open  ]],
+
+Cell["\<\
+Can you change species parameters to show the founder control case?\
+\>", "Subsection",
+ CellChangeTimes->{{3.391129535064753*^9, 3.391129553557601*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Bonus: Nutrient Recycling", "Section",
+ CellDingbat->"\[Wolf]",
+ CellChangeTimes->{{3.391087229116928*^9, 3.391087237492134*^9}, {
+   3.391093099484681*^9, 3.3910930996542797`*^9}, 3.3911074959328003`*^9}],
+
+Cell["\<\
+Modify the \"One Resource, One Species, Fixed Yield\" model to include \
+nutrient recycling, so that a fraction (0<=\[Phi]<=1) of each cell is \
+returned to the available nutrient pool upon death.  What are your equations? \
+ What happens to the equilibrium biomass and nutrient concentration as a \
+function of \[Phi]?  Does nutrient recycling affect the outcome of \
+competition for one resource?\[LineSeparator]
+Note: to make a \[Phi], type esc-f-esc!\
+\>", "Subsection",
+ CellChangeTimes->{{3.391087277770061*^9, 3.3910873036634912`*^9}, {
+   3.3910873495870123`*^9, 3.391087439319254*^9}, {3.3910874752827044`*^9, 
+   3.391087502786839*^9}, {3.391105969393064*^9, 3.3911059696974697`*^9}, {
+   3.391106270142274*^9, 3.391106287020508*^9}, 3.3911074959350853`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1024, 687},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowSelection->True,
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 172, 2, 76, "Title"],
+Cell[742, 26, 45, 0, 67, "Section"],
+Cell[CellGroupData[{
+Cell[812, 30, 1563, 53, 110, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[2400, 87, 228, 5, 34, "Subsection"],
+Cell[2631, 94, 959, 25, 73, "Input"],
+Cell[3593, 121, 492, 14, 58, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4122, 140, 163, 2, 34, "Subsection"],
+Cell[4288, 144, 444, 13, 43, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4769, 162, 364, 7, 49, "Subsection"],
+Cell[5136, 171, 203, 5, 27, "Input"],
+Cell[5342, 178, 185, 5, 27, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5564, 188, 718, 11, 64, "Subsection"],
+Cell[6285, 201, 5722, 156, 508, "Input"],
+Cell[12010, 359, 301, 6, 58, "Input"],
+Cell[12314, 367, 423, 10, 58, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12774, 382, 229, 5, 67, "Section"],
+Cell[13006, 389, 466, 10, 64, "Subsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13509, 404, 125, 1, 67, "Section"],
+Cell[13637, 407, 896, 32, 125, "Subsection"],
+Cell[14536, 441, 245, 6, 26, "Subsection"],
+Cell[CellGroupData[{
+Cell[14806, 451, 133, 3, 27, "Subsection"],
+Cell[14942, 456, 276, 8, 73, "Input"],
+Cell[15221, 466, 734, 22, 27, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15992, 493, 304, 5, 64, "Subsection"],
+Cell[16299, 500, 2763, 78, 193, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19111, 584, 187, 2, 67, "Section"],
+Cell[19301, 588, 1890, 73, 179, "Subsection"],
+Cell[CellGroupData[{
+Cell[21216, 665, 282, 5, 42, "Subsection"],
+Cell[21501, 672, 599, 18, 148, "Input"],
+Cell[22103, 692, 970, 28, 43, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23110, 725, 223, 4, 49, "Subsection"],
+Cell[23336, 731, 3738, 103, 208, "Input"]
+}, Open  ]],
+Cell[27089, 837, 405, 7, 49, "Subsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27531, 849, 234, 3, 67, "Section"],
+Cell[CellGroupData[{
+Cell[27790, 856, 306, 5, 64, "Subsection"],
+Cell[28099, 863, 12702, 369, 718, "Input"]
+}, Open  ]],
+Cell[40816, 1235, 163, 3, 34, "Subsection"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41016, 1243, 211, 3, 67, "Section"],
+Cell[41230, 1248, 778, 12, 95, "Subsection"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,2940 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[    164413,       2931]
+NotebookOptionsPosition[    163014,       2881]
+NotebookOutlinePosition[    163478,       2899]
+CellTagsIndexPosition[    163435,       2896]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.5600795573491073`*^9, 3.560079558129109*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.5600803516816144`*^9, 3.5600803646764374`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"dn1", ":=", 
+   RowBox[{"r1", "*", "n1", "*", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{"n1", "/", "k1"}], "+", 
+      RowBox[{"\[Alpha]", "*", 
+       RowBox[{"n2", "/", "k1"}]}], "-", 
+      RowBox[{"c2", "*", "n2", "*", 
+       RowBox[{"n2", "/", "k1"}]}]}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dn2", ":=", 
+   RowBox[{"r2", "*", "n2", "*", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{"n2", "/", "k2"}], "+", 
+      RowBox[{"\[Beta]", "*", 
+       RowBox[{"n1", "/", "k2"}]}], "-", 
+      RowBox[{"c1", "*", "n1", "*", 
+       RowBox[{"n1", "/", "k2"}]}]}], ")"}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.560076401399308*^9, 3.5600764336911488`*^9}, {
+  3.5600795624503164`*^9, 3.56007958516781*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"eq", "=", 
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"dn1", "\[Equal]", "0"}], ",", 
+       RowBox[{"dn2", "\[Equal]", "0"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n1", ",", "n2"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", "eq", "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.560076440938483*^9, 3.560076457272403*^9}, {
+  3.560079819688376*^9, 3.560079938550214*^9}, {3.5600803860640745`*^9, 
+  3.5600803936932564`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   PanelBox[GridBox[{
+      {
+       StyleBox[
+        StyleBox[
+         DynamicBox[ToBoxes[
+           FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"], 
+           StandardForm],
+          ImageSizeCache->{453., {4., 14.}}],
+         StripOnInput->False,
+         DynamicUpdating->True], "Panel",
+        StripOnInput->False,
+        Background->None]},
+      {
+       ItemBox[
+        TagBox[
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"n1", "\[Rule]", "0"}], ",", 
+             RowBox[{"n2", "\[Rule]", "k2"}]}], "}"}], ",", 
+           RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"n1", "\[Rule]", 
+              RowBox[{
+               FractionBox["\[Beta]", 
+                RowBox[{"2", " ", "c1"}]], "-", 
+               RowBox[{
+                FractionBox["1", "2"], " ", 
+                SqrtBox[
+                 RowBox[{
+                  FractionBox[
+                   SuperscriptBox["\[Beta]", "2"], 
+                   SuperscriptBox["c1", "2"]], "-", 
+                  FractionBox[
+                   RowBox[{
+                    RowBox[{"2", " ", "c1", " ", "c2", " ", "k2"}], "-", 
+                    RowBox[{"c1", " ", "\[Alpha]"}], "-", 
+                    RowBox[{"c2", " ", 
+                    SuperscriptBox["\[Beta]", "2"]}]}], 
+                   RowBox[{"3", " ", 
+                    SuperscriptBox["c1", "2"], " ", "c2"}]], "-", 
+                  FractionBox[
+                   RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], 
+                   RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]], "-", 
+                  FractionBox[
+                   RowBox[{
+                    SuperscriptBox["2", 
+                    RowBox[{"1", "/", "3"}]], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], "-", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], "+", 
+                    SuperscriptBox[
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], 
+                    "2"]}], ")"}]}], 
+                   RowBox[{"3", " ", 
+                    SuperscriptBox["c1", "2"], " ", "c2", " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], 
+                    ")"}], 
+                    RowBox[{"1", "/", "3"}]]}]], "-", 
+                  FractionBox[
+                   SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"\[LeftSkeleton]", "7", "\[RightSkeleton]"}], "+", 
+                    SqrtBox[
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]]}], 
+                    ")"}], 
+                    RowBox[{"1", "/", "3"}]], 
+                   RowBox[{"3", " ", 
+                    SuperscriptBox["2", 
+                    RowBox[{"1", "/", "3"}]], " ", 
+                    SuperscriptBox["c1", "2"], " ", "c2"}]]}]]}], "+", 
+               RowBox[{
+                FractionBox["1", "2"], " ", 
+                RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]}]}]}], 
+             ",", 
+             RowBox[{"n2", "\[Rule]", 
+              RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]}]}], "}"}],
+            ",", 
+           RowBox[{"{", 
+            RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], "}"}], ",", 
+           
+           RowBox[{"{", 
+            RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], "}"}], ",", 
+           
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"n1", "\[Rule]", "0"}], ",", 
+             RowBox[{"n2", "\[Rule]", "0"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"n1", "\[Rule]", "k1"}], ",", 
+             RowBox[{"n2", "\[Rule]", "0"}]}], "}"}]}], "}"}],
+         Short[#, 5]& ],
+        Background->GrayLevel[1],
+        BaseStyle->{Deployed -> False},
+        Frame->True,
+        FrameStyle->GrayLevel[0, 0.2],
+        StripOnInput->False]},
+      {
+       RowBox[{
+        ButtonBox[
+         StyleBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+             StandardForm],
+            ImageSizeCache->{82., {1., 14.}}],
+           StripOnInput->False,
+           DynamicUpdating->True], "Panel",
+          StripOnInput->False,
+          Background->None],
+         Appearance->Automatic,
+         ButtonFunction:>OutputSizeLimit`ButtonFunction[
+          Identity, 6, 23331248500763757627, 5/2],
+         Enabled->True,
+         Evaluator->Automatic,
+         Method->"Queued"], "\[ThinSpace]", 
+        ButtonBox[
+         StyleBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+             StandardForm],
+            ImageSizeCache->{91., {1., 14.}}],
+           StripOnInput->False,
+           DynamicUpdating->True], "Panel",
+          StripOnInput->False,
+          Background->None],
+         Appearance->Automatic,
+         ButtonFunction:>OutputSizeLimit`ButtonFunction[
+          Identity, 6, 23331248500763757627, 5 2],
+         Enabled->True,
+         Evaluator->Automatic,
+         Method->"Queued"], "\[ThinSpace]", 
+        ButtonBox[
+         StyleBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+             StandardForm],
+            ImageSizeCache->{138., {4., 14.}}],
+           StripOnInput->False,
+           DynamicUpdating->True], "Panel",
+          StripOnInput->False,
+          Background->None],
+         Appearance->Automatic,
+         ButtonFunction:>OutputSizeLimit`ButtonFunction[
+          Identity, 6, 23331248500763757627, Infinity],
+         Enabled->True,
+         Evaluator->Automatic,
+         Method->"Queued"], "\[ThinSpace]", 
+        ButtonBox[
+         StyleBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+             StandardForm],
+            ImageSizeCache->{116., {1., 13.}}],
+           StripOnInput->False,
+           DynamicUpdating->True], "Panel",
+          StripOnInput->False,
+          Background->None],
+         Appearance->Automatic,
+         ButtonFunction:>FrontEndExecute[{
+            FrontEnd`SetOptions[
+            FrontEnd`$FrontEnd, 
+             FrontEnd`PreferencesSettings -> {"Page" -> "Evaluation"}], 
+            FrontEnd`FrontEndToken["PreferencesDialog"]}],
+         Evaluator->None,
+         Method->"Preemptive"]}]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[1.2]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    DefaultBaseStyle->{},
+    FrameMargins->5],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  Out[6]]], "Output",
+ CellChangeTimes->{{3.5600803955623636`*^9, 3.560080400544648*^9}}]
+}, Open  ]],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.5600798980784535`*^9}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"r1", "=", 
+   RowBox[{"r2", "=", "1"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"k1", "=", 
+   RowBox[{"k2", "=", "1"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c1", "=", ".1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c2", "=", ".1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Alpha]", ":=", "\[Beta]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.560076531878481*^9, 3.560076560978919*^9}, {
+  3.5600795906590195`*^9, 3.560079602546241*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"n1", "/.", 
+    RowBox[{"eq", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Beta]", ",", 
+     RowBox[{"-", "1"}], ",", "1.1"}], "}"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1000"}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.5600765676175117`*^9, 3.560076613255446*^9}, {
+  3.5600766594682903`*^9, 3.5600766678747787`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1: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
+     "]], 
+    LineBox[{{0.9994416229683885, 1000.}, {0.9994984186595198, 0.}}]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesOrigin->{0, 0},
+  PlotRange->{{-1, 1.1}, {0, 1000}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], Automatic}]], "Output",
+ CellChangeTimes->{{3.560076638814383*^9, 3.560076668292544*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"\[Alpha]", ",", "\[Beta]"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.560076741799033*^9, 3.560076745744073*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["eq"], "Input",
+ CellChangeTimes->{{3.560076887325032*^9, 3.560076887389193*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"n1", "\[Rule]", "0"}], ",", 
+     RowBox[{"n2", "\[Rule]", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"n1", "\[Rule]", "2.`"}], ",", 
+     RowBox[{"n2", "\[Rule]", "2.`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"n1", "\[Rule]", "0"}], ",", 
+     RowBox[{"n2", "\[Rule]", "0"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"n1", "\[Rule]", "1"}], ",", 
+     RowBox[{"n2", "\[Rule]", "0"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.56007689274118*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"\[Alpha]", "=", "1.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Beta]", "=", "1.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c1", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c2", "=", "0.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tmax", "=", "20"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"r1", " ", "=", " ", "1.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"r2", " ", "=", " ", "1.1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"k1", " ", "=", " ", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"k2", " ", "=", " ", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sol", "=", 
+   RowBox[{"NDSolve", "[", 
+    RowBox[{
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"n1", "'"}], "[", "t", "]"}], "\[Equal]", 
+        RowBox[{"r1", "*", 
+         RowBox[{"n1", "[", "t", "]"}], "*", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", 
+           RowBox[{
+            RowBox[{"n1", "[", "t", "]"}], "/", "k1"}], "+", 
+           RowBox[{"\[Alpha]", "*", 
+            RowBox[{
+             RowBox[{"n2", "[", "t", "]"}], "/", "k1"}]}], "-", 
+           RowBox[{"c2", "*", 
+            RowBox[{"n2", "[", "t", "]"}], "*", 
+            RowBox[{
+             RowBox[{"n2", "[", "t", "]"}], "/", "k1"}]}]}], ")"}]}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"n2", "'"}], "[", "t", "]"}], "\[Equal]", 
+        RowBox[{"r2", "*", 
+         RowBox[{"n2", "[", "t", "]"}], "*", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", 
+           RowBox[{
+            RowBox[{"n2", "[", "t", "]"}], "/", "k2"}], "+", 
+           RowBox[{"\[Beta]", "*", 
+            RowBox[{
+             RowBox[{"n1", "[", "t", "]"}], "/", "k2"}]}], "-", 
+           RowBox[{"c1", "*", 
+            RowBox[{"n1", "[", "t", "]"}], "*", 
+            RowBox[{
+             RowBox[{"n1", "[", "t", "]"}], "/", "k2"}]}]}], ")"}]}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"n1", "[", "0", "]"}], "\[Equal]", "0.01"}], ",", 
+       RowBox[{
+        RowBox[{"n2", "[", "0", "]"}], "\[Equal]", "0.01"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n1", ",", "n2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "tmax"}], "}"}]}], "]"}]}], ";"}]}], "Input",\
+
+ CellChangeTimes->{{3.5600766874012203`*^9, 3.560076794778227*^9}, {
+  3.5600768701055717`*^9, 3.5600768724079103`*^9}, {3.560076903169656*^9, 
+  3.5600769057670383`*^9}, {3.5600796199714713`*^9, 3.560079680175831*^9}, {
+  3.5600800319565363`*^9, 3.560080088155366*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["sol"], "Input",
+ CellChangeTimes->{{3.5600769346167183`*^9, 3.5600769348026657`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"n1", "\[Rule]", 
+     TagBox[
+      RowBox[{"InterpolatingFunction", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"0.`", ",", "20.`"}], "}"}], "}"}], ",", "\<\"<>\"\>"}], 
+       "]"}],
+      False,
+      Editable->False]}], ",", 
+    RowBox[{"n2", "\[Rule]", 
+     TagBox[
+      RowBox[{"InterpolatingFunction", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"{", 
+          RowBox[{"0.`", ",", "20.`"}], "}"}], "}"}], ",", "\<\"<>\"\>"}], 
+       "]"}],
+      False,
+      Editable->False]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.560076935102624*^9, 3.5600800941925764`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"Evaluate", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"n1", "[", "t", "]"}], ",", 
+       RowBox[{"n2", "[", "t", "]"}]}], "}"}], "/.", "sol"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "6.9"}], "}"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.5600768039479237`*^9, 3.560076819359726*^9}, {
+  3.560076857758317*^9, 3.56007686188652*^9}, {3.5600769430296383`*^9, 
+  3.560076943358444*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1: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
+qgY5/Uaj96haQloaD+yyU2J9fP4PehUI/g==
+     "]]}, 
+   {Hue[0.9060679774997897, 0.6, 0.6], LineBox[CompressedData["
+1:eJwVlHk01fkbx022RNz7/crdrDO2mSiUsTT5vJMpy4xEVCQkxagooUglO4Uk
+S8kSXWtKCkkM0YiQZbphilSmTCUlt5T87u+P5zzn9c/7vM77OefR2BHg6LNA
+TEzsrGj+v2cCH0X6jZ+wULz/5sjTsGhyjq9U6+DiRXp8rcRV4qLJq4trJ35y
+2U86c0JeuJ+JJkyNIXG2SyS5UNuQ9bE8mmh5XkqVdzlNZH5a5BzxOJpcmV8k
+kHEpIEbcKLX3a2LIwZ7VYdIuVSS1OPdSKiOWuJgI7KRcmknK459/5LfFkdKZ
+9TsrGH1Ea07enzeVRDwdvbdOPBwiI83JzstJKjHYytU7WfeUWDKS7U88TCNP
+5Z2jZnaME35UX5WjagaZtJo0Lr89QVoddVyvVWWTyuNuqA6eJItfBiz+0yyX
+WHv0Fg/KvidXFk72Pr9ZQHY3aj7+tnKaHOTXGsikFREPda/GrpMzpH9x/pYY
+vRISY/l7V3PDJ3L2sBvx4lWQ2y/4T6qezpJrruv8hm2vkq6kV+ftjOfIdVWn
+7F71aiL3fjh2kdc8EQ5HWeqY1pC0y8PJNx+LQart/ILcH+pJ8ffHh/0lF0Bo
+dnckrbSR9Id+bTTgiGPtrEmNfmcz2WO/95CtlQS+NFQMxk+0EmXJmvYQN0m4
+n0r+Fu3UTkxXf3grTJBCpFhk9Lvi++Sx8W4l4TVpHPctjSkaeECy5asHFrYv
+RGSyc/3plH7S7PvBN2BaBnKGhr7jUgLyXaFs+ks5WawWl914pneIdFxw/XNE
+TQ6h1zSj2jVHyDwnt2Wp7WJkvPgw6u8wRuxCbrolesrDsaIvTsX+BRHfdK9j
+dbICdAJC+P+xXpHvP8ddMHFjgPacmDIKekPsTVkFW18wsPK8z7K7ilPEoC5f
+QTucidwt/Y2nFk4TVd2Me1+kKIy1bN5XYCQkDp+0oxmpFP4W+Jk3X58lZjLX
+Sns0aQgipgZ1P38j+otKuVlXaLTGelvZVH4Hgd25mUXrFHFeQvado4UETkUI
+VeL6FJGuXVqf3ySFOIV3v1puW4II4Uf1OXMZmIyNPSqeWgLXuiy9O49k8aFo
+Ta1ShBLi9+Qf46vKw6fknJiBIgvWXPlAvg4D04dbvCKVWKiQZ5TlLWXghN1E
+Sx+bhc0XVSwyljOQ/9YsJliFhQdfswLCTRj4Z+WgzC1tFtZdb3yotZ4Bx2YW
+vc6MheDuyvHPPgxgKF1r23YWyMX1Q+cKGFCWS7GNL2Fhbf+xnGIGE/6nnj+o
+KmPhh70Ny+tpJurlzTcPV7Dwz89ZHh1KTGxhvvBeVsWCzY+lGc+UmUhXWhUx
+cJOFy0LnvZ91mZDT+PeKeicL3QqNS6rBxJwxWXLzDQsvHz7heO1j4rfa9PNj
+kyy06k5L6O5nIsd0QkPuPQtL9DuzXwcxYb7q7DKPGRYCssru7DvMRAj+Wy85
+z4Lg7kW9zdFMvLXNDNvIYGPypZKwLpuJJx6TI6+M2JCfWZrU1sKEQcc7BUtj
+Nub+smk81MbEiZXvyTkTNpZJBNv/2M6EtszHPNtf2Pht8mviiS4m9l6b9Sj/
+lQ2jr1TWkkdMfJWQGt2zhQ0/ezflptdMcMuURycj2Eh1Ni/UVaSwR1GVYX2c
+DW/Ng68TlCg0HlVD/gk2fnI73vCSTWGH0/f5DnFsTGyXEuaqUCj9quNZlcpG
+slPM/BttCqYbVoweKGRjT/qKCpYZBZdpm9GP7Ww0hId+KHSj4Ct/2Fi7k42x
+uwaXz7pTCNMtSXTpYuOPsXt+MR4UcrdJGdf2sjF0dfrddm8K460tCYeG2Biu
+ydk2+weF0LOrVnz5jw3n1pqB/sMUsn7WjxVT4EBvVyqfm0GhzGHbsAGTA1Xl
+yU09mRQa/kgy8KI5OCrjb3gim8Jo7quhZhYHTmY2YWM5FHSl+cuj1Dm4ej3m
+wKlCCjcFqoOSRhyEOxuvTL5KYegQQ0/WmYPWQI0aq3sU9opZRhhs5kD/KfGo
+76AgFh/U7byVg+xM/6Bl9yloZz4MzHfnoN6RPcbsoRB0I+eG8S4OWnZLzrUN
+UJB7r0s8QzlYaa5h93yEgoX/Gscb2Rw0THzavOAjhd73BwqHznMwa93+fP0M
+hZ1hRdPzFzjQ6GFInRRSSEyQzrS9yMHuHnNZxiwFQXHX8EgZBz1Ra6yk5ykE
+Pt/qs6iBgw7DlITqhTQuuh845PGEA+tEgYQcj4Zp94ag6lEOiniaxyyUaXRb
+6O+TfsbB68bjRwJUaMyqvfS+8i8HtHidVJcaDccx9w3z7zg4/ckiJkT0Jxbs
+ttHOE+dih9tUbLQ+jR2B6gNPdLmwuRU+lWFB49PoXLfRUi7WLI2/nUNoJG8c
+vherz4XAdecvBaBRb5TRtMyIiy2z3lv4ljSoj7LlR1dxMWvla1SwjkbLYWGk
+qj0XT2oHql3taWhEdS/fHsSFxhmtoPFtNA4VDm5IDOZCbFP//hp3kf+d5wE1
+oVzwH4QfjNlOI0ziyxX5I1xYBcgmqnvS6IvRMWiK5qLZw1bRzptGdPxxA/UM
+Lq63eWUc8KMxfsrIcKyOi7y0+CAqmMYvlas3yt/ios+webpVxGnd1vvNb3Px
+SQ/nQkJoWCh4VKU1c9HV8a+zIJRGZmqS4doOLqIqb5Ulh9GwPvPcsGiYi9U+
+uwr+PkajPCvDaNc3Lh71NTl0JtD4RyAn1i/GQ0/26HhwIg05VlQXEefBsSgt
+RS2Jxr6zAb6chTx4/+WmEniShkGade59Jg+RKm52Uik0apJmZVZo8bCifUAo
+nS7q6+j2p/N2PFyrtq7wvUDjw+2Byj32PNxJ+6FXKGLNOdsjgw48lPRa68Xm
+0ogJN2FVO/NQPxWRkJ8n8j3E+H2XBw9Z9s++dBaI+tzfUnf/AA/SbLXCb5do
+zF81jTUL5mGT9edLkXyRz7tKJ36oKO+Z3aR4MY3T+86/PXaEB4MnPlulSmhs
+8j+ouSKWB/eQ28ULykR9l01M5cXzcDitfPaYiG+88mySS+Kh7YpuzlcRK/n+
+7jqeIvJFWPeHchrri+/oOKXx4Cct6bWvQnTvcbOPTek8+Ajyfn0p4hKtqy16
+mTxcqtOK8LpMY3Cndmp2Ng+c6v0Lh0T8P4E5CBg=
+     "]]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesOrigin->{0, 0},
+  PlotRange->{All, All},
+  PlotRangeClipping->True,
+  PlotRangePadding->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.560076820043318*^9, {3.560076862833148*^9, 3.560076873681205*^9}, 
+   3.560076947332117*^9, 3.5600800976245823`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StreamPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"dn1", ",", "dn2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n1", ",", "0", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n2", ",", "0", ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.560076963317402*^9, 3.5600769662538548`*^9}, {
+  3.560077433993239*^9, 3.560077454518325*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.0018461258607080507`, 0.0018461251974715735`}, {
+       0.005598319941452885, 0.005598317941280658}, {0.010158188893113287`, 
+       0.010158185294776918`}, {0.017553085654064566`, 
+       0.017553079485325574`}, {0.030571269949901125`, 
+       0.030571259513382586`}, {0.053078989048560316`, 
+       0.053078971612630546`}, {0.09118258701218432, 0.09118255819532047}, {
+       0.13615949198750477`, 0.13615945094040574`}, {0.20397555470735867`, 
+       0.20397549760131498`}, {0.30504360735783226`, 0.3050435302308227}, {
+       0.4547259365702321, 0.45472583685177137`}, {0.5758189695461738, 
+       0.5758188576340921}, {0.5921460069655057, 0.5921458939911441}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.6069035030693173, 0.6069033891347945}, {0.7289764391894092,
+        0.7289763173125015}, {0.8199809223671086, 0.8199807968769873}, {
+       0.9219967632698363, 0.9219966353820634}, {0.9811828542365012, 
+       0.9811827256037603}, {1.0439748249577976`, 1.0439746960159637`}, {
+       1.1138450746277262`, 1.113844945868769}, {1.1882218955669597`, 
+       1.1882217675400883`}, {1.1972033349917872`, 1.1972032071108005`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{1.211960830495666, 1.2119607028543837`}, {
+       1.2671052877754982`, 1.2671051610299224`}, {1.350495251253342, 
+       1.3504951263382705`}, {1.4386069833893294`, 1.4386068608470217`}, {
+       1.5316556815722997`, 1.5316555619380645`}, {1.6296413458022527`, 
+       1.629641229611399}, {1.7325639760791887`, 1.7325638638670249`}, {
+       1.8022606462805502`, 1.8022605369679756`}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{1.8170181415973032`, 1.8170180328986845`}, {
+       1.8776731137462317`, 1.8776730075710408`}, {2.031286265276889, 
+       2.031286165861985}, {2.1111036976809823`, 2.1111036018774745`}, {
+       2.1926908364307978`, 2.1926907443395347`}, {2.276047681526335, 
+       2.276047593248165}, {2.3611742329675947`, 2.3611741486033653`}, {
+       2.4073179533215727`, 2.407317871072891}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{2.4220754486070106`, 2.422075367034915}, {2.447733301935497, 
+       2.447733221539735}, {2.535387699610963, 2.535387623191872}, {
+       2.624137425993993, 2.6241373535597767`}, {2.713982481084587, 
+       2.7139824126434493`}, {2.7760739149260907`, 2.776073849230646}, {
+       2.838432229840412, 2.838432166868725}, {2.960017501780399, 
+       2.9600174439062488`}, {3.012375260643124, 3.0123752048972774`}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{3.0271327559669143`, 3.027132700820949}, {3.081135312321477, 
+       3.081135259370676}, {3.184236673292201, 3.184236624304682}, {
+       3.287338034262925, 3.2873379892386887`}, {3.3856800137840293`, 
+       3.385679972252612}, {3.4859257458849813`, 3.4859257080345682`}, {
+       3.5723742049714375`, 3.5723741701987883`}, {3.6174325699519017`, 
+       3.617432536734438}}]}, 
+     {Arrowheads[{{0.01999999999999999, 1.}}], 
+      ArrowBox[{{3.632190065320956, 3.632190032612846}, {3.6564839919063234`, 
+       3.6564839600367165`}, {3.738255106689638, 3.7382550775483536`}, {
+       3.8176875493213815`, 3.817687522733699}, {3.9680822450458617`, 
+       3.968082223061304}, {4.106213905995468, 4.106213887955321}, {
+       4.2224898813867515`, 4.2224898664455255`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{4.237247376818722, 4.237247362261017}, {4.343730020655971, 
+       4.343730008751852}, {4.447295752869047, 4.447295743374971}, {
+       4.538068195508672, 4.538068187990314}, {4.61604734857485, 
+       4.616047342597882}, {4.681233212067578, 4.681233207197672}, {
+       4.7358615904431485`, 4.73586158649163}, {4.782229757328374, 
+       4.782229754230197}, {4.820953599092484, 4.820953596671525}, {
+       4.827547195646447, 4.827547193331768}}]}, 
+     {Arrowheads[{{0.005155358493983227, 1.}}], 
+      ArrowBox[{{4.842304691151241, 4.842304689074436}, {4.8800273742821085`, 
+       4.880027372813349}, {4.919983714522898, 4.919983713627945}, {
+       4.946799277405134, 4.946799276859042}, {4.9704424537563865`, 
+       4.970442453484744}, {4.983244982704951, 4.983244982558638}, {
+       4.990407239346252, 4.990407239264482}, {4.994465050962352, 
+       4.994465050918212}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{10., 2.5179236583859983`}, {9.890342522842813, 
+       2.5202559664934943`}, {9.717002841207956, 2.525369407537934}, {
+       9.551601625293948, 2.5315186950701722`}, {9.393759833292606, 
+       2.5386429082454156`}, {9.243098423395747, 2.54668112621887}, {
+       9.16592668327197, 2.5514507418847585`}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{9.145096179947078, 2.552738175533752}, {9.099238353795185, 
+       2.5555724281457426`}, {8.96180058268274, 2.5652558931812397`}, {
+       8.830406068250223, 2.575670600480568}, {8.704675768689453, 
+       2.586755629198934}, {8.575580828846437, 2.599243959556144}, {
+       8.451572097440216, 2.612267383915616}, {8.332369987550223, 
+       2.6257835792107187`}, {8.313816603963275, 2.628178579642297}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{8.293118095299574, 2.630850487812053}, {8.22067717274193, 
+       2.640201668418891}, {8.008635951547804, 2.670050605909181}, {
+       7.81358452105407, 2.7015320426089406`}, {7.633877795926746, 
+       2.7344060432420565`}, {7.469914931654759, 2.768013662607377}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{7.4495159743421135`, 2.7724232355758645`}, {
+       7.308713395753171, 2.8030356161513903`}, {7.161635564318658, 
+       2.8385477764803024`}, {7.0173876119992045`, 2.8808367156471526`}, {
+       6.88410133213141, 2.923662507548732}, {6.755726775626869, 
+       2.9666671255424215`}, {6.648935209628009, 3.005728124180349}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{6.629418066358304, 3.0131150703673146`}, {6.527569660943133, 
+       3.0536264479924355`}, {6.426030419055586, 3.0973354122687136`}, {
+       6.244443030065776, 3.1847058866744}, {6.06603868190098, 
+       3.285326054361422}, {5.914755555993185, 3.3842583660632233`}, {
+       5.892634679087008, 3.4006912898376913`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{5.8758813126688505`, 3.4131368540204763`}, {
+       5.784922900909919, 3.4807070798040582`}, {5.673878354534954, 
+       3.574306840399351}, {5.578474913411834, 3.6646392095281017`}, {
+       5.496585127402003, 3.751447859128472}, {5.3653356201138855`, 
+       3.9136916962773363`}, {5.30055110201023, 4.010952799930012}}]}, 
+     {Arrowheads[{{0.016624143643571475`, 1.}}], 
+      ArrowBox[{{5.288981321570198, 4.028322530346409}, {5.273485725696116, 
+       4.05158609393513}, {5.203701697554069, 4.175615285953148}, {
+       5.149929327246109, 4.2860163768080595`}, {5.109057799064394, 
+       4.38366349842117}, {5.054329743250652, 4.544270323141532}, {
+       5.02341564490496, 4.6657008097484995`}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{2.5179204091238394`, 10.}, {2.520252483721376, 
+       9.8903519016676}, {2.525365873885358, 9.717011997162464}, {
+       2.5315151112975594`, 9.551610565251105}, {2.5386392751195506`, 
+       9.393768563870054}, {2.5466774445129006`, 9.243106950955847}, {
+       2.5514475548971025`, 9.165926685786156}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{2.5527349798955794`, 9.145096181926618}, {2.55556869863918, 
+       9.099246684445015}, {2.565252116659958, 8.961808722274096}, {
+       2.5756667777368043`, 8.83041402237962}, {2.586751761031289, 
+       8.70468354269812}, {2.5992400390904997`, 8.575588460707722}, {
+       2.612263411730134, 8.451579588941861}, {2.6257795559313566`, 
+       8.332377340537487}, {2.6281754924333844`, 8.313816617113675}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{2.63084738809081, 8.2931181068348}, {2.640197594209579, 
+       8.22068438850411}, {2.6700464322435957`, 8.008642899028226}, {
+       2.701527772373279, 7.813591208093857}, {2.734401679587638, 
+       7.633884230444388}, {2.7680104802591665`, 7.469914927654075}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{2.7724201097800707`, 7.449515982198214}, {2.803031074200563, 
+       7.308719345216145}, {2.838543149962536, 7.161641281127356}, {
+       2.8808319949645624`, 7.017393102307014}, {2.9236576980225357`, 
+       6.88410660230135}, {2.9666622299831586`, 6.755731828828289}, {
+       3.0057249409068874`, 6.648935193701762}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{3.0131119988814064`, 6.629418093164919}, {
+       3.0536213973660544`, 6.527574299269297}, {3.0973302928798296`, 
+       6.426034859566396}, {3.184700647714667, 6.24444709400214}, {
+       3.285320734799548, 6.066042295275766}, {3.384252997078178, 
+       5.914758764509322}, {3.4006882205015483`, 5.892634725332212}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{3.413133760527423, 5.87588134096865}, {3.4807016914320794`, 
+       5.784925744446295}, {3.5743014609464496`, 5.67388086937604}, {
+       3.6646338654681645`, 5.578477131948742}, {3.751442574707617, 
+       5.496587078948352}, {3.9136865946133006`, 5.365337114771335}, {
+       4.010949695781518, 5.300551129528389}}]}, 
+     {Arrowheads[{{0.016624150143280794`, 1.}}], 
+      ArrowBox[{{4.028319414941189, 5.288981332188633}, {4.051581195791292, 
+       5.273486891102768}, {4.175610641708849, 5.203702590528661}, {
+       4.286012021992184, 5.149929997156775}, {4.3836594544440075`, 
+       5.10905828779231}, {4.54426691993027, 5.0543299691433505`}, {
+       4.665698019233918, 5.023415705792726}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.01999999999999999, 1.}}], 
+      ArrowBox[{{9.99999975595999, 10.}, {9.949422408135458, 
+       9.949422650789268}, {9.81023482188449, 9.810235060569683}, {
+       9.678516044380753, 9.678516279162213}, {9.553761744747497, 
+       9.553761975690293}, {9.410057614847089, 9.410057841216446}, {
+       9.409699939851949, 9.409700166209566}}]}, 
+     {Arrowheads[{{0.01999999999999999, 1.}}], 
+      ArrowBox[{{9.39494244447041, 9.394942670343644}, {9.273864225007527, 
+       9.273864446906636}, {9.144767847108007, 9.14476806463758}, {
+       9.022354753027718, 9.022354966285993}, {8.906211214645856, 
+       8.906211423728593}, {8.80464262979618, 8.804642835119397}}]}, 
+     {Arrowheads[{{0.020000000000000025`, 1.}}], 
+      ArrowBox[{{8.789885134448758, 8.789885339219358}, {8.691077892494185, 
+       8.691078093503213}, {8.591260652482763, 8.591260849588664}, {
+       8.462519107935265, 8.462519299883727}, {8.34020915806404, 
+       8.340209345004357}, {8.223823239356056, 8.223823421432563}, {
+       8.199585321382914, 8.199585502386725}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{8.184827826085744, 8.184828006436433}, {8.118267799103975, 
+       8.118267976508925}, {8.01635235420648, 8.016352527061903}, {
+       7.919345813446158, 7.919345981886475}, {7.827248176823007, 
+       7.827248340982642}, {7.740059444337029, 7.740059604350404}, {
+       7.65714061355051, 7.65714076954315}, {7.59452801485704, 
+       7.594528167766661}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{7.579770519596636, 7.579770671779603}, {7.577852682025741, 
+       7.577852834114275}, {7.430169516761451, 7.430169661391654}, {
+       7.28974815002066, 7.289748287425788}, {7.161525367066253, 
+       7.16152549767647}, {7.030871914924744, 7.030872038256216}, {
+       6.989470710251799, 6.989470831225964}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{6.9747132150482, 6.974713335182101}, {6.911323177584343, 
+       6.911323294108935}, {6.7965954312605295`, 6.796595541195365}, {
+       6.691509666969891, 6.691509770749218}, {6.594992046993404, 
+       6.5949921450180415`}, {6.505968733612046, 6.505968826249383}, {
+       6.423808181846174, 6.423808269441155}, {6.384413407589367, 
+       6.384413492742459}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{6.369655912423008, 6.369655996661355}, {6.347373610732429, 
+       6.3473736935896055`}, {6.206903137379865, 6.206903211360721}, {
+       6.085241837191823, 6.0852419033654}, {5.978156036350835, 
+       5.978156095607882}, {5.8840356575833495`, 5.884035710719058}, {
+       5.800738766530989, 5.800738814232304}, {5.779356106441236, 
+       5.7793561527446515`}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{5.764598611299894, 5.764598656638532}, {5.726903370022505, 
+       5.726903412896802}, {5.60230120946243, 5.602301244204243}, {
+       5.5013383011301675`, 5.501338329328495}, {5.419354890188193, 
+       5.419354913143732}, {5.2955907912295155`, 5.29559080649346}, {
+       5.210437649014538, 5.210437659220976}, {5.174298804933128, 
+       5.174298813106822}}]}, 
+     {Arrowheads[{{0.005258139405889804, 1.}}], 
+      ArrowBox[{{5.159541309724438, 5.15954131706805}, {5.151099599095223, 
+       5.151099605964004}, {5.093532015470385, 5.093532019312553}, {
+       5.0587575484968035`, 5.058757550700998}, {5.037334592356518, 
+       5.037334593654581}, {5.021731461297865, 5.021731461989817}, {
+       5.012784871516946, 5.012784871894058}, {5.00754961344762, 
+       5.007549613654799}, {5.004347374798568, 5.004347374908376}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{10., 5.260637296134386}, {9.913934626723835, 
+       5.240099280716453}, {9.779633762327206, 5.20924956284003}, {
+       9.632589424710392, 5.17664178848888}, {9.491354126388954, 
+       5.146319563549768}, {9.355589381456364, 5.118098871881299}, {
+       9.228567220342352, 5.093758536183618}, {9.183885677997083, 
+       5.0853842499559745`}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{9.16337259805132, 5.081539655659096}, {9.105492426037836, 
+       5.070691661120307}, {8.987211213309125, 5.049358287044853}, {
+       8.873723582156217, 5.0297584139572535`}, {8.765029532579112, 
+       5.011892041857511}, {8.560080579719619, 4.980391402543753}, {
+       8.370422756297954, 4.95388797102574}, {8.339137980292405, 
+       4.949761954127205}}]}, 
+     {Arrowheads[{{0.019999999999999993`, 1.}}], 
+      ArrowBox[{{8.318446902890651, 4.947033095368767}, {8.188410497595202, 
+       4.929883143405597}, {8.019810744315983, 4.909966356687008}, {
+       7.852953193691499, 4.89457481867926}, {7.6981444566271, 
+       4.882225208496172}, {7.548727044028744, 4.8711400641250195`}, {
+       7.487662250506901, 4.8673712881634605`}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{7.4668316349694575`, 4.866085671385375}, {
+       7.4100922803624725`, 4.862583851377735}, {7.281253433186676, 
+       4.856194518396424}, {7.161223770059747, 4.851610013323189}, {
+       6.944587509587473, 4.846836054775419}, {6.73158209697258, 
+       4.847259809723479}, {6.632455217037589, 4.8495638398470655`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{6.611590601855581, 4.850048801160565}, {6.547189688981351, 
+       4.85154568720546}, {6.385490965416487, 4.85796074052977}, {
+       6.243796802029006, 4.865987354385977}, {6.118885371871126, 
+       4.874881171093439}, {6.008617243270416, 4.884278756291885}, {
+       5.823856878405598, 4.903174345940275}, {5.779162430231561, 
+       4.908619040453445}}]}, 
+     {Arrowheads[{{0.011535185473856398`, 1.}}], 
+      ArrowBox[{{5.758445336596598, 4.911142804604283}, {5.683676841825947, 
+       4.920251130802886}, {5.569832728694352, 4.9355700488341805`}, {
+       5.3986341911041675`, 4.959853042737742}, {5.2814818887238255`, 
+       4.976864106222074}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{5.260637148012066, 10.}, {5.2400991109484, 
+       9.913934525653895}, {5.209249396844748, 9.77963366087023}, {
+       5.176641627110439, 9.632589325007554}, {5.1463194065919655`, 
+       9.491354028379565}, {5.118098719162474, 9.355589285084726}, {
+       5.093758387381536, 9.228567125504567}, {5.085384119494487, 
+       9.18388567419973}}]}, 
+     {Arrowheads[{{0.020000000000000018`, 1.}}], 
+      ArrowBox[{{5.081539525764267, 9.163372594147763}, {5.070691516118747, 
+       9.105492332700639}, {5.049358145691237, 8.987211121426785}, {
+       5.029758276099005, 8.873723491683005}, {5.0118919073420525`, 
+       8.7650294434693}, {4.980391274331037, 8.5600804932227}, {
+       4.953887848655242, 8.370422672277565}, {4.949761842841353, 
+       8.339137973419405}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{4.9470329846744825`, 8.318446895939632}, {4.929883026647057, 
+       8.188410415983165}, {4.909966245149047, 8.01981066499667}, {
+       4.89457471237045, 7.85295311671086}, {4.882225107081462, 
+       7.69814438188902}, {4.871139967455831, 7.548726971489934}, {
+       4.867371197328078, 7.487662241675251}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{4.86608558119633, 7.466831626097917}, {4.862583759156917, 
+       7.410092209936354}, {4.856194430354307, 7.281253364792788}, {
+       4.8516099292175925`, 7.161223703623745}, {4.84683597789602, 
+       6.944587446862289}, {4.847259740135368, 6.731582038236214}, {
+       4.849563772636875, 6.632455207745827}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{4.850048734692388, 6.611590592581066}, {4.851545624092772, 
+       6.547189633932384}, {4.857960683228142, 6.385490913794987}, {
+       4.8659873022938385`, 6.243796753594649}, {4.8748811236899, 
+       6.118885326408305}, {4.884278713110268, 6.008617200582424}, {
+       4.903174310014216, 5.823856840743836}, {4.908619002787692, 
+       5.779162423041983}}]}, 
+     {Arrowheads[{{0.011535185825173702`, 1.}}], 
+      ArrowBox[{{4.91114276783944, 5.7584453295167695`}, {4.920251100557259, 
+       5.683676808317404}, {4.935570023302499, 5.569832698877803}, {
+       4.959853024429093, 5.398634167508897}, {4.976864092962302, 
+       5.281481870088873}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{0.7570236029196347, 10.}, {0.7575421046393941, 
+       9.977080934904546}, {0.7608361072160617, 9.8444137407573}, {
+       0.7642821341341216, 9.715450853884205}, {0.7678801853935738, 
+       9.590192274285258}, {0.7716302609944184, 9.46863800196046}, {
+       0.7755323609366553, 9.350788036909814}, {0.7795864852202846, 
+       9.236642379133317}, {0.7823886349672432, 9.165584050164739}}]}, 
+     {Arrowheads[{{0.020000000000000018`, 1.}}], 
+      ArrowBox[{{0.7832110037042931, 9.14473000825845}, {0.7881508068117202, 
+       9.01946398540277}, {0.7941600844099713, 8.881813685537567}, {
+       0.8003604943957539, 8.748625109144129}, {0.8067520367690676, 
+       8.619898256222456}, {0.8133347115299127, 8.495633126772548}, {
+       0.8201085186782892, 8.375829720794403}, {0.8240272002314817, 
+       8.310935069344563}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{0.8252851646800082, 8.290102765592573}, {0.827073458214197, 
+       8.260488038288022}, {0.8342295301376361, 8.149608079253406}, {
+       0.8415767344486065, 8.043189843690556}, {0.8567491942657592, 
+       7.840848423441983}, {0.8724954916982727, 7.650573658004146}, {
+       0.8888156267461471, 7.472365547377043}, {0.8902896296467824, 
+       7.457869668126449}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.8924009188615674, 7.437106484073409}, {0.9057095994093826, 
+       7.306224091560672}, {0.9294524529116638, 7.096318018342566}, {
+       0.9540331921522374, 6.901309218163754}, {0.9794518171311034, 
+       6.721197691024236}, {0.9972755322728043, 6.609045248753732}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{1.0005512073828808`, 6.588433666894445}, {1.005708327848262, 
+       6.555983436924012}, {1.0327311030039572`, 6.403205752606939}, {
+       1.0604485212984334`, 6.260403934816876}, {1.0888605827316906`, 
+       6.12757798355382}, {1.117967287303729, 6.004727898817773}, {
+       1.1603407901926606`, 5.844134829194507}, {1.1810762670717945`, 
+       5.773969145380289}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{1.1869910067647513`, 5.753954570477648}, {1.203890819170333, 
+       5.696768188863107}, {1.2486173742367468`, 5.562627977823572}, {
+       1.2945204553919016`, 5.441714196075903}, {1.3414993576861174`, 
+       5.33174488429115}, {1.3894533761697132`, 5.230438083140363}, {
+       1.4882867617050464`, 5.05381201274069}, {1.5284606062034742`, 
+       4.996024443439524}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{1.5403736282087066`, 4.9788883044090495`}, {
+       1.5906349851651898`, 4.906590477687311}, {1.6961124197174327`, 
+       4.783527970790652}, {1.7607784157223132`, 4.716481175310973}, {
+       1.8263792848592348`, 4.656724658061494}, {1.9171573280628862`, 
+       4.595247173226141}, {2.0090916322363404`, 4.542830012775482}, {
+       2.1449071430602897`, 4.474069077839443}, {2.177710250770752, 
+       4.461589656314915}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{2.197216604949746, 4.454168773563348}, {2.2820872131738965`, 
+       4.421881098126596}, {2.419849538481546, 4.383992399427029}, {
+       2.557411814887624, 4.358129307530839}, {2.694148757818206, 
+       4.342922674613148}, {2.828934855040228, 4.335908034589184}, {
+       3.01746971439523, 4.341115038420414}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{3.0383320098238387`, 4.341691218616462}, {3.040973412618254, 
+       4.341764169552524}, {3.2443024215361067`, 4.3619530114492155`}, {
+       3.43642611804129, 4.391602317903433}, {3.6160683199906436`, 
+       4.428452565910248}, {3.782017999631698, 4.46975141674575}, {
+       3.8579620378312223`, 4.491679856617429}}]}, 
+     {Arrowheads[{{0.012486909206915814`, 1.}}], 
+      ArrowBox[{{3.878013154058208, 4.49746951051216}, {3.9337390744073444`, 
+       4.513560075652501}, {4.070982565667891, 4.558028824422627}, {
+       4.194124071268745, 4.601803793381059}, {4.369312332555234, 
+       4.670699578298803}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.019999999999999987`, 1.}}], 
+      ArrowBox[{{1.4895929057148778`, 10.}, {1.489823142849588, 
+       9.992554532135102}, {1.49713660404386, 9.792868904692995}, {
+       1.5052256066786536`, 9.603073462165066}, {1.51404824575543, 
+       9.42267421574067}, {1.5235626162756526`, 9.251177176609161}, {
+       1.5288621434640755`, 9.166144031135525}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{1.530160322940882, 9.145314194741188}, {1.5337268132407829`, 
+       9.08808835595989}, {1.544498931652283, 8.932913764982214}, {
+       1.5602156942069754`, 8.729653803220655}, {1.576770938731839, 
+       8.537820202692085}, {1.5941235194202228`, 8.356867524417362}, {
+       1.5987388534717524`, 8.313382776176178}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{1.6009415838755092`, 8.292629093781546}, {
+       1.6122322904654751`, 8.186250329417344}, {1.631056106060944, 
+       8.025423178712892}, {1.6505538203999786`, 7.873840633324863}, {
+       1.6706842876759267`, 7.73095725427412}, {1.6914063620821371`, 
+       7.59622760258152}, {1.7126488328620384`, 7.46867372266827}, {
+       1.713205533980433, 7.465564807930057}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{1.7168841756891116`, 7.4450213187096725`}, {
+       1.7343514219681206`, 7.347474937719087}, {1.7564893826573251`, 
+       7.232321726900096}, {1.7790379681865929`, 7.122904569377422}, {
+       1.8252680267930828`, 6.92004033088552}, {1.8728436238431188`, 
+       6.73640605557238}, {1.903383830759372, 6.631801608304116}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{1.9092328975748942`, 6.6117677426872055`}, {
+       1.927773605077597, 6.548263246283461}, {1.9840322818885243`, 
+       6.379481804245053}, {2.041353971090791, 6.226958647644877}, {
+       2.099591070914891, 6.088969842142777}, {2.158598992060726, 
+       5.964028697896579}, {2.2182331452281963`, 5.850648525064105}, {
+       2.2239512152254406`, 5.840385129398224}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{2.234108665320036, 5.822153465685203}, {2.278180414406484, 
+       5.743048837938494}, {2.3385673694393763`, 5.645562224368682}, {
+       2.40776879024506, 5.554841568081392}, {2.477083192426494, 
+       5.472937174143806}, {2.615522838121483, 5.324848922204737}, {
+       2.7530794146106086`, 5.205238425532734}, {2.7719755987151147`, 
+       5.191819592709812}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{2.7889917651590213`, 5.179735825345196}, {2.888799877927984, 
+       5.108858638067014}, {3.042461945684813, 5.022248002550997}, {
+       3.191434256390584, 4.956088874576083}, {3.3346523771734127`, 
+       4.905583659844709}, {3.4714989127141993`, 4.86841824253104}, {
+       3.54923139633175, 4.852540919053996}}]}, 
+     {Arrowheads[{{0.017230474877076705`, 1.}}], 
+      ArrowBox[{{3.5696794537372405`, 4.848364281349976}, {
+       3.6013646058514768`, 4.841892400018971}, {3.723871856357802, 
+       4.824161542137992}, {3.838744330320298, 4.8133798968763735`}, {
+       3.945922788607664, 4.808128326603965}, {4.129226827729571, 
+       4.809691403274847}, {4.28594159825903, 4.820549773765519}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.02000000000000002, 1.}}], 
+      ArrowBox[{{0.14245585857787002`, 10.}, {0.14308524287812677`, 
+       9.880991856465887}, {0.14396672390098403`, 9.726735152509422}, {
+       0.14488807800641346`, 9.577358536721817}, {0.14584930519441508`, 
+       9.432862009103065}, {0.1468504054649889, 9.293245569653166}, {
+       0.14783962700284548`, 9.16520761343017}}]}, 
+     {Arrowheads[{{0.020000000000000025`, 1.}}], 
+      ArrowBox[{{0.14800933117863604`, 9.144338053760972}, {
+       0.14897222525385315`, 9.028652955259927}, {0.1500929447721436, 
+       8.903676780316587}, {0.1512487994593617, 8.782802412172547}, {
+       0.152435051401863, 8.665251569458247}, {0.1536517005996475, 
+       8.55102425217369}, {0.15489874705271514`, 8.440120460318877}, {
+       0.15649197893501526`, 8.309571790870375}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{0.15674666305102364`, 8.288703094452776}, {
+       0.15748403172470002`, 8.228283452898477}, {0.16019090541781753`, 
+       8.029740547197054}, {0.16205763720982772`, 7.903853303195379}, {
+       0.16396899854979438`, 7.781956319211199}, {0.16592498943771752`, 
+       7.6640495952445145`}, {0.1679256098735972, 7.550133131295324}, {
+       0.1697672404821288, 7.453996278218806}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{0.17016696483910596`, 7.433129856038487}, {
+       0.17206073938922595`, 7.33427098344943}, {0.17637438709668057`, 
+       7.134369875673522}, {0.18085713325709954`, 6.947834202113681}, {
+       0.18549955813162117`, 6.772068356915997}, {0.19030166172024543`, 
+       6.607072340080472}, {0.1905750735543652, 6.598573929129102}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{0.1912461663864965, 6.577714471116499}, {
+       0.19526344402297235`, 6.452846151607101}, {0.2022388691044251, 
+       6.257682717927651}, {0.20949576881877352`, 6.075746552832932}, {
+       0.2170341431660176, 5.907037656322945}, {0.22485399214615737`, 
+       5.751556028397689}, {0.22529939824227663`, 5.7436156841373505`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.22646825770010598`, 5.722778190964305}, {
+       0.23295698793352493`, 5.607102289096948}, {0.24134480270245257`, 
+       5.471477058460501}, {0.2500174364529401, 5.3446803364883495`}, {
+       0.2589748891849876, 5.226712123180494}, {0.2719040753074499, 
+       5.074620541406858}, {0.2854147963500291, 4.9337665000848085`}, {
+       0.29011938753974487`, 4.890495028884515}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.29237516434453564`, 4.869747045243306}, {
+       0.2995070523127252, 4.804149999214345}, {0.3141808431955383, 
+       4.685771038795466}, {0.34537255284348034`, 4.475118207550753}, {
+       0.37908944841582043`, 4.294200474588954}, {0.40568655709753904`, 
+       4.176873768589331}, {0.43382419887192997`, 4.070097457950005}, {
+       0.44075565060979394`, 4.049392933176421}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{0.4473811573358839, 4.029602278442647}, {
+       0.49472108169872836`, 3.8881960227522407`}, {0.5621547678216685, 
+       3.741286981776434}, {0.6364999281662035, 3.6221611478033524`}, {
+       0.7440461030298299, 3.501557769178878}, {0.8644331167051338, 
+       3.413314941769506}, {0.9307648005994659, 3.383394179427561}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.9497891486687993, 3.374812714826123}, {0.997891221167274, 
+       3.3531149288679885`}, {1.1446506683914097`, 3.316639993767077}, {
+       1.1924328952031458`, 3.308974038559358}, {1.2414617742134004`, 
+       3.3033164869620704`}, {1.314844877198531, 3.301692197431123}, {
+       1.3906559627683481`, 3.303554527746145}, {1.592782192343752, 
+       3.318676040282067}, {1.6988737865913304`, 3.333977472499075}, {
+       1.7715677207466156`, 3.3475684956243876`}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{1.792082504821562, 3.3514039862745126`}, {
+       1.8083177004788265`, 3.3544393553487812`}, {1.9203888584495634`, 
+       3.379470950715296}, {2.0343621849468647`, 3.408481520482729}, {
+       2.1502376799707306`, 3.441471064651081}, {2.26801534352116, 
+       3.4784395832203514`}, {2.388881945020316, 3.5202035624009174`}, {
+       2.506112457742615, 3.562136247000644}, {2.589737220018047, 
+       3.594160483043124}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{2.6092272209083265`, 3.6016242099583975`}, {
+       2.6242957234537494`, 3.607394717032988}, {2.7429570343848537`, 
+       3.6556523780137984`}, {2.8965059045317383`, 3.721851850408926}, {
+       3.0477836896179906`, 3.7907912681674567`}, {3.1953384143829564`, 
+       3.861404760870523}, {3.3377181035659813`, 3.9326264580992554`}, {
+       3.36817305581773, 3.9484887806838738`}}]}, 
+     {Arrowheads[{{0.018445958951690464`, 1.}}], 
+      ArrowBox[{{3.3866830831820716`, 3.9581296437749147`}, {
+       3.4743035842385073`, 4.003766380989083}, {3.604951570518888, 
+       4.074349345849315}, {3.7289239177168376`, 4.1436316750219095`}, {
+       3.8454824811420703`, 4.210869690848825}, {3.954529982288974, 
+       4.275644825186909}, {4.056335351900323, 4.337724286758664}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{0.3810504665455866, 10.}, {0.38118166219164645`, 
+       9.989663661329129}, {0.383345171923064, 9.832942907177744}, {
+       0.38561297419441853`, 9.681092284119527}, {0.38798506900570995`, 
+       9.534111792154487}, {0.3904614563569382, 9.392001431282624}, {
+       0.3930421362481033, 9.254761201503936}, {0.39485662908360336`, 
+       9.165306057414906}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{0.39527987061369196`, 9.144440098995124}, {
+       0.3957271086792053, 9.12239110281842}, {0.39851637365024417`, 
+       8.99489113522608}, {0.40140993116122003`, 8.872261298726912}, {
+       0.4043944325902966, 8.753723253266946}, {0.40745652931563764`, 
+       8.638498658792216}, {0.41059622133724316`, 8.52658751530272}, {
+       0.41381350865511324`, 8.417989822798457}, {0.41728993360595773`, 
+       8.309925085341215}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{0.41796097901176327`, 8.289065625802861}, {
+       0.42048086917964705`, 8.21073479074563}, {0.4274586108892389, 
+       8.016733562633734}, {0.4322898254095499, 7.893289892303181}, {
+       0.4372323707638471, 7.773855779610535}, {0.4422862469521304, 
+       7.658431224555799}, {0.44745145397439995`, 7.547016227138969}, {
+       0.45210824689730894`, 7.454966275763193}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.45316272115432144`, 7.434122681106556}, {
+       0.45811586052089753`, 7.336214905219035}, {0.46922559040333983`, 
+       7.141451813850731}, {0.48074952529851744`, 6.960112801808107}, {
+       0.4926565468832208, 6.78958371786521}, {0.50494665515745, 
+       6.629864562022042}, {0.5073937320824947, 6.601111565151137}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.5091635353757414, 6.5803164900016675`}, {
+       0.5176198501212049, 6.480955334278601}, {0.5354812891039744, 
+       6.29204986997451}, {0.5539934082681749, 6.116558684946294}, {
+       0.5731562076138064, 5.954481779193953}, {0.592969687140869, 
+       5.805819152717488}, {0.6011643799404859, 5.750731524682897}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{0.6042351935730077, 5.730088427584758}, {0.6134195536265912, 
+       5.668347905671451}, {0.6344915138482016, 5.539845138210396}, {
+       0.6561855678057003, 5.420310850334322}, {0.6785017154990872, 
+       5.309745042043228}, {0.712043317178476, 5.161728714249553}, {
+       0.7468734968351947, 5.026140288818993}, {0.7795538060746245, 
+       4.914704452052012}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.7857612374489474, 4.894783064836688}, {0.8203995900806218, 
+       4.792247145047223}, {0.8990348545183554, 4.599450297514937}, {
+       0.9827341494313825, 4.439134433009162}, {1.0714050064513951`, 
+       4.30646827237306}, {1.164954957210086, 4.196620536449795}, {
+       1.1884539318358511`, 4.172522021251194}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{1.203024385408853, 4.157579824731075}, {1.2153809674739502`, 
+       4.1449079832809375`}, {1.2670746823173005`, 4.098458042502273}, {
+       1.3410801101383978`, 4.0498668655512935`}, {1.4173014779878719`, 
+       4.00841853387713}, {1.5465968657775775`, 3.9480542254104893`}, {
+       1.6811166246731806`, 3.9047391313983177`}, {1.8201605323647256`, 
+       3.8764474015094734`}, {1.963028366542257, 3.8611531854128147`}, {
+       1.9657561985359537`, 3.861087024587681}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{1.986620313172463, 3.8605809864433893`}, {
+       2.1090040158267485`, 3.85761269265946}, {2.2567984797359526`, 
+       3.863587100441422}, {2.378887472704627, 3.8758274265801034`}, {
+       2.5013582458793424`, 3.893587532642193}, {2.623557915065804, 
+       3.915939218868264}, {2.7448335960697188`, 3.9419542854988876`}, {
+       2.812610972035035, 3.958470342806691}}]}, 
+     {Arrowheads[{{0.009462693729872651, 1.}}], 
+      ArrowBox[{{2.832887878142166, 3.963411439131543}, {2.864713117713814, 
+       3.971166644657188}, {2.9828275734019742`, 4.0033742723991725`}, {
+       3.0986789758116386`, 4.038045064864745}, {3.2117693376202467`, 
+       4.074646918193804}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.000020362434562057687`, 0.42517302404714175`}, {
+       0.000028110848439527707`, 0.5354957189067001}, {
+       0.000039788571658466514`, 0.6620437965181688}, {0.00006317097846039354,
+        0.8188454201575956}, {0.00010256828464823064`, 0.9852844361710664}, {
+       0.00016924807472113628`, 1.1525414067504345`}, {
+       0.00024772166638773916`, 1.2599829931902755`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.0002629649546695696, 1.280853238081293}, {
+       0.0002904577718951556, 1.3184948425457241`}, {0.0005082850757017643, 
+       1.4672412452533392`}, {0.0009097277336046955, 1.5938511997629246`}, {
+       0.001531180411271492, 1.6852249560924923`}, {0.002661859703927552, 
+       1.7595374551629852`}, {0.004757392672476221, 1.8188513135849083`}, {
+       0.008293549774884602, 1.864001686919555}, {0.0147591155041868, 
+       1.9003858929480584`}, {0.025768080577272128`, 1.9305782466847121`}, {
+       0.0443502617173096, 1.9574228591499738`}, {0.05677190531102952, 
+       1.9693467281663974`}, {0.07264869405763653, 1.9817660818983407`}, {
+       0.0929280257073151, 1.9951542406327893`}, {0.10515977085803685`, 
+       2.0024002327795145`}, {0.11896650655746085`, 2.010114555090322}, {
+       0.17074146243556199`, 2.036314966240926}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.1895468927370547, 2.0453571333019727`}, {
+       0.26821519220523327`, 2.0814178428720673`}, {0.3823666338665661, 
+       2.1316715618896662`}, {0.5399871890048514, 2.2004762497018278`}, {
+       0.6386729487896805, 2.2439318505103096`}, {0.7525018265059102, 
+       2.294654180853766}, {0.7857925932404415, 2.309559751345022}, {
+       0.8203015452956667, 2.3250845655523285`}, {0.881294785602697, 
+       2.3529109380306603`}, {0.9458008417279861, 2.3826293612415106`}, {
+       0.9519011282323201, 2.385485812764861}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.9708019223545375, 2.394336085965075}, {1.1047357386043553`,
+        2.457050427854277}, {1.2824854788246056`, 2.5425367721010907`}, {
+       1.3782296294067553`, 2.589571106686083}, {1.4783049192610132`, 
+       2.6396551273772224`}, {1.582711348387379, 2.6927888341745088`}, {
+       1.691448916785853, 2.748972227077942}, {1.719377886716122, 
+       2.7636631106491905`}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{1.7378486882406652`, 2.7733789145382057`}, {
+       1.803889626637821, 2.808117028380246}, {1.9194054801246678`, 
+       2.870134960374143}, {2.037996477246394, 2.935026023059634}, {
+       2.1596626180029994`, 3.0027902164367184`}, {2.2833659193488205`, 
+       3.0730054743285398`}, {2.4080683982381954`, 3.145249730558241}, {
+       2.4668456801518417`, 3.1799794242332977`}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{2.4848137452513153`, 3.1905962029702764`}, {
+       2.533770054671123, 3.219522985125823}, {2.660470888647603, 
+       3.295825238031285}, {2.7869412196777192`, 3.3734204436393562`}, {
+       2.9119513672715533`, 3.451572556314764}, {3.035501331429106, 
+       3.5302815760575097`}, {3.1575911121503766`, 3.6095475028675925`}, {
+       3.192745443260759, 3.632860691836717}}]}, 
+     {Arrowheads[{{0.00528803412081565, 1.}}], 
+      ArrowBox[{{3.2101385848592554`, 3.644395247723423}, {3.279581403493091, 
+       3.690447426849684}, {3.3937616057968043`, 3.766877837410649}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{1.9684220337846854`, 10.}, {1.9742219840956776`, 
+       9.831239763425542}, {1.981622958199096, 9.653681901711058}, {
+       1.989939188508691, 9.484859160499143}, {1.999105150237086, 
+       9.32425717884368}, {2.009472413272338, 9.166249595829404}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{2.010838823291381, 9.145424123978117}, {2.012924785006914, 
+       9.113631955899526}, {2.027862325372603, 8.914899490409317}, {
+       2.043855166100406, 8.727489484685023}, {2.060840701956578, 
+       8.550831641038613}, {2.0787563277073735`, 8.384355661782056}, {
+       2.0871566875785263`, 8.314201279065024}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{2.089637988369978, 8.293479056680559}, {2.097539438119046, 
+       8.227491249227324}, {2.117127427957851, 8.079668105686387}, {
+       2.137457691990041, 7.940315933471216}, {2.158417207798307, 
+       7.808412357825747}, {2.179911286486634, 7.683099395655021}, {
+       2.2019048231032214`, 7.564053336762662}, {2.220727563003353, 
+       7.469257883419293}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{2.224836974257635, 7.448796641641404}, {2.2705311310045286`, 
+       7.241279477792027}, {2.3181357017970075`, 7.051496734603218}, {
+       2.373660923726214, 6.8550145237491416`}, {2.430475395616229, 
+       6.678918008966373}, {2.443252465919447, 6.643717697077439}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{2.4503733854954444`, 6.6240998516666645`}, {
+       2.488206853590478, 6.519870177321847}, {2.546648484384198, 
+       6.376017132741642}, {2.6056100481285194`, 6.2457663825504}, {
+       2.664901304954574, 6.127525434072767}, {2.7243574083214956`, 
+       6.015289386451939}, {2.783918078559588, 5.91352065592581}, {
+       2.8119843285379518`, 5.873992910515353}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{2.824067017835039, 5.85697597854984}, {2.852768370531905, 
+       5.816553771692421}, {2.9211954853655895`, 5.728946029202939}, {
+       3.0567631739352534`, 5.570326336458804}, {3.189243291084793, 
+       5.441593868447777}, {3.3177108018496058`, 5.336931792176757}, {
+       3.4131769844877233`, 5.2728447350777685`}}]}, 
+     {Arrowheads[{{0.015936233045896718`, 1.}}], 
+      ArrowBox[{{3.430504887277992, 5.261212403451656}, {3.4564548055682174`, 
+       5.243792057846303}, {3.588438692163582, 5.170270043359349}, {
+       3.7129742108112485`, 5.111613398225899}, {3.8298586932145584`, 
+       5.065646453582651}, {3.9388788176049467`, 5.029789991044875}, {
+       4.040053400005837, 5.002349583519758}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{10., 0.7570298649370609}, {9.977067480172982, 
+       0.7575486790400311}, {9.844400528082662, 0.7608427250887306}, {
+       9.715437878370583, 0.7642887964803229}, {9.59017953103675, 
+       0.767886893214808}, {9.468625486081164, 0.7716370152921856}, {
+       9.350775743503823, 0.775539162712456}, {9.236630303304723, 
+       0.7795933354756193}, {9.165584054821078, 0.7823950469603166}}]}, 
+     {Arrowheads[{{0.02000000000000002, 1.}}], 
+      ArrowBox[{{9.144730013355417, 0.7832174268709201}, {9.01945233004126, 
+       0.7881577570306239}, {8.881802278513762, 0.7941671042525303}, {
+       8.748613945601088, 0.8003675851682199}, {8.619887331303241, 
+       0.8067591997776925}, {8.495622435620222, 0.8133419480809481}, {
+       8.375819258552026, 0.8201158300779866}, {8.310935089618964, 
+       0.8240339290925521}}]}, 
+     {Arrowheads[{{0.019999999999999993`, 1.}}], 
+      ArrowBox[{{8.290102786841565, 0.8252919096805051}, {8.260477800098656, 
+       0.8270808457688082}, {8.149598060260114, 0.8342369951534128}, {
+       8.043180039036397, 0.8415842782318005}, {7.8408390354368045`, 
+       0.8567568987536915}, {7.650564672303241, 0.8725033606182484}, {
+       7.4723569496357065`, 0.888823663825471}, {7.457869723130788, 
+       0.8902968051789396}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{7.437106541717552, 0.8924081203543478}, {7.306215867434204, 
+       0.905717808375359}, {7.0963102340784285`, 0.9294609058484553}, {
+       6.901301861161995, 0.9540418942419194}, {6.721190748684904, 
+       0.9794607735557515}, {6.6090454154036395`, 0.9972835784385478}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{6.588433839798722, 1.0005592929028502`}, {6.555976896647156, 
+       1.0057175437899515`}, {6.4031996032074145`, 1.0327405827218608`}, {
+       6.260398166524345, 1.0604582681288208`}, {6.127572586597948, 
+       1.0888706000108315`}, {6.004722863428224, 1.1179775783678922`}, {
+       5.8441302673211615`, 1.1603514804078254`}, {5.773969634259656, 
+       1.1810857213494421`}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{5.753955079257113, 1.1870005283808747`}, {5.696764089815784, 
+       1.2039019117211085`}, {5.562624330912092, 1.248628872307741}, {
+       5.441710990610085, 1.2945323621677232`}, {5.33174211060111, 
+       1.3415116740980526`}, {5.230435732576512, 1.3894661008957272`}, {
+       5.0538104824804515`, 1.4883002990931116`}, {4.996026061607769, 
+       1.5284724831305836`}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{4.978889996008557, 1.5403856107614113`}, {4.906589735344348, 
+       1.5906493208323191`}, {4.78352798619065, 1.6961275301857932`}, {
+       4.716481757584631, 1.7607938731444839`}, {4.6567257713228365`, 
+       1.8263950733788974`}, {4.595248861646704, 1.9171735830280558`}, {
+       4.542832243952861, 2.009108317038764}, {4.474072035374937, 
+       2.1449244984601408`}, {4.461594021114912, 2.1777244727090275`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{4.4541732501578775`, 2.1972308694181097`}, {
+       4.421884734945502, 2.2821051487249995`}, {4.383996665631246, 
+       2.419867955337234}, {4.358134150398859, 2.557430605800738}, {
+       4.342928038925103, 2.6941678123996513`}, {4.335913860628148, 
+       2.828954057245425}, {4.3411212876827765`, 3.0174842872894896`}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{4.341697528813163, 3.0383465810351096`}, {4.341770617215467, 
+       3.04099268114469}, {4.361959924612569, 3.244321467319368}, {
+       4.3916095345170545`, 3.4364446705057103`}, {4.428459930361133, 
+       3.6160861501126305`}, {4.4697587832833525`, 3.7820349184352917`}, {
+       4.491686606620323, 3.857976511026267}}]}, 
+     {Arrowheads[{{0.012486840608948602`, 1.}}], 
+      ArrowBox[{{4.49747628235715, 3.87802762094645}, {4.513567317995903, 
+       3.9337549429914405`}, {4.558035834823307, 4.070997289900156}, {
+       4.601810486489242, 4.19413760149314}, {4.670705670586351, 
+       4.369324004681779}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.01999999999999999, 1.}}], 
+      ArrowBox[{{10., 7.257288552359024}, {9.977649109986398, 
+       7.244241047734849}, {9.844252260391547, 7.166858143213264}, {
+       9.716205070842092, 7.09345579553399}, {9.593507541338033, 
+       7.02403400469703}, {9.476159671879369, 6.958592770702381}, {
+       9.36356405228563, 6.896608357434027}, {9.272885083379732, 
+       6.847229206899355}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{9.254554682190005, 6.83725105960339}, {9.150837332151518, 
+       6.781438784728152}, {9.050706231611146, 6.728253625290632}, {
+       8.95444845291192, 6.677758857365913}, {8.854598870214856, 
+       6.624816391025869}, {8.672858724809917, 6.531169950422407}, {
+       8.513690026490135, 6.4526414177670715`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{8.49497371072248, 6.443407411147284}, {8.49096910194022, 
+       6.441431670597482}, {8.321925573458849, 6.3597377323911015`}, {
+       8.158590235968791, 6.281511110977195}, {8.006671280461362, 
+       6.210219123148236}, {7.865090150165883, 6.145070880242632}, {
+       7.739491020698484, 6.088313452532703}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{7.720435297543968, 6.079802151698517}, {7.609035450834628, 
+       6.030363255638156}, {7.492685198419324, 5.979488692719342}, {
+       7.372360035810567, 5.927916081048319}, {7.2602933228112985`, 
+       5.880794619516152}, {7.155357220320469, 5.837355604759726}, {
+       7.056423889237032, 5.796830333415927}, {6.9516326358451845`, 
+       5.754600673674295}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{6.932275106545656, 5.746799813876378}, {6.875298502328034, 
+       5.723838903194772}, {6.714383084155703, 5.660456093309828}, {
+       6.570557079679493, 5.604848527195608}, {6.441735615466863, 
+       5.555910035104514}, {6.32581468254295, 5.512494872163088}, {
+       6.221188977194579, 5.47378132178095}, {6.152523911625174, 
+       5.448752951450762}}]}, 
+     {Arrowheads[{{0.015976548730365626`, 1.}}], 
+      ArrowBox[{{6.132915627761087, 5.441605745138205}, {6.045282915727305, 
+       5.409663680397827}, {5.898864583995871, 5.356898774705531}, {
+       5.775172134763558, 5.312337145729496}, {5.670697694055077, 
+       5.274690314580146}, {5.505835079740555, 5.214706515533723}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.01999999999999999, 1.}}], 
+      ArrowBox[{{7.257288285050005, 10.}, {7.244240761850397, 
+       9.97764907625633}, {7.166857864081253, 9.844252226799433}, {
+       7.093455522885851, 9.716205037331445}, {7.02403373826419, 
+       9.593507507852367}, {6.958592510216271, 9.4761596383622}, {
+       6.896608102659024, 9.363564018696444}, {6.847228966734085, 
+       9.272885068080132}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{6.837250820073708, 9.254554666544154}, {6.781438540767329, 
+       9.150837298344676}, {6.7282533864328835`, 9.050706197658664}, {
+       6.677758623423601, 8.954448418795764}, {6.624816162171591, 
+       8.854598835946552}, {6.531169730881203, 8.67285869017968}, {
+       6.452641208324909, 8.513689995235474}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{6.443407202502682, 8.494973679074329}, {6.441431460701649, 
+       8.490969067325882}, {6.35973753149375, 8.321925538817318}, {
+       6.281510918793369, 8.15859020129061}, {6.2102189391080245`, 
+       8.006671245727613}, {6.145070703831732, 7.865090115370033}, {
+       6.0883132772847, 7.739490973360874}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{6.079801977402761, 7.720435249780951}, {6.030363093143181, 
+       7.609035415936953}, {5.979488536604458, 7.492685163495448}, {
+       5.927915931032673, 7.372359999587384}, {5.88079447528566, 
+       7.2602932854911035`}, {5.837355466031991, 7.155357182076534}, {
+       5.7968301999402385`, 7.0564238502136005`}, {5.754600536322536, 
+       6.951632572466603}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{5.746799677468388, 6.932275042786746}, {5.723838779512163, 
+       6.875298462134027}, {5.660455978540797, 6.714383043235148}, {
+       5.60484842056262, 6.570557038385735}, {5.555909935908928, 
+       6.441735574096403}, {5.512494779782368, 6.325814641333083}, {
+       5.473781235654349, 6.221188936337946}, {5.4487528553943525`, 
+       6.152523832450421}}]}, 
+     {Arrowheads[{{0.015976547094907763`, 1.}}], 
+      ArrowBox[{{5.441605650099446, 6.132915548215401}, {5.409663605521489, 
+       6.045282877361709}, {5.356898709332369, 5.8988645480442035`}, {
+       5.3123370884808265`, 5.7751721011423625`}, {5.274690264282779, 
+       5.6706976626758365`}, {5.214706476398212, 5.505835052563399}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.01999999999999999, 1.}}], 
+      ArrowBox[{{10., 0.14245951112707572`}, {9.880972070482187, 
+       0.14308902295349862`}, {9.726715713086056, 0.14397053368517093`}, {
+       9.577339435122404, 0.14489191848891608`}, {9.43284323659123, 
+       0.14585317736473408`}, {9.293227117492533, 0.14685431031262494`}, {
+       9.165207614373799, 0.14784342355781915`}}]}, 
+     {Arrowheads[{{0.020000000000000018`, 1.}}], 
+      ArrowBox[{{9.144338054665255, 0.14801312274639028`}, {9.028635117592572,
+        0.1489761984246252}, {8.903659236791306, 0.15009695358873462`}, {
+       8.782785155304424, 0.15125284480884676`}, {8.665234593013826, 
+       0.1524391340688916}, {8.551007549919515, 0.15365582136886902`}, {
+       8.440104026021487, 0.15490290670877913`}, {8.309571794054525, 
+       0.15649599124965727`}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{8.288703097740836, 0.15675068387985786`}, {8.22826753581429, 
+       0.15748827150839725`}, {8.029725122392232, 0.160195228467746}, {
+       7.9038381702531435`, 0.16206201775735526`}, {7.781941471769966, 
+       0.1639734378058652}, {7.664035026942702, 0.16592948861327583`}, {
+       7.550118835771345, 0.16793017017958722`}, {7.453996286697659, 
+       0.16977158732675376`}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{7.433129864769052, 0.17017132482341435`}, {7.334257214396372,
+        0.172065425588912}, {7.134356607645051, 0.17637920403383942`}, {
+       6.947821413272681, 0.18086208557764263`}, {6.77205602903457, 
+       0.18550465028359453`}, {6.607060454930719, 0.19030689815169516`}, {
+       6.59857395027321, 0.19057993587065078`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{6.577714492966484, 0.19125105064304906`}, {6.452834690961124,
+        0.19526882918194452`}, {6.257671749794219, 0.20224446509127864`}, {
+       6.075736061496841, 0.20950158376212905`}, {5.907027626068991, 
+       0.2170401851944958}, {5.751546443510669, 0.2248602693883788}, {
+       5.7436157417452325`, 0.2253051492908256}}]}, 
+     {Arrowheads[{{0.019999999999999993`, 1.}}], 
+      ArrowBox[{{5.722778250730937, 0.2264740472325029}, {5.6070931361309695`,
+        0.23296350857148265`}, {5.471468326238986, 0.24135157497151186`}, {
+       5.344672013834719, 0.2500244685884664}, {5.226704198918169, 
+       0.25898218942234635`}, {5.0746130786962995`, 0.271911768815622}, {
+       4.933759495731134, 0.28542290031524503`}, {4.890495222656213, 
+       0.29012686816547967`}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{4.869747247221872, 0.2923827204533845}, {4.804143450022668, 
+       0.2995155839212155}, {4.685764941570905, 0.31418981963353354`}, {
+       4.475113008493858, 0.3453824723848024}, {4.294196168556372, 
+       0.3791003835766421}, {4.176869959339246, 0.4056983288922178}, {
+       4.070094175412685, 0.4338368532737827}, {4.049393898631383, 
+       0.4407671430017877}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{4.02960331876729, 0.4473928733624211}, {3.888193883431258, 
+       0.49473563923488006`}, {3.7412860928689913`, 0.5621714137982632}, {
+       3.6221616039827866`, 0.6365188493022612}, {3.501560549660009, 
+       0.7440677731101859}, {3.4133199590995913`, 0.8644577017419333}, {
+       3.383402652659777, 0.9307856358790614}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{3.374821608589455, 0.9498101736351297}, {3.353122132568711, 
+       0.9979188300480839}, {3.316649370334548, 1.1446813528792186`}, {
+       3.3089841117340777`, 1.1924644089761545`}, {3.303327245103532, 
+       1.2414941070481016`}, {3.301703880542924, 1.3148781898626172`}, {
+       3.30356710168729, 1.39069020481288}, {3.3186900419675727`, 
+       1.5928122660623898`}, {3.3339916465004475`, 1.6989013241217272`}, {
+       3.3475817908591665`, 1.7715893438453623`}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{3.351417343414241, 1.792104116346322}, {3.354453340628478, 
+       1.8083424004707864`}, {3.3794844320892183`, 1.9204104716887422`}, {
+       3.408494228620222, 2.0343805143547695`}, {3.4414827302214888`, 
+       2.150252528468868}, {3.4784499368930186`, 2.2680265140310376`}, {
+       3.520212265949224, 2.388889130598707}, {3.562143352608436, 
+       2.506115974013116}, {3.594174221795337, 2.5897587322967004`}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{3.6016378961889415`, 2.6092487533001556`}, {
+       3.607400010486382, 2.6242954612296527`}, {3.655655672657297, 
+       2.7429529284253475`}, {3.721855115172143, 2.8965030494824737`}, {
+       3.7907945901301097`, 3.0477820507860143`}, {3.8614082052843552`, 
+       3.195337936862412}, {3.9326300683880375`, 3.337718712238109}, {
+       3.948503075958467, 3.3681943194117805`}}]}, 
+     {Arrowheads[{{0.018445502787042156`, 1.}}], 
+      ArrowBox[{{3.958143904155575, 3.386704364950426}, {4.003770183143369, 
+       3.4743051897505577`}, {4.074353350937739, 3.6049540727006426`}, {
+       4.1436358760520635`, 3.7289272013099577`}, {4.210874062767263, 
+       3.845486415800096}, {4.2756493363506465`, 3.9545344411819157`}, {
+       4.337728905490316, 4.056340222345855}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{3.830595253339246, 10.}, {3.8286863254785475`, 
+       9.970001801803507}, {3.8213293947770643`, 9.839810403564204}, {
+       3.81522184561819, 9.714673084798264}, {3.8101997387961113`, 
+       9.594116697968401}, {3.806099135105014, 9.477668095537325}, {
+       3.8029200345448984`, 9.365327277505038}, {3.8006624371157645`, 
+       9.257094243871538}, {3.799118595634793, 9.165865626950804}}]}, 
+     {Arrowheads[{{0.020000000000000018`, 1.}}], 
+      ArrowBox[{{3.7987654636153225`, 9.144998364266263}, {
+       3.7970687453884784`, 9.04473596100333}, {3.796532939616786, 
+       8.846934697217238}, {3.801529657898122, 8.652282031834272}, {
+       3.8088123317520606`, 8.470678165125385}, {3.816319895877746, 
+       8.310589457192618}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{3.817375680375734, 8.28974636974798}, {3.8272108544699437`, 
+       8.130975695369738}, {3.839021575628692, 7.977751330453466}, {
+       3.852222041377047, 7.83427544179817}, {3.8666509110167686`, 
+       7.699898376119}, {3.8820177712910273`, 7.573450757503225}, {
+       3.898008648746951, 7.459116772672858}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{3.9008994483162516`, 7.438447698382532}, {3.901425541747195, 
+       7.434686156308395}, {3.9219175392869063`, 7.305928065604958}, {
+       3.943177969314567, 7.185858258421973}, {3.9648910372345827`, 
+       7.073158507788504}, {4.009380258785761, 6.8682203282781}, {
+       4.054795548008613, 6.687815831289725}, {4.073504665325085, 
+       6.622254387276776}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{4.079231732742868, 6.602185305260873}, {4.100379845835258, 
+       6.528077007737635}, {4.1456928652699965`, 6.3863775652302355`}, {
+       4.190293274637234, 6.2601026780886535`}, {4.233897083617576, 
+       6.147269845693813}, {4.310592158064389, 5.970353740271631}, {
+       4.3816709506108324`, 5.82559790706269}}]}, 
+     {Arrowheads[{{0.017620390038382196`, 1.}}], 
+      ArrowBox[{{4.391549514431399, 5.807214772362575}, {4.4483400314717505`, 
+       5.702191246089383}, {4.508841946231927, 5.600038808102718}, {
+       4.613469432930756, 5.44125004709213}, {4.6981325750537275`, 
+       5.327134023832866}, {4.803823544488741, 5.2002824945037185`}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{10., 3.830596972863163}, {9.970001666829432, 
+       3.8286880318332166`}, {9.839810272595642, 3.8213310816281387`}, {
+       9.714672957897227, 3.8152235138606843`}, {9.594116575165621, 
+       3.8102013891970707`}, {9.477667976832265, 3.806100768303518}, {
+       9.365327162897156, 3.8029216511800255`}, {9.257094133360294, 
+       3.8006640378265932`}, {9.165865631901978, 3.799120184832487}}]}, 
+     {Arrowheads[{{0.020000000000000018`, 1.}}], 
+      ArrowBox[{{9.14499836926955, 3.7987670497334896`}, {9.044735858684819, 
+       3.7970703148897895`}, {8.846934602996956, 3.7965344799876934`}, {
+       8.652281944558334, 3.801531169093666}, {8.470678084700282, 
+       3.80881381530125}, {8.310589459462028, 3.8163213512331873`}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{8.289746371794777, 3.8173771314235174`}, {8.130975628387558, 
+       3.827212285274616}, {7.977751269964063, 3.8390229817941774`}, {
+       7.834275387602919, 3.852223423821297}, {7.69989832800581, 
+       3.8666522705560578`}, {7.5734507152357615`, 3.882019108558609}, {
+       7.459116761162708, 3.8980099615128405`}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{7.4384476863714495`, 3.900900757500495}, {7.434686123617597, 
+       3.901426853159152}, {7.305928041731952, 3.921918825566748}, {
+       7.185858242670788, 3.943179231015545}, {7.073158499526068, 
+       3.9648922747396917`}, {6.868220333239924, 4.009381448979967}, {
+       6.687815847381448, 4.054796692219439}, {6.622254340075058, 
+       4.073505810258519}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{6.602185256658554, 4.079232872768244}, {6.5280770331567455`, 
+       4.100380945137634}, {6.38637759841315, 4.145693920676412}, {
+       6.260102717684482, 4.190294287071983}, {6.147269890511661, 
+       4.233898053986075}, {5.970353788544458, 4.310593055390777}, {
+       5.825597770462026, 4.38167187014221}}]}, 
+     {Arrowheads[{{0.0176203787360126, 1.}}], 
+      ArrowBox[{{5.807214635362463, 4.391550433517972}, {5.702191296927407, 
+       4.448340791642495}, {5.600038858624755, 4.5088426427462425`}, {
+       5.441250095036136, 4.613470012988808}, {5.327134067720034, 
+       4.698133053644855}, {5.2002825279807725`, 4.803823886138887}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{0.4248916433439199, 0.000020458068668234137`}, {
+       0.5347424407322604, 0.000028220039744356624`}, {0.6607192863250049, 
+       0.00003990007513975246}, {0.8174588549369891, 
+       0.00006334136446670648}, {0.983911529169851, 
+       0.00010283544677065155`}, {1.151258047335696, 
+       0.00016971743913892341`}, {1.2597016119878655`, 
+       0.00024908908039260016`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{1.2805718568554936`, 0.00026436435831087024`}, {
+       1.3170734862101334`, 0.00029108050545711945`}, {1.4657931238245778`, 
+       0.0005090256526331876}, {1.5924744267151534`, 0.000910160149787013}, {
+       1.6840985032207765`, 0.0015317680563828547`}, {1.7586394743562355`, 
+       0.0026626689012528015`}, {1.8181503801897154`, 0.004758537571630891}, {
+       1.8634576373870297`, 0.008295170385800875}, {1.8999687115243453`, 
+       0.014761557789516072`}, {1.9302615946073332`, 0.025771962515343572`}, {
+       1.9571848349324033`, 0.04435673701376122}, {1.9691371171345144`, 
+       0.05677930043503406}, {1.981581811133382, 0.07265710225031348}, {
+       1.9949925412359797`, 0.09293752807354186}, {2.0022488126192974`, 
+       0.10516984613760927`}, {2.009972831545671, 0.1189771656527451}, {
+       2.0361544127437456`, 0.17066747323786124`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{2.0452053721604035`, 0.18946863506094852`}, {
+       2.0813264714435875`, 0.2682240996974677}, {2.131599616721006, 
+       0.382381424085828}, {2.200422407972421, 0.5400111768643258}, {
+       2.2438869533249366`, 0.6387030912279341}, {2.294618367402295, 
+       0.7525393084544043}, {2.3095258944373476`, 0.7858310142163383}, {
+       2.3250526413252794`, 0.8203409078020146}, {2.352881891827583, 
+       0.8813353482481211}, {2.3826031185388743`, 0.9458425473809597}, {
+       2.385391570398703, 0.9517971933544879}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{2.3942423547079135`, 0.9706977481421315}, {2.457035107946259,
+        1.1047895790336983`}, {2.5425332682178534`, 1.2825531586564343`}, {
+       2.5895738473441154`, 1.378304777476204}, {2.639664339019203, 
+       1.4783877803277787`}, {2.692804743243116, 1.5828021672111585`}, {
+       2.748995060015855, 1.6915479381263432`}, {2.7635776327017663`, 
+       1.7192697162661112`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{2.7732937882452857`, 1.737740332813022}, {
+       2.8081469431762174`, 1.8039969151923243`}, {2.8701720465630016`, 
+       1.919520920528094}, {2.9350703701762084`, 2.038119954133652}, {
+       3.002841914015837, 2.159794016008999}, {3.0730644653329127`, 
+       2.2835048979864347`}, {3.145315811378461, 2.408214391898262}, {
+       3.1798960760725197`, 2.4667363538796714`}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{3.1905131806360263`, 2.4847042264542543`}, {
+       3.2195959521524817`, 2.53392249774448}, {3.2959048876549746`, 
+       2.6606292155250886`}, {3.3735063957882567`, 2.787104685789352}, {
+       3.451664254454646, 2.9121190490865336`}, {3.5303784636541415`, 
+       3.0356723054166337`}, {3.6096490233867438`, 3.1577644547796524`}, {
+       3.6327761875514253`, 3.19263688610538}}]}, 
+     {Arrowheads[{{0.005296257670725604, 1.}}], 
+      ArrowBox[{{3.6443110627587005`, 3.210029815936822}, {3.69055316785211, 
+       3.2797562477096225`}, {3.76698656991885, 3.3939367645136906`}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.01999999999999999, 1.}}], 
+      ArrowBox[{{10., 1.4895984893088177`}, {9.99255450129071, 
+       1.4898287275142084`}, {9.792868919335213, 1.4971421935838973`}, {
+       9.60307352189882, 1.5052312038909097`}, {9.422674320150247, 
+       1.5140538532374868`}, {9.251177325258212, 1.5235682364258696`}, {
+       9.166144033908731, 1.528867781880128}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{9.145314197653915, 1.53016596359561}, {9.088088548391438, 
+       1.5337324482582997`}, {8.932914000718638, 1.5445045835370186`}, {
+       8.729654060592585, 1.5602213749341889`}, {8.537820484648153, 
+       1.576776650893795}, {8.356867833674789, 1.5941292653918224`}, {
+       8.313382791514586, 1.5987446406116856`}}]}, 
+     {Arrowheads[{{0.019999999999999993`, 1.}}], 
+      ArrowBox[{{8.292629109619494, 1.6009473757219945`}, {8.186250668461941, 
+       1.6122380724042573`}, {8.025423549799061, 1.631061925907085}, {
+       7.873841038475597, 1.6505596798762918`}, {7.730957695280997, 
+       1.6706901882878635`}, {7.596228081004712, 1.6914123051177858`}, {
+       7.468674239599169, 1.7126548192293607`}, {7.465564862682385, 
+       1.7132116044151546`}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{7.4450213749601355`, 1.7168902544902047`}, {
+       7.347475493866619, 1.734357452254139}, {7.232322322871251, 
+       1.7564954573204796`}, {7.122905205677257, 1.7790440875567408`}, {
+       6.92004104895014, 1.8252742360524619`}, {6.736406856198782, 
+       1.8728499227681725`}, {6.631801776177984, 1.9033903852164025`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{6.611767914208664, 1.9092394645254132`}, {6.548264066875376, 
+       1.9277800255040467`}, {6.379482659207756, 1.9840388225381236`}, {
+       6.2269595472002, 2.041360629058983}, {6.088970794188419, 
+       2.0995978423936137`}, {5.964029708548033, 2.158605872421665}, {
+       5.850649598654665, 2.218240129022786}, {5.840385616737951, 
+       2.2239585387061203`}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{5.8221539628930525`, 2.2341160065130437`}, {
+       5.743049976634806, 2.278187498910442}, {5.645563430959809, 
+       2.338574548295898}, {5.554842838640205, 2.407776071186413}, {
+       5.472938510743694, 2.4770905651643598`}, {5.324850392774537, 
+       2.6155303724724015`}, {5.20524002995884, 2.7530870652589075`}, {
+       5.1918208307464475`, 2.7719837998620704`}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{5.179737078070888, 2.7889999767371734`}, {5.108860369708109, 
+       2.8888075976152057`}, {5.022249897921526, 3.042469626369242}, {
+       4.95609089958, 3.1914418397764184`}, {4.905585781586669, 
+       3.334659808796937}, {4.868420430203393, 3.4715061442747226`}, {
+       4.852542835629202, 3.549239919670385}}]}, 
+     {Arrowheads[{{0.01723038418847223, 1.}}], 
+      ArrowBox[{{4.848366196096007, 3.569687976702256}, {4.841894625052182, 
+       3.601371595252104}, {4.824163778794554, 3.723878568911674}, {
+       4.813382122087793, 3.8387507383989004`}, {4.80813052010471, 
+       3.9459288718922574`}, {4.809693490359142, 4.129232261075175}, {
+       4.82055171011228, 4.285946371099368}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{10., 8.502749975146905}, {9.904833544172394, 
+       8.42709057654113}, {9.793155110768755, 8.338766259820527}, {
+       9.685810593259383, 8.25434996289318}, {9.58279999164428, 
+       8.173841685759086}, {9.48381145303139, 8.096934518261342}, {
+       9.381112704308338, 8.016733151284154}, {9.343173685879588, 
+       7.987507929737481}}]}, 
+     {Arrowheads[{{0.020000000000000014`, 1.}}], 
+      ArrowBox[{{9.326640139509871, 7.9747717922300065`}, {9.287689480860692, 
+       7.94476728300558}, {9.194266257413044, 7.872801414727006}, {
+       9.099112483777219, 7.801034351812827}, {9.003958710141394, 
+       7.729267288898649}, {8.917241843501222, 7.664707585351564}, {
+       8.827150214062788, 7.597264938057641}, {8.659651130964003, 
+       7.472769439239467}}]}, 
+     {Arrowheads[{{0.020000000000000014`, 1.}}], 
+      ArrowBox[{{8.642853495596498, 7.460383753731724}, {8.497332929112122, 
+       7.3532997472250585`}, {8.349101951815856, 7.2452663765622045`}, {
+       8.210426597671177, 7.145091944556792}, {8.080590979502029, 
+       7.05212949718292}, {7.966514013425703, 6.971048093427964}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{7.949475020105828, 6.958996624974336}, {7.836167405960416, 
+       6.879221263468773}, {7.721867044795283, 6.799460385198274}, {
+       7.6143308929397175`, 6.724972953563908}, {7.51248442643733, 
+       6.654800039747113}, {7.415941199025687, 6.5886191071102855`}, {
+       7.324707951696052, 6.526471271690652}, {7.262675151067993, 
+       6.484453553607843}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{7.245395698399002, 6.472749371892363}, {7.2382999413725715`, 
+       6.4679430836819}, {7.1562324249793905`, 6.412621093277718}, {
+       7.0041421975924525`, 6.310815878509612}, {6.8664839167522835`, 
+       6.219495973839436}, {6.741295253239714, 6.137080200370972}, {
+       6.627086049355328, 6.062402840084583}, {6.549342698384199, 
+       6.011883681368177}}]}, 
+     {Arrowheads[{{0.018606921198875775`, 1.}}], 
+      ArrowBox[{{6.531842728258738, 6.000511856546415}, {6.522563809588382, 
+       5.994482232672877}, {6.426976400247171, 5.932750666612735}, {
+       6.3390565396292144`, 5.876226367485159}, {6.257536946032032, 
+       5.823927560871151}, {6.111924309208392, 5.730803238924949}, {
+       5.986589988393057, 5.6509713282563485`}, {5.877746110049675, 
+       5.581754073462888}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{8.50274962441658, 10.}, {8.427090255406956, 
+       9.90483357493591}, {8.338765943404068, 9.79315513975542}, {
+       8.254349651096357, 9.685810620514014}, {8.173841378483818, 
+       9.58280001721169}, {8.096934215412206, 9.483811476955779}, {
+       8.016732852953917, 9.381112726546124}, {7.987507602387883, 
+       9.3431736675449}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{7.974771465491533, 9.32664012070442}, {7.944766988962322, 
+       9.28768950152083}, {7.872801124970727, 9.194266276495538}, {
+       7.8010340671761425`, 9.099112501841763}, {7.729267009381558, 
+       9.003958727187989}, {7.664707310599302, 8.917241859541969}, {
+       7.597264668212114, 8.827150229092847}, {7.47276913971289, 
+       8.659651091684758}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{7.46038345516131, 8.642853455611698}, {7.353299495700297, 
+       8.497332940192848}, {7.245266133473538, 8.349101960995219}, {
+       7.145091709478013, 8.210426605012046}, {7.052129269714473, 
+       8.080590985070955}, {6.971047825650671, 7.966513951170408}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{6.958996358286761, 7.949474957079783}, {6.879221050505811, 
+       7.836167407923671}, {6.799460179129262, 7.721867044954123}, {
+       6.724972754073078, 7.614330891395609}, {6.654799846555714, 
+       7.512484423290704}, {6.588618919954675, 7.415941194372662}, {
+       6.526471090309781, 7.324707945626547}, {6.484453321900423, 
+       7.262675063880667}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{6.472749141066803, 7.2453956106143504`}, {6.467942907832956, 
+       7.238299933972658}, {6.412620922736128, 7.156232416331292}, {
+       6.310815717951585, 7.004142186679752}, {6.219495822494403, 
+       6.866483903859162}, {6.1370800575520565`, 6.741295238622447}, {
+       6.062402705171965, 6.627086033244434}, {6.011883489297079, 
+       6.549342584944328}}]}, 
+     {Arrowheads[{{0.01860691789171697, 1.}}], 
+      ArrowBox[{{6.00051166543882, 6.5318426141927635`}, {5.994482105208951, 
+       6.522563792344775}, {5.9327505460567505`, 6.426976382033318}, {
+       5.876226253359237, 6.339056520590669}, {5.823927452760286, 
+       6.257536926297433}, {5.730803141706581, 6.111924288425922}, {
+       5.650971240592654, 5.9865899669522165`}, {5.581753994233829, 
+       5.87774608826434}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.019999999999999983`, 1.}}], 
+      ArrowBox[{{10., 6.203209971765464}, {9.928585239914396, 
+       6.174925146659611}, {9.815476329323383, 6.131038367863659}, {
+       9.706499059757196, 6.089588054210362}, {9.593669398033095, 
+       6.045923409478121}, {9.490470716703777, 6.007794592443242}, {
+       9.38727203537446, 5.9696657754083615`}, {9.217921860446708, 
+       5.911499557669157}}]}, 
+     {Arrowheads[{{0.01999999999999999, 1.}}], 
+      ArrowBox[{{9.198183428395426, 5.904720055156006}, {9.182067821508818, 
+       5.899184873987367}, {8.99059427404963, 5.835744381326389}, {
+       8.805264157898181, 5.775326582262984}, {8.632220904362207, 
+       5.720954170394727}, {8.470365977058195, 5.671923907052256}, {
+       8.40257808081461, 5.652095924719322}}]}, 
+     {Arrowheads[{{0.019999999999999993`, 1.}}], 
+      ArrowBox[{{8.382547135019403, 5.646236866371912}, {8.318600839602638, 
+       5.627532553566215}, {8.176229710878571, 5.587359898577213}, {
+       8.042000184875459, 5.550649561638348}, {7.900471789013457, 
+       5.513542075983335}, {7.768372461205545, 5.4803535141287405`}, {
+       7.644465428834335, 5.450363301573842}, {7.575261103318771, 
+       5.434083223569865}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{7.5549454277301145`, 5.4293040312170335`}, {
+       7.527513919282444, 5.422850863817918}, {7.417041164891617, 
+       5.397586749974942}, {7.313004686551681, 5.3746221512244245`}, {
+       7.214819144467365, 5.353657456163953}, {7.121899198843397, 
+       5.334393053391115}, {6.9506510825154395`, 5.300456721282965}, {
+       6.796850308645667, 5.271796348049223}, {6.737323230771547, 
+       5.261316097552857}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{6.716769103455413, 5.257697367880576}, {6.6580888094415975`, 
+       5.247366200915423}, {6.532528650600405, 5.226436642275519}, {
+       6.32475016796638, 5.194377003768084}, {6.150331361309511, 
+       5.169664818051778}, {6.001895530227854, 5.14976042248541}, {
+       5.891011498406821, 5.1356980147848095`}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.019999999999999987`, 1.}}], 
+      ArrowBox[{{6.203209774839476, 10.}, {6.1749249164179805`, 
+       9.928585148501856}, {6.131038142505824, 9.81547623872214}, {
+       6.089587833541883, 9.70649896992712}, {6.04592319367657, 
+       9.593669309007238}, {6.007794381064687, 9.490470628399517}, {
+       5.969665568452805, 9.387271947791797}, {5.911499384549855, 
+       9.217921851560753}}]}, 
+     {Arrowheads[{{0.019999999999999993`, 1.}}], 
+      ArrowBox[{{5.904719882746319, 9.198183419265742}, {5.899184675874782, 
+       9.182067735659654}, {5.835744191446997, 8.990594189825318}, {
+       5.775326400350433, 8.805264075256623}, {5.720953995916311, 
+       8.632220823219209}, {5.671923739529602, 8.470365897343761}, {
+       5.652095778180376, 8.402578063478169}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{5.6462367205783, 8.38254711746495}, {5.627532392575278, 
+       8.318600761260962}, {5.587359743726338, 8.176229633860629}, {
+       5.55064941259418, 8.042000109144427}, {5.513541932616227, 
+       7.9004717128661595`}, {5.480353376154508, 7.76837238484455}, {
+       5.450363168737453, 7.644465352426654}, {5.434083105747706, 
+       7.575261078429171}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{5.429303914200108, 7.554945402651087}, {5.422850735893492, 
+       7.527513842959524}, {5.397586626748002, 7.417041088770044}, {
+       5.374622032481753, 7.313004610744996}, {5.353657341706271, 
+       7.21481906907129}, {5.334392943033083, 7.121899123935832}, {
+       5.300456618602965, 6.950651008789808}, {5.271796252410159, 
+       6.796850236327217}, {5.261316011761514, 6.7373231992945595`}}]}, 
+     {Arrowheads[{{0.019999999999999993`, 1.}}], 
+      ArrowBox[{{5.257697282979166, 6.716769071821746}, {5.247366111747211, 
+       6.65808873869458}, {5.226436559062094, 6.532528581545902}, {
+       5.19437693090375, 6.324750104265696}, {5.169664753996927, 
+       6.150331302492979}, {5.149760366015697, 6.001895475892998}, {
+       5.1356979657972115`, 5.891011461490128}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{10., 0.3810558596591054}, {9.989691545082936, 
+       0.381186700800392}, {9.832970361514395, 0.3833502086999435}, {
+       9.681119321581754, 0.38561801069262797`}, {9.534138425285022, 
+       0.3879901067784453}, {9.392027672624195, 0.39046649695739555`}, {
+       9.254787063599274, 0.39304718122947874`}, {9.16530606031619, 
+       0.39486219757173335`}}]}, 
+     {Arrowheads[{{0.02000000000000002, 1.}}], 
+      ArrowBox[{{9.1444401018916, 0.3952854388648335}, {9.122416598210258, 
+       0.3957321595946949}, {8.994916276457142, 0.398521432053044}, {
+       8.872286098339934, 0.40141499860452595`}, {8.753747721945068, 
+       0.40439951033355515`}, {8.638522805358978, 0.4074616183245458}, {
+       8.526611348581662, 0.410601322577498}, {8.418013351613123, 
+       0.4138186230924117}, {8.309925096346326, 0.41729581011127775`}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{8.289065636842107, 0.41796685657816357`}, {8.210757737102371,
+        0.4204860129081235}, {8.016755961826725, 0.4274637877716812}, {
+       7.893311957661872, 0.4322950257146768}, {7.773877521217791, 
+       0.4372375955479526}, {7.658452652494485, 0.44229149727150857`}, {
+       7.547037351491952, 0.44745673088534466`}, {7.454966306597276, 
+       0.4521146027911335}}]}, 
+     {Arrowheads[{{0.019999999999999993`, 1.}}], 
+      ArrowBox[{{7.434122712076181, 0.45316907972735737`}, {
+       7.3362354526492055`, 0.45812119378385746`}, {7.141471824689554, 
+       0.4692309842434909}, {6.96013231035348, 0.4807549831275309}, {
+       6.789602752381465, 0.4926620712992635}, {6.629883150773512, 
+       0.5049522487586884}, {6.601111651110152, 0.5074009074023321}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{6.580316576388434, 0.5091707157216182}, {6.480973505529622, 
+       0.5176255155058058}, {6.292067534549639, 0.5354870529872866}, {
+       6.116575875691777, 0.5539992732022154}, {5.954498528956037, 
+       0.5731621761505924}, {5.8058354943424195`, 0.5929757618324173}, {
+       5.7507317625429915`, 0.60117287076234}}]}, 
+     {Arrowheads[{{0.019999999999999993`, 1.}}], 
+      ArrowBox[{{5.730088666566685, 0.6042436919362046}, {5.668363866900033, 
+       0.6134257362374301}, {5.539860741677983, 0.6344978053553707}, {
+       5.420326118676273, 0.656191969186239}, {5.309759997894901, 
+       0.678508227730035}, {5.161743352353107, 0.7120499658753414}, {
+       5.026154624884946, 0.7468802790750958}, {4.914705194718199, 
+       0.7795646170067538}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{4.894783978479389, 0.7857725905922209}, {4.792260924169523, 
+       0.820406630637949}, {4.599463574207433, 0.8990421355843765}, {
+       4.439147253457476, 0.9827416470801602}, {4.306480674765754, 
+       1.0714126914364615`}, {4.196632550978369, 1.1649627949644417`}, {
+       4.172525658191843, 1.1884698829168792`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{4.157583444372312, 1.2030403187490806`}, {4.144919633929683, 
+       1.2153890402754925`}, {4.098469369370903, 1.2670829874917815`}, {
+       4.049877879645145, 1.3410886659520092`}, {4.008429270266651, 
+       1.4173102702975373`}, {3.9480646684981195`, 1.5466056972830045`}, {
+       3.904749272936075, 1.6811254216215135`}, {3.8764572283856182`, 
+       1.8201692195479675`}, {3.8611626796518492`, 1.9630368672972704`}, {
+       3.8610962671370985`, 1.9657747985987521`}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{3.8605901776535494`, 1.986638911990016}, {
+       3.8576218338194126`, 2.109012255742115}, {3.8635958636406684`, 
+       2.256806388453348}, {3.8758358581736077`, 2.378895011354674}, {
+       3.893595613006962, 2.501365375739886}, {3.915946928535396, 
+       2.6235646020887695`}, {3.9419616051535726`, 2.7448398108811096`}, {
+       3.9584804936249047`, 2.8126294686517213`}}]}, 
+     {Arrowheads[{{0.009462333644421608, 1.}}], 
+      ArrowBox[{{3.963421544299864, 2.8329063858828083`}, {3.97117355780391, 
+       2.8647188376336885`}, {4.0033807668846855`, 2.9828327835987163`}, {
+       4.0380511309743525`, 3.0986836678591185`}, {4.074652548651364, 
+       3.21177350949782}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.020000000000000018`, 1.}}], 
+      ArrowBox[{{4.5339677802286555`, 10.}, {4.528515697315562, 
+       9.960719205473204}, {4.513510807422148, 9.846732817579088}, {
+       4.497241883357329, 9.728858244807459}, {4.484133044721021, 
+       9.620704134229616}, {4.471024206084712, 9.512550023651773}, {
+       4.450771970126494, 9.299385103241836}, {4.44019247502829, 
+       9.170644243454875}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{4.438483189049617, 9.149844106541575}, {4.434396175618402, 
+       9.100109632617134}, {4.41967143555857, 8.907091868484741}, {
+       4.408248804395257, 8.726589517336974}, {4.399721586544828, 
+       8.55754276567462}, {4.39368308642365, 8.398891799998477}, {
+       4.391582417530528, 8.316480214039148}}]}, 
+     {Arrowheads[{{0.019999999999999993`, 1.}}], 
+      ArrowBox[{{4.391050608202967, 8.295616740382826}, {4.389886560693997, 
+       8.249949857010439}, {4.387887871347961, 8.109480762773924}, {
+       4.3879538221303225`, 7.954724622791421}, {4.390195085153606, 
+       7.8106951195720695`}, {4.394129552517843, 7.675994603889475}, {
+       4.399275116323066, 7.549225426517239}, {4.403850529606652, 
+       7.461133802089802}}]}, 
+     {Arrowheads[{{0.01999999999999999, 1.}}], 
+      ArrowBox[{{4.404933055678306, 7.440291645496179}, {4.405476425691435, 
+       7.429830001016234}, {4.41276484804347, 7.317730776825765}, {
+       4.4209383529267425`, 7.212250158537092}, {4.429794909888823, 
+       7.112710550741475}, {4.449224874086723, 6.9300566095995215`}, {
+       4.470390128711802, 6.766973439340123}, {4.492613612096755, 
+       6.620680876602907}, {4.494350521746652, 6.6106679820641085`}}]}, 
+     {Arrowheads[{{0.018607969432313715`, 1.}}], 
+      ArrowBox[{{4.497917557577054, 6.590104820596243}, {4.515443720755857, 
+       6.489070421029447}, {4.557699381282089, 6.281111307523448}, {
+       4.599133669392542, 6.107143885245644}, {4.6385065380513755`, 
+       5.959662746292956}, {4.675541292665597, 5.834555178115277}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.01999999999999999, 1.}}], 
+      ArrowBox[{{10., 4.5339687292609385`}, {9.960718995594588, 
+       4.528516613026258}, {9.846732612118304, 4.51351171160992}, {
+       9.728858043829165, 4.4972427756075914`}, {9.620703937572163, 
+       4.484133926070241}, {9.512549831315162, 4.471025076532889}, {
+       9.29938491862421, 4.45077281888456}, {9.170644254483085, 
+       4.44019332629316}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{9.149844117748755, 4.438484038136624}, {9.100109455479725, 
+       4.434397003985285}, {8.907091698701606, 4.419672244088294}, {
+       8.726589354656223, 4.408249594195874}, {8.557542609835249, 
+       4.399722358590867}, {8.398891650730357, 4.393683841556115}, {
+       8.316480230765094, 4.391583167869349}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{8.295616757166973, 4.391051356258525}, {8.24994971404465, 
+       4.3898872996765625`}, {8.109480625843705, 4.387888594805116}, {
+       7.954724494911847, 4.387954528072745}, {7.810695000075655, 
+       4.390195774296026}, {7.675994492176733, 4.394130225448074}, {
+       7.549225322056688, 4.399275773502004}, {7.461133817169904, 
+       4.40385116952944}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{7.4402916604408915`, 4.404933692994372}, {7.429829903313817, 
+       4.405477067546331}, {7.3177306854073905`, 4.412765475021224}, {
+       7.212250072970466, 4.420938965427287}, {7.1127104706361, 
+       4.429795508265118}, {6.930056539345403, 4.449225445213056}, {
+       6.766973377676018, 4.470390673818972}, {6.6206808224529965`, 
+       4.4926141322801785`}, {6.610667982929134, 4.4943510306541485`}}]}, 
+     {Arrowheads[{{0.018607969176455075`, 1.}}], 
+      ArrowBox[{{6.590104820862055, 4.497918063030218}, {6.489070373454792, 
+       4.515444217024643}, {6.281111266887737, 4.557699836950689}, {
+       6.107143850399436, 4.59913408725991}, {5.959662716275546, 
+       4.638506920625423}, {5.834555152144847, 4.675541642396232}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{5.350210422805414, 0.06092389478089986}, {5.214015367143725, 
+       0.06338893265038448}, {5.086009640447606, 0.06595016550892473}, {
+       4.966193242717056, 0.06860759335652056}, {4.854566173952078, 
+       0.07136121619317197}, {4.7105637486564405`, 0.07535123826376565}, {
+       4.57688926667069, 0.07954834468998374}, {4.515671907654326, 
+       0.08173416142357784}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{4.4948149482975595`, 0.08247887650940383}, {
+       4.453542727994827, 0.08395253547182624}, {4.34052413262885, 
+       0.08856381060929318}, {4.138343623530112, 0.09846806433044634}, {
+       3.963220591078028, 0.10932155623278934`}, {3.8492831912915126`, 
+       0.1179463887369181}, {3.7446842662116846`, 0.12719172050724076`}, {
+       3.661957770636103, 0.13648436009589013`}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{3.6412179570116225`, 0.13881405642603356`}, {
+       3.5635018401720893`, 0.14754388184646772`}, {3.4129683162646387`, 
+       0.17066986291528446`}, {3.2863786977947296`, 0.19686148637850523`}, {
+       3.1566387860039047`, 0.23424692877896253`}, {3.0515542702406107`, 
+       0.2776748350994235}, {2.9012330349533633`, 0.38587280903937166`}, {
+       2.8804016779443713`, 0.40821841932318076`}, {2.8737910861059635`, 
+       0.4164409069735554}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{2.8608967007003625`, 0.4328298169530508}, {
+       2.8432321322661123`, 0.4641956453826206}, {2.827598245712375, 
+       0.4987658891838885}, {2.8015228374024863`, 0.5720880519587141}, {
+       2.785566809506656, 0.6540665929481247}, {2.7792925357470777`, 
+       0.7452650543004564}, {2.7900410391920953`, 0.919943596546704}, {
+       2.826474087583191, 1.1233949598659017`}, {2.8540251350415162`, 
+       1.2361963711632908`}, {2.8568242585357924`, 1.2461143869540148`}}]}, 
+     {Arrowheads[{{0.016091392450906454`, 1.}}], 
+      ArrowBox[{{2.8624929537584474`, 1.266200034781295}, {2.887820730972061, 
+       1.3559428756606828`}, {2.9278020127867257`, 1.4825517693353318`}, {
+       2.9739101178974106`, 1.6159403481644934`}, {3.025931283632238, 
+       1.755430023111959}, {3.0835632329857443`, 1.9000016994195423`}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{0.060926445414127395`, 5.350386928811922}, {
+       0.06339146867771861, 5.214186650472398}, {0.06595268354636176, 
+       5.086175955787289}, {0.06861009002005687, 4.9663548447565935`}, {
+       0.07136368809880397, 4.854723317380309}, {0.07535365465856238, 
+       4.710715526722118}, {0.07955069416587142, 4.5770359582443305`}, {
+       0.08173532369112682, 4.5158483759872245`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.08247999656150215, 4.494991415123163}, {
+       0.08395480662073113, 4.453684611946945}, {0.08856599202314148, 
+       4.340661487829962}, {0.09847002409690961, 4.138472595392828}, {
+       0.10932323281347132`, 3.963341970188549}, {0.11794769169922799`, 
+       3.8494008904356347`}, {0.12719258319126722`, 3.744798356715948}, {
+       0.13647743341068394`, 3.6621336211644717`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.13880691867332942`, 3.641393783831937}, {
+       0.14754366399419333`, 3.563608927376258}, {0.1706682396665089, 
+       3.4130686913113717`}, {0.196858074652473, 3.2864726576631855`}, {
+       0.23424318307090913`, 3.156717658453233}, {0.27767072477243554`, 
+       3.0516210751514894`}, {0.38586786373029885`, 2.90128210062412}, {
+       0.4082133664471619, 2.8804480914877466`}, {0.416339962576085, 
+       2.8739137038494578`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.43271661663357125`, 2.861001391239766}, {0.464190264667058,
+        2.8432734261949215`}, {0.49876028034979203`, 2.8276370742967685`}, {
+       0.5720819706257482, 2.8015570485448325`}, {0.6540600071206293, 
+       2.785596970299491}, {0.7452579337780035, 2.779319107590411}, {
+       0.919929277728182, 2.7900616601341595`}, {1.1233714710871936`, 
+       2.8264878463686594`}, {1.2361675634206983`, 2.8540350583829737`}, {
+       1.2459864143310588`, 2.8568059910921297`}}]}, 
+     {Arrowheads[{{0.0160929646664118, 1.}}], 
+      ArrowBox[{{1.266072171167359, 2.8624743000535307`}, {
+       1.3559083462883612`, 2.8878265534262333`}, {1.4825111457508322`, 
+       2.927803456367191}, {1.6158932878687615`, 2.973906892074599}, {
+       1.7553762980356429`, 3.0259231347091644`}, {1.8999412441208805`, 
+       3.0835499723127113`}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{3.173469417158967, 10.}, {3.1726885111099836`, 
+       9.90172744733933}, {3.171036594795342, 9.780759589784957}, {
+       3.1711887921337034`, 9.669538232040937}, {3.1713409894720646`, 
+       9.558316874296917}, {3.1741883247050597`, 9.449160115919943}, {
+       3.177035659938055, 9.340003357542967}, {3.183811678839236, 
+       9.1654102711735}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{3.184621051250898, 9.144555720819485}, {3.184967715489628, 
+       9.135623458342588}, {3.19385864703233, 8.937540458098185}, {
+       3.204667330557291, 8.752051255765737}, {3.2171652725807465`, 
+       8.578124493619113}, {3.2311239796189333`, 8.41472881393218}, {
+       3.241363559158117, 8.311818286765938}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{3.243429941821363, 8.291050585476246}, {3.246401178378664, 
+       8.26118885929136}, {3.2627407769322003`, 8.116288986352208}, {
+       3.2838271104594448`, 7.953931174565588}, {3.3062316809233687`, 
+       7.802891473763768}, {3.329658693721764, 7.6617234715144775`}, {
+       3.353812354252423, 7.528980755385447}, {3.366370588185489, 
+       7.465666295243203}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{3.3704310383026987`, 7.445194849299779}, {3.378587086343207, 
+       7.4040747538045615`}, {3.40398601006773, 7.28690708997694}, {
+       3.4298763751924155`, 7.176766643636158}, {3.4561254314836853`, 
+       7.072942294515795}, {3.5094493769842865`, 6.882755008492734}, {
+       3.5634573654061477`, 6.713371473020574}, {3.5895439854416913`, 
+       6.640436722311074}}]}, 
+     {Arrowheads[{{0.019999999999999993`, 1.}}], 
+      ArrowBox[{{3.5965726080388585`, 6.620785620088668}, {
+       3.6176520027697125`, 6.561850411245698}, {3.6716793624555626`, 
+       6.425961829159098}, {3.7198791690344795`, 6.315574561815776}, {
+       3.767582344722619, 6.215364447051779}, {3.8145768421566384`, 
+       6.123954470923861}, {3.860650613973197, 6.039967619488776}, {
+       3.9498235684986613`, 5.892101682872808}, {3.962932371030712, 
+       5.872843388071171}}]}, 
+     {Arrowheads[{{0.01643633309262251, 1.}}], 
+      ArrowBox[{{3.9746759837307644`, 5.855590709585787}, {4.034676383788478, 
+       5.767443421555287}, {4.114774903795437, 5.661550285801638}, {
+       4.1899935295347115`, 5.571533615765653}, {4.325543537531565, 
+       5.42865739635976}, {4.423389628087454, 5.339455527178497}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{10., 3.1734720561448038`}, {9.90172736817462, 
+       3.172691133999317}, {9.780759517516174, 3.1710391984972497`}, {
+       9.669538166628234, 3.171191378688693}, {9.558316815740294, 
+       3.171343558880137}, {9.449160063398685, 3.1741908778335906`}, {
+       9.340003311057075, 3.177038196787044}, {9.165410269650664, 
+       3.1838141885386273`}}]}, 
+     {Arrowheads[{{0.020000000000000025`, 1.}}], 
+      ArrowBox[{{9.144555719179058, 3.1846235579203634`}, {9.135623423899194, 
+       3.1849702221324736`}, {8.937540435650108, 3.1938611244423813`}, {
+       8.75205124521861, 3.2046697806812454`}, {8.578124494818454, 
+       3.217167697078948}, {8.414728826663394, 3.231126379865369}, {
+       8.31181827706085, 3.241365946941736}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{8.291050575478979, 3.2434323266685072`}, {8.261188883311116, 
+       3.246403555576987}, {8.116289021365452, 3.262743131979459}, {
+       7.953931226890182, 3.2838294395485668`}, {7.802891542326588, 
+       3.306233985052583}, {7.661723555307274, 3.3296609735698537`}, {
+       7.528980853464845, 3.353814610178725}, {7.465666268104818, 
+       3.3663728583065176`}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{7.445194821504751, 3.370433305113152}, {7.404074865272669, 
+       3.3785893186198357`}, {7.286907213970264, 3.4039882190122763`}, {
+       7.176766779339459, 3.4298785610020714`}, {7.072942441162086, 
+       3.4561275942352463`}, {6.8827551748659666`, 3.5094514937166017`}, {
+       6.713371656478579, 3.5634594360260743`}, {6.640436659219035, 
+       3.5895461243997677`}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{6.620785555301057, 3.5965747422563386`}, {6.561850609400744, 
+       3.6176540269041593`}, {6.425962039822943, 3.671681339612497}, {
+       6.315574779368786, 3.7198811046991973`}, {6.215364670485856, 
+       3.7675842384714313`}, {6.123954699260835, 3.8145786935067614`}, {
+       6.039967851780408, 3.8606524223827483`}, {5.89210192048628, 
+       3.9498252898030057`}, {5.872843241446552, 3.9629343405157154`}}]}, 
+     {Arrowheads[{{0.01643631351948767, 1.}}], 
+      ArrowBox[{{5.855590557392331, 3.9746779450345198`}, {5.767443661469378, 
+       4.034678017024829}, {5.6615505254323395`, 4.1147764486278}, {
+       5.571533852957651, 4.1899949863964885`}, {5.4286576236391255`, 
+       4.325544822338467}, {5.339455740420571, 4.423390779149629}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.18978057239580104`, 0.9207631429602441}, {
+       0.2646234292839276, 1.070778861980808}, {0.34382781156339787`, 
+       1.1956909483202107`}, {0.44760781047600123`, 1.330797652127883}, {
+       0.5826317667312865, 1.4783732401207883`}, {0.6071808215215949, 
+       1.5032573196139585`}, {0.6327225856500704, 1.528542294680609}, {
+       0.672714120461324, 1.5660106846895858`}, {0.6898589935882036, 
+       1.5815924212391597`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.7053037510653917, 1.5956290454999895`}, {
+       0.7150368898968217, 1.6044747922109408`}, {0.8044971931931435, 
+       1.6835067940453257`}, {0.903899112712474, 1.7669866682840731`}, {
+       1.0138235328467855`, 1.8554070387659556`}, {1.1164396102646492`, 
+       1.9352899839325097`}, {1.2270560002952278`, 2.019364762543389}, {
+       1.3459291295237705`, 2.107971591088955}, {1.3573460481199005`, 
+       2.1163495976682416`}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{1.3741719860344797`, 2.1286968713536996`}, {
+       1.473315424535527, 2.201450686059571}, {1.608816630315995, 
+       2.2998628033201696`}, {1.7516603880793846`, 2.4031090069497285`}, {
+       1.9015419687540154`, 2.511289975759671}, {2.0500702044608743`, 
+       2.6186607192654443`}}]}, 
+     {Arrowheads[{{0.01960280833308264, 1.}}], 
+      ArrowBox[{{2.066970628047291, 2.630905823224893}, {2.220329732638091, 
+       2.742252914747703}, {2.3863894436442656`, 2.8636779326148365`}, {
+       2.5552853758617453`, 2.988362684329646}, {2.7259671288655483`, 
+       3.115888412058953}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{0.9194796939596229, 0.18969604802025994`}, {
+       1.069439193110717, 0.2644708947732666}, {1.1943216035423891`, 
+       0.3435969206114049}, {1.3294063698016336`, 0.44726914264747186`}, {
+       1.4769618588832856`, 0.5821495569414669}, {1.5018475624745138`, 
+       0.606677292763327}, {1.5271341793168827`, 0.6321970924206144}, {
+       1.5646089948209225`, 0.6721598221703526}, {1.5804587352274915`, 
+       0.6895844783109861}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{1.5945020201338953`, 0.7050231797850884}, {1.60307960091374, 
+       0.714453075276964}, {1.6821246679102833`, 0.8038532321164288}, {
+       1.7656176709567823`, 0.9031932941299219}, {1.8540511775160042`, 
+       1.01305532418223}, {1.934006854857708, 1.115698168813394}, {
+       2.0181612778742672`, 1.2263549491667995`}, {2.1068555499250543`, 
+       1.3452837145338474`}, {2.115400243727693, 1.3569224407257048`}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{2.127751199605827, 1.3737456759396955`}, {
+       2.2004307743694422`, 1.4727425142059378`}, {2.2989482029879045`, 
+       1.6083329546478495`}, {2.402309172372973, 1.751281532137722}, {
+       2.510614913102107, 1.9012836306869945`}, {2.6178357296168, 
+       2.0495563453769106`}}]}, 
+     {Arrowheads[{{0.019635293450207262`, 1.}}], 
+      ArrowBox[{{2.630082556684687, 2.0664555204427217`}, {2.741857574235001, 
+       2.2203567536502335`}, {2.8634333815060566`, 2.386573243163258}, {
+       2.9882741167141855`, 2.5556310525496784`}, {3.115959819007639, 
+       2.7264771315129948`}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.019999999999999983`, 1.}}], 
+      ArrowBox[{{10., 9.217724907695606}, {9.992351907683105, 
+       9.210822485389984}, {9.886390923462839, 9.114960275607743}, {
+       9.789903205237582, 9.02822810798361}, {9.693415487012325, 
+       8.941495940359479}, {9.594751816658956, 8.853701911934143}, {
+       9.496088146305587, 8.765907883508808}, {9.406081705600966, 
+       8.686323701590783}, {9.377755362732618, 8.661210108390343}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{9.362138858607796, 8.647364814854692}, {9.312612373036846, 
+       8.603455581069834}, {9.222397741992152, 8.523664904361546}, {
+       9.135229622126813, 8.446745176675655}, {9.05110801344083, 
+       8.372696398012165}, {8.9700329159342, 8.30151856837107}, {
+       8.81581553276925, 8.166591401341442}, {8.73508237541995, 
+       8.096272443684619}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{8.719344791536074, 8.082564934513846}, {8.671370750942213, 
+       8.04077932077214}, {8.53596203877736, 7.923364963518923}, {
+       8.40826363925838, 7.81305707592216}, {8.27921064318864, 
+       7.702118099701321}, {8.158327114961438, 7.598682066081774}, {
+       8.086831273940954, 7.537746436893362}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{8.070947421198596, 7.524208690543692}, {8.044476310961135, 
+       7.501647465518402}, {7.936521487572088, 7.409912788466089}, {
+       7.834057659605954, 7.323096270881444}, {7.737097989547132, 
+       7.241227431864918}, {7.645132955289091, 7.163821686587159}, {
+       7.557653034725302, 7.090394450218814}, {7.432787703110711, 
+       6.98601383359135}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{7.41677532254831, 6.972628355531389}, {7.3951324959134705`, 
+       6.954536131208637}, {7.247504295577615, 6.831773728830924}, {
+       7.112729699277786, 6.720216417925948}, {6.98927434049766, 
+       6.6184607773355575`}, {6.876776655599767, 6.526101991112245}, {
+       6.7733393822791825`, 6.441515543109091}, {6.772962978674233, 
+       6.441208701696562}}]}, 
+     {Arrowheads[{{0.01014766807996137, 1.}}], 
+      ArrowBox[{{6.756786622958858, 6.428021857118023}, {6.67769246585706, 
+       6.363544889924441}, {6.5885658516545496`, 6.291033488156642}, {
+       6.428095925499539, 6.160865113384117}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.019999999999999993`, 1.}}], 
+      ArrowBox[{{9.217724478967236, 10.}, {9.210822165223032, 
+       9.992352027500393}, {9.114959959987733, 9.886391041914685}, {
+       9.028227796643439, 9.789903322271682}, {8.941495633299146, 
+       9.69341560262868}, {8.853701609462785, 9.59475193053699}, {
+       8.765907585626424, 9.496088258445303}, {8.686323408030669, 
+       9.406081816009578}, {8.661209701469176, 9.377755343238618}}]}, 
+     {Arrowheads[{{0.019999999999999987`, 1.}}], 
+      ArrowBox[{{8.647364408491649, 9.362138838618975}, {8.60345529193867, 
+       9.312612481711469}, {8.523664619557113, 9.222397848938751}, {
+       8.446744896100192, 9.135229727354435}, {8.372696121567907, 
+       9.05110811695852}, {8.30151829596026, 8.970033017751005}, {
+       8.166591136732542, 8.815815631224476}, {8.0962720624551, 
+       8.735082333347204}}]}, 
+     {Arrowheads[{{0.019999999999999987`, 1.}}], 
+      ArrowBox[{{8.082564553924986, 8.71934474890531}, {8.040779063630705, 
+       8.671370846098146}, {7.923364713528695, 8.535962130701911}, {
+       7.81305683279962, 8.408263728029585}, {7.702117863900989, 
+       8.279210728897363}, {7.5986818372655245`, 8.158327197664896}, {
+       7.537746085554164, 8.086831206121996}}]}, 
+     {Arrowheads[{{0.01999999999999999, 1.}}], 
+      ArrowBox[{{7.524208339946591, 8.070947352747153}, {7.501647243383673, 
+       8.044476390729626}, {7.409912572745882, 7.936521564488988}, {
+       7.323096061323207, 7.83405773375492}, {7.241227228218474, 
+       7.737098061004788}, {7.163821488619796, 7.645133024134173}, {
+       7.090394257715283, 7.557653101038656}, {6.986013516115518, 
+       7.432787606730732}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{6.9726280388882085`, 7.4167752254722785`}, {
+       6.954535949026124, 7.3951325573989415`}, {6.831773556225747, 
+       7.247504352537705}, {6.7202162542327315`, 7.112729752004419}, {
+       6.61846062195195, 6.989274389267822}, {6.526101843223709, 
+       6.876776700454077}, {6.441515402249045, 6.773339423500822}, {
+       6.441208422763965, 6.772962850476526}}]}, 
+     {Arrowheads[{{0.010147662702853317`, 1.}}], 
+      ArrowBox[{{6.428021579136075, 6.756786493986189}, {6.36354475567126, 
+       6.677692503705941}, {6.291033360133662, 6.588565886367318}, {
+       6.160864996780543, 6.428095954589603}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{10., 1.977624272048678}, {9.915739757033302, 
+       1.9801771218978572`}, {9.723007713114711, 1.9875110919763501`}, {
+       9.540468326529963, 1.995932194129617}, {9.36750372743414, 
+       2.0053603613438207`}, {9.203024595395418, 2.015642677006137}, {
+       9.166230594118588, 2.0182244076998472`}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{9.145411531340875, 2.019685222276199}, {9.04611304655903, 
+       2.0266527152670095`}, {8.896408365945645, 2.0383501452575032`}, {
+       8.753549838575928, 2.050694636108682}, {8.61717674947055, 
+       2.0636458569516107`}, {8.486928383650179, 2.077163476917354}, {
+       8.362444026135481, 2.0912071651369764`}, {8.31429423891661, 
+       2.0970820601594604`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{8.293577624413793, 2.0996097543083896`}, {8.24336296194713, 
+       2.105736590741542}, {8.121366507319115, 2.121720139624945}, {
+       8.004206892601806, 2.138106265399795}, {7.891619599343979, 
+       2.154866486664305}, {7.786161639240751, 2.1722761236357453`}, {
+       7.5860529804493435`, 2.2079043886279544`}, {7.469460597831874, 
+       2.2312923960813413`}}]}, 
+     {Arrowheads[{{0.019999999999999993`, 1.}}], 
+      ArrowBox[{{7.448997983643532, 2.235397121985459}, {7.4021174598861235`, 
+       2.244801184364511}, {7.232798307608288, 2.282800173855952}, {
+       7.0765387536730335`, 2.321735020112812}, {6.9268089989090695`, 
+       2.3611377947523824`}, {6.788602691890977, 2.401299376763478}, {
+       6.653534752237742, 2.4487232609618657`}, {6.643711798089008, 
+       2.4525034302757303`}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{6.624234043697582, 2.459999058203806}, {6.528953932495327, 
+       2.496665721524715}, {6.409075601561919, 2.54479275741551}, {
+       6.298602248246527, 2.593288943962194}, {6.196702046589974, 
+       2.642053683124274}, {6.102543170633084, 2.690986376861256}, {
+       5.934878161521241, 2.7890222094511046`}, {5.877705861508977, 
+       2.828689356024539}}]}, 
+     {Arrowheads[{{0.01999999999999999, 1.}}], 
+      ArrowBox[{{5.860558630137701, 2.840586406519045}, {5.770759891266172, 
+       2.9028903497951157`}, {5.6330194394060165`, 3.015566293237072}, {
+       5.516183109532154, 3.1262574408804897`}, {5.4176520207048675`, 
+       3.234503522408408}, {5.334361206350912, 3.339806112010511}, {
+       5.274306176229911, 3.427125300987909}}]}, 
+     {Arrowheads[{{0.016787911905235334`, 1.}}], 
+      ArrowBox[{{5.262637848730167, 3.444423034537694}, {5.205127045933882, 
+       3.54013913021243}, {5.155485740257127, 3.6346126776750474`}, {
+       5.083537854344305, 3.8010418165284467`}, {5.032629460700694, 
+       3.9526206915457136`}, {4.996659992040573, 4.089094931884264}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.019999999999999983`, 1.}}], 
+      ArrowBox[{{1.0933434295787068`, 10.}, {1.0977234273747054`, 
+       9.857071689817838}, {1.1025476793209377`, 9.714248437448264}, {
+       1.107665170698433, 9.576458162858435}, {1.1130759015071923`, 
+       9.443700866048353}, {1.1187798717472148`, 9.315976547018016}, {
+       1.1247770814185007`, 9.193285205767426}, {1.1262224324113241`, 
+       9.165855585982799}}]}, 
+     {Arrowheads[{{0.020000000000000018`, 1.}}], 
+      ArrowBox[{{1.1273206265248201`, 9.145014249080912}, {
+       1.1310194244544225`, 9.074819105221097}, {1.1374587947883525`, 
+       8.95977050830355}, {1.1440951924202905`, 8.848139415014778}, {
+       1.1509286173502367`, 8.739925825354785}, {1.1651865491041533`, 
+       8.533751156921134}, {1.1802325900501025`, 8.341246503002596}, {
+       1.1827287639238562`, 8.312080449314223}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{1.1845084363248322`, 8.291286216452344}, {
+       1.1907500273331613`, 8.21835757139124}, {1.201517104586105, 
+       8.099636585037372}, {1.2125338218089339`, 7.985083543940992}, {
+       1.2238001790016475`, 7.874698448102104}, {1.2470818132967298`, 
+       7.666432092196795}, {1.2713620074713523`, 7.474837517321441}, {
+       1.2732783644576477`, 7.461296574710532}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{1.2762028465054365`, 7.440632239276722}, {1.296504615720749, 
+       7.29718031783913}, {1.3223734922401542`, 7.130726088112944}, {
+       1.3489686370295684`, 6.975474828142883}, {1.376290050088991, 
+       6.831426537928947}, {1.4154232910211886`, 6.645545173244207}, {
+       1.4216722982398518`, 6.618876428940956}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{1.426433639543243, 6.598556562229742}, {1.4555990865176, 
+       6.474087855340404}, {1.4968174365782256`, 6.317054584217537}, {
+       1.5390783412030653`, 6.174445359875608}, {1.5822398890219058`, 
+       6.043786177774988}, {1.626160168664534, 5.9226030333760535`}, {
+       1.6708391801309495`, 5.8108959266788025`}, {1.6745217287902985`, 
+       5.8026105044986345`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{1.6829982070895049`, 5.783539147184276}, {
+       1.7162769234211526`, 5.708664857683235}, {1.8089926883522767`, 
+       5.526872258223382}, {1.9038715463372609`, 5.3714666604227235`}, {
+       1.9734561608375898`, 5.268343148226752}, {2.0438889143113808`, 
+       5.176613702335503}, {2.1175037220141233`, 5.101681747803324}, {
+       2.133554781420061, 5.087189107814611}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{2.149045093147668, 5.073202771741484}, {2.191590005324991, 
+       5.0347886035583365`}, {2.340250928946604, 4.9153810674497285`}, {
+       2.489336371515011, 4.82209389182522}, {2.637768489908782, 
+       4.750234772832675}, {2.811268785301527, 4.688971650180998}, {
+       2.8715264940570644`, 4.6742335396632235`}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{2.891799178826808, 4.669275152183862}, {2.9809026254582656`, 
+       4.64748181700584}, {3.145162156325869, 4.621037541173766}, {
+       3.303009500589113, 4.607228945442633}, {3.453445635269367, 
+       4.603294827044869}, {3.5957453800935473`, 4.607281585133118}, {
+       3.7208098768134525`, 4.616614294026444}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{10., 1.0933494795099241`}, {9.857070797427712, 
+       1.097729521358361}, {9.71424759582409, 1.1025537905344507`}, {
+       9.576457371603794, 1.107671300658264}, {9.443700124766828, 
+       1.113082051729801}, {9.315975855313187, 1.118786043749062}, {
+       9.193284563242871, 1.124783276716047}, {9.165855590769855, 
+       1.126228599867311}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{9.145014254118202, 1.1273267987296836`}, {9.074818511481299, 
+       1.131025644249802}, {8.959769962953885, 1.1374650399693724`}, {
+       8.848138917660627, 1.1441014638747589`}, {8.739925375601526, 
+       1.1509349159659614`}, {8.533750801185791, 1.1651929047058143`}, {
+       8.341246239706683, 1.1802390061889307`}, {8.312080470050384, 
+       1.182735167063348}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{8.291286237873585, 1.1845148474690066`}, {8.218357360812153, 
+       1.1907564866124676`}, {8.099636427071577, 1.2015236079186298`}, {
+       7.985083438484957, 1.2125403701074169`}, {7.874698395052289, 
+       1.2238067731788291`}, {7.666432143648817, 1.2470885019695295`}, {
+       7.47483767286116, 1.2713687942907306`}, {7.461296639507347, 
+       1.2732851729164558`}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{7.440632305936183, 1.2762096681256405`}, {7.297180576768406, 
+       1.296511503326648}, {7.130726449449645, 1.3223804822614982`}, {
+       6.975475290904875, 1.3489757310952806`}, {6.831427101134096, 
+       1.3762972498279953`}, {6.645545856811432, 1.415430643288621}, {
+       6.618876617988244, 1.421679794558376}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{6.59855675604547, 1.4264411562118822`}, {6.474088659475687, 
+       1.455606591674058}, {6.317055509126861, 1.4968250949843058`}, {
+       6.1744464057649555`, 1.5390861532193651`}, {6.0437873441620775`, 
+       1.5822478537370708`}, {5.922604319090336, 1.6261682838952582`}, {
+       5.8108973305497305`, 1.6708474436939273`}, {5.80261106526702, 
+       1.6745303831401372`}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{5.7835397216717075`, 1.683006892305968}, {5.708666378540262, 
+       1.716285333133078}, {5.526874008111405, 1.809001379937773}, {
+       5.371468631800435, 1.903880503314291}, {5.268345273512762, 
+       1.973465306962091}, {5.176615977914869, 2.0438982388481763`}, {
+       5.101684129994834, 2.117513245492166}, {5.087190804259361, 
+       2.1335651305505703`}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{5.07320449994619, 2.149055470954456}, {5.034791094769259, 
+       2.1915997134462124`}, {4.915383778452206, 2.3402609749478285`}, {
+       4.822096820813835, 2.4893466894293312`}, {4.750237908776905, 
+       2.637779008522359}, {4.688975032827844, 2.811279365281636}, {
+       4.674236818242299, 2.8715377707967082`}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{4.669278451824707, 2.891810460717825}, {4.647485396088132, 
+       2.9809131659583326`}, {4.621041265290686, 3.145172559717315}, {
+       4.60723276441589, 3.3030196778825722`}, {4.603298692480946, 
+       3.453455506599282}, {4.607285452163605, 3.5957548779133703`}, {
+       4.616618292332166, 3.7208212288736595`}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{10., 7.85603295830059}, {9.933811911597726, 
+       7.80968782089368}, {9.833429984150786, 7.740808972015314}, {
+       9.733048056703849, 7.671930123136948}, {9.629869836985927, 
+       7.603336413458585}, {9.526691617268003, 7.534742703780222}, {
+       9.432340489621259, 7.47323948226776}, {9.334458525146042, 
+       7.408900065488939}, {9.306846217981107, 7.3908843863157765`}}]}, 
+     {Arrowheads[{{0.01999999999999999, 1.}}], 
+      ArrowBox[{{9.289367291921616, 7.379480242420872}, {9.239904473689673, 
+       7.347208174065833}, {9.148475411442528, 7.287975138087802}, {
+       9.060171338404606, 7.231200957554843}, {8.974992254575907, 
+       7.176885632466957}, {8.812813787454537, 7.074559597557739}, {
+       8.66074474298678, 6.979925082291479}, {8.584096404693558, 
+       6.932879169166287}}]}, 
+     {Arrowheads[{{0.019999999999999993`, 1.}}], 
+      ArrowBox[{{8.566309426889969, 6.921961716405523}, {8.518048924750099, 
+       6.892339947145965}, {8.38340117918393, 6.810648340981209}, {
+       8.248971603852334, 6.730293151434037}, {8.122864250048098, 
+       6.655967184692285}, {8.003978090824939, 6.586726962719023}, {
+       7.891212099236576, 6.521629007477324}, {7.847895823603984, 
+       6.496836410812953}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{7.829782660589845, 6.4864691218813135`}, {7.784160950367155, 
+       6.46035698171756}, {7.682816863318205, 6.402952914354274}, {
+       7.586675127169527, 6.349010876596795}, {7.495231031000918, 
+       6.2981249396544525`}, {7.325395426278385, 6.204758097379169}, {
+       7.171229384499567, 6.121325845856406}, {7.099085057791284, 
+       6.082814485036897}}]}, 
+     {Arrowheads[{{0.008024756200397743, 1.}}], 
+      ArrowBox[{{7.080673775981134, 6.072986359260529}, {7.030654783768609, 
+       6.046285722567172}, {6.902085300622492, 5.97850956630884}, {
+       6.784207692941412, 5.9170926135548125`}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{7.856032653138286, 10.}, {7.809687518402487, 
+       9.933811910579278}, {7.7408086737910855`, 9.833429981655945}, {
+       7.671929829179684, 9.733048052732613}, {7.6033361241342075`, 
+       9.629869831492499}, {7.534742419088732, 9.526691610252385}, {
+       7.473239201942944, 9.432340481209508}, {7.408899789637281, 
+       9.334458515287738}, {7.390884107093132, 9.306846200591922}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{7.379479963883122, 9.28936727408557}, {7.347207902584763, 
+       9.239904462434156}, {7.28797487087866, 9.148475398838064}, {
+       7.2312006945189715`, 9.060171324499457}, {7.176885373505699, 
+       8.974992239418338}, {7.074559346474945, 8.812813769925677}, {
+       6.979924838742945, 8.6607447232572}, {6.932878919938105, 
+       8.584096368308083}}]}, 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{6.921961467943191, 8.566309390034423}, {6.8923397108048725`, 
+       8.518048902981914}, {6.81064811155204, 8.383401155524028}, {
+       6.7302929293538485`, 8.248971578860946}, {6.655966969601939, 
+       8.12286422381309}, {6.586726754297411, 8.00397806343238}, {
+       6.521628805441368, 7.8912120707707265`}, {6.496836195469642, 
+       7.847895767161104}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{6.486468907390213, 7.829782603659192}, {6.460356785800192, 
+       7.7841609209087785`}, {6.402952724291859, 7.682816832943599}, {
+       6.349010692144854, 7.586675095951729}, {6.2981247605876645`, 
+       7.49523099900971}, {6.204757928449905, 7.3253953929360485`}, {
+       6.1213256862929315`, 7.17122935004426}, {6.08281430733349, 
+       7.099084980547778}}]}, 
+     {Arrowheads[{{0.00802475486003472, 1.}}], 
+      ArrowBox[{{6.072986182490741, 7.080673698239252}, {6.0462855716829305`, 
+       7.030654748413302}, {5.978509423484533, 6.902085264556777}, {
+       5.917092478343795, 6.784207656556604}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{10., 6.712100497528911}, {9.921934365936059, 
+       6.673145191020273}, {9.815875163819152, 6.622100710470408}, {
+       9.709815961702247, 6.571056229920544}, {9.603912179082688, 
+       6.522867876973408}, {9.498008396463126, 6.474679524026272}, {
+       9.300333054323016, 6.387150894843579}, {9.242369161005666, 
+       6.3617945492808134`}}]}, 
+     {Arrowheads[{{0.01999999999999999, 1.}}], 
+      ArrowBox[{{9.22324838181147, 6.353430151085148}, {9.108960647590434, 
+       6.303434902031947}, {8.930194111672913, 6.227344181962438}, {
+       8.762886483062001, 6.158015133006081}, {8.605890798249249, 
+       6.094584153533899}, {8.458487199802917, 6.0365350531109545`}, {
+       8.45202225591233, 6.034044187441343}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{8.432547491910316, 6.0265407934603}, {8.31937994434588, 
+       5.9829386889543565`}, {8.177300283315972, 5.929744380992135}, {
+       8.044211019260294, 5.881289275345917}, {7.9189530452165116`, 
+       5.836766992289064}, {7.800367254222292, 5.795371152094937}, {
+       7.688010650570438, 5.756838603128923}, {7.647369939641467, 
+       5.743201765404174}}]}, 
+     {Arrowheads[{{0.01999999999999999, 1.}}], 
+      ArrowBox[{{7.627583856245146, 5.736562619525167}, {7.581849444985259, 
+       5.721216609808998}, {7.481338340151684, 5.688164416487403}, {
+       7.385932038754637, 5.657341267516381}, {7.209293755403524, 
+       5.601771436106162}, {7.049654413198703, 5.553285782538556}, {
+       6.904743808826228, 5.510642290984845}, {6.830288741804857, 
+       5.489371683022607}}]}, 
+     {Arrowheads[{{0.0038609681027045807`, 1.}}], 
+      ArrowBox[{{6.810221334710834, 5.483638749507241}, {6.772822266588266, 
+       5.472954440862943}, {6.655020646867277, 5.440226370620009}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{6.712100269463509, 10.}, {6.673144933280792, 
+       9.921934299379183}, {6.622100457620643, 9.81587509739243}, {
+       6.5710559819604955`, 9.709815895405677}, {6.522867634014046, 
+       9.603912113125196}, {6.474679286067598, 9.498008330844714}, {
+       6.387150666216362, 9.300332989300216}, {6.361794346632656, 
+       9.242369149284789}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{6.353429949174092, 9.223248369768147}, {6.303434682442716, 
+       9.108960583136518}, {6.22734397082425, 8.930194047734417}, {
+       6.158014929790941, 8.76288641960165}, {6.094583957772768, 
+       8.605890735245952}, {6.036534864370014, 8.458487137242617}, {
+       6.034044013934288, 8.452022232109396}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{6.026540620743127, 8.432547467803051}, {5.98293850686319, 
+       8.319379882227178}, {5.92974420520686, 8.17730022027594}, {
+       5.8812891055589285`, 8.04421095547741}, {5.836766828225404, 
+       7.918952980845473}, {5.795370993512297, 7.800367189394005}, {
+       5.756838449797536, 7.688010585403875}, {5.743201624011912, 
+       7.647369904239984}}]}, 
+     {Arrowheads[{{0.019999999999999993`, 1.}}], 
+      ArrowBox[{{5.736562478986882, 7.627583820557114}, {5.721216461500149, 
+       7.581849379594225}, {5.688164272987792, 7.481338274636352}, {
+       5.6573411286281186`, 7.385931973201554}, {5.601771305884104, 
+       7.209293690007828}, {5.553285660302664, 7.049654348226334}, {
+       5.510642176127341, 6.904743744489371}, {5.489371577018398, 
+       6.83028869542333}}]}, 
+     {Arrowheads[{{0.0038609684264774334`, 1.}}], 
+      ArrowBox[{{5.48363864443094, 6.810221288064218}, {5.472954332833989, 
+       6.7728222030589755`}, {5.440226269041197, 6.6550205852095425`}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{10., 5.725295761404157}, {9.906433848965564, 
+       5.694875290473668}, {9.797900092791913, 5.661532587692571}, {
+       9.689366336618264, 5.6281898849114755`}, {9.581781645768052, 
+       5.5980190459656285`}, {9.474196954917838, 5.5678482070197814`}, {
+       9.273138031871671, 5.5139962062954515`}, {9.197953819653545, 
+       5.494278438250563}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{9.17776627497308, 5.488984064449713}, {9.078410127792639, 
+       5.4629269787113675`}, {8.89634426164788, 5.417423297407777}, {
+       8.725834495248057, 5.376833690947077}, {8.565774890403832, 
+       5.340506687891664}, {8.415459036828805, 5.308051483156652}, {
+       8.365274124425625, 5.2976896631081525`}}]}, 
+     {Arrowheads[{{0.01999999999999999, 1.}}], 
+      ArrowBox[{{8.344834997551727, 5.293469539081347}, {8.27361539600745, 
+       5.278764627589244}, {8.122355824767626, 5.24938626349525}, {
+       7.98112149554755, 5.2236582285602235`}, {7.848614359056823, 
+       5.200889641232823}, {7.723536366005046, 5.180389619961712}, {
+       7.605379220017481, 5.1619374202316815`}, {7.522610049555059, 
+       5.149773061703002}}]}, 
+     {Arrowheads[{{0.017098643274802004`, 1.}}], 
+      ArrowBox[{{7.501961604551884, 5.146738416234466}, {7.494085912099764, 
+       5.145580947262457}, {7.389035324032064, 5.131032294105097}, {
+       7.289606337594548, 5.118003553810663}, {7.106324343358938, 
+       5.09601913995362}, {6.94166227689068, 5.078654361977431}, {
+       6.793053830142658, 5.064912004678296}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.01999999999999998, 1.}}], 
+      ArrowBox[{{5.72529559216844, 10.}, {5.694875087493613, 
+       9.906433734898322}, {5.661532388916658, 9.797899979884106}, {
+       5.628189690339704, 9.68936622486989}, {5.598018855535557, 
+       9.581781535292187}, {5.567848020731409, 9.474196845714483}, {
+       5.513996027709664, 9.273137925073872}, {5.494278288826314, 
+       9.197953813988157}}]}, 
+     {Arrowheads[{{0.019999999999999993`, 1.}}], 
+      ArrowBox[{{5.488983915688359, 9.177766269133842}, {5.46292680757537, 
+       9.078410023342709}, {5.417423133215979, 8.896344159430438}, {
+       5.376833533246414, 8.72583439516248}, {5.340506536281597, 
+       8.565774792364257}, {5.3080513372679174`, 8.415458940757013}, {
+       5.297689536545735, 8.36527411336191}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{5.293469413212077, 8.344834986344896}, {5.278764487108874, 
+       8.273615301838984}, {5.249386128393792, 8.122355730566007}, {
+       5.22365809857167, 7.981121401520103}, {5.200889516118639, 
+       7.848614265371029}, {5.180389499510824, 7.723536272788537}, {
+       5.161937304243547, 7.605379127381994}, {5.149772960155739, 
+       7.5226100341197535`}}]}, 
+     {Arrowheads[{{0.01709864486073639, 1.}}], 
+      ArrowBox[{{5.146738315442983, 7.501961589005503}, {5.145580835537384, 
+       7.494085820154827}, {5.131032186456342, 7.389035232867884}, {
+       5.118003450064429, 7.2896062472820145`}, {5.0960190435231185`, 
+       7.106324254933084}, {5.0786542722637025`, 6.941662190547209}, {
+       5.06491192114413, 6.793053746014412}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{0.44825945404197926`, 5.231217891393081}, {
+       0.4707223819598192, 5.082552468981808}, {0.4941363454224794, 
+       4.945553063755931}, {0.51850134442996, 4.820219675715451}, {
+       0.5438173789822609, 4.706552304860368}, {0.5973907394092293, 
+       4.506260172967706}, {0.627609462105314, 4.417243565780126}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.6343183139688957, 4.397481008738048}, {0.65494461139129, 
+       4.336721226339259}, {0.7307652665116818, 4.164043501994956}, {
+       0.8127868434830803, 4.02256186282329}, {0.9010755888638076, 
+       3.907681858714004}, {0.9956977492121861, 3.814809039556839}, {
+       1.0406612073942592`, 3.777165454638861}, {1.086929817879935, 
+       3.7434419314067}, {1.1092753766615164`, 3.731902507389845}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{1.1278190039912264`, 3.7223264309685904`}, {
+       1.1555165444022482`, 3.708023201134383}, {1.2266474008957824`, 
+       3.678480416123659}, {1.3618357024075276`, 3.632714373376342}, {
+       1.5048125020431284`, 3.604476986306944}, {1.65481213230759, 
+       3.59187017969149}, {1.8110689257059165`, 3.5929958783060045`}, {
+       1.941965570855258, 3.604050942945603}}]}, 
+     {Arrowheads[{{0.00023820181015570983`, 1.}}], 
+      ArrowBox[{{1.962761784547655, 3.6058073171167364`}, {1.972669176039483, 
+       3.606644060130486}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{5.231236896916507, 0.44826556324374395`}, {5.082570967350225,
+        0.47072865920434004`}, {4.945571087848716, 0.4941427917973683}, {
+       4.820237258411979, 0.5185079610228287}, {4.706569479040016, 
+       0.5438241668807214}, {4.506276608586515, 0.5973978685100003}, {
+       4.41726260128469, 0.6276157697521965}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{4.397500048374263, 0.6343246337865506}, {4.336737014584324, 
+       0.6549520767014021}, {4.164058749006947, 0.730773054454248}, {
+       4.022576606831345, 0.8127949190808645}, {3.907696131057442, 
+       0.9010839083298654}, {3.814822864685161, 0.9957062599498641}, {
+       3.7771789143751895`, 1.0406699915280198`}, {3.743455063397665, 
+       1.0869388739654502`}, {3.731918567893563, 1.1092786507670498`}}]}, 
+     {Arrowheads[{{0.020000000000000004`, 1.}}], 
+      ArrowBox[{{3.7223424538916228`, 1.127822258689747}, {3.708036016371828, 
+       1.1555258729203104`}, {3.6784929453892805`, 1.2266569854089107`}, {
+       3.632726536272945, 1.3618452701764112`}, {3.6044887493623308`, 
+       1.5048219327308434`}, {3.591881503414629, 1.654821302738623}, {
+       3.5930067171870297`, 1.8110777098661661`}, {3.604060828171709, 
+       1.9419677649642901`}}]}, 
+     {Arrowheads[{{0.00023834787077761858`, 1.}}], 
+      ArrowBox[{{3.605817139699933, 1.9627639839471895`}, {
+       3.6066543659262815`, 1.9726774529767879`}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{3.0447759273526005`, 0.06201826573492402}, {
+       2.8939024621680103`, 0.07895613776022545}, {2.725407527542278, 
+       0.11290193101525457`}, {2.6078286735722496`, 0.15991350311485117`}, {
+       2.5290271780772087`, 0.22448013484794035`}, {2.517431067702753, 
+       0.23853074509223973`}, {2.506949641519146, 0.2533808640853349}, {
+       2.4963959304472367`, 0.27569266112901236`}, {2.4876510586528395`, 
+       0.2997681934627312}, {2.473737294940834, 0.3516500073572489}, {
+       2.4669436349862472`, 0.4114358586343451}, {2.4672770097814074`, 
+       0.48003648866103077`}, {2.4689787313303606`, 0.4933546822710065}}]}, 
+     {Arrowheads[{{0.0026665482455090943`, 1.}}], 
+      ArrowBox[{{2.471623905448088, 0.5140566244034679}, {2.485730874253473, 
+       0.6244620793473594}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.062011579731226917`, 3.044985721871745}, {
+       0.07894599626942575, 2.8940846174519077`}, {0.11288870891440653`, 
+       2.7255382475045797`}, {0.15989637083243785`, 2.607923954324547}, {
+       0.22445811700629947`, 2.5290966383827658`}, {0.23850770876433006`, 
+       2.517496356347875}, {0.2533567700032864, 2.5070109599267707`}, {
+       0.2756672469432682, 2.4964524572999993`}, {0.2997414187053365, 
+       2.4877030663580526`}, {0.3516204373016694, 2.473780754078073}, {
+       0.41140336071641, 2.466979436871442}, {0.4800009688660919, 
+       2.467305890116277}, {0.4931962234418, 2.468990930184648}}]}, 
+     {Arrowheads[{{0.0026690851943488086`, 1.}}], 
+      ArrowBox[{{0.5138983574483762, 2.471634602203382}, {0.6244098761851314, 
+       2.4857469738912155`}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.019999999999999997`, 1.}}], 
+      ArrowBox[{{7.651214296944569, 0.6433000014930965}, {7.476105375586106, 
+       0.6553855753507905}, {7.364027023738905, 0.6637720406318581}, {
+       7.255732602019672, 0.67232334209083}, {7.050495548965111, 
+       0.6899204535424869}, {6.8603942164224225`, 0.7081769097057611}, {
+       6.819338133062662, 0.7126155458955936}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{6.798588790571357, 0.7148587891609121}, {6.685428604391605, 
+       0.7270927105806526}, {6.523114229942421, 0.7466229464023189}, {
+       6.370966610144632, 0.7667227074059172}, {6.228985744998237, 
+       0.7873919935914477}, {6.097171634503239, 0.8086308049589106}, {
+       5.972123674609908, 0.8310630813880563}}]}, 
+     {Arrowheads[{{0.02000000000000001, 1.}}], 
+      ArrowBox[{{5.951581338765318, 0.8347481583502017}, {5.9252017831684745`,
+        0.8394803705648687}, {5.766592658105078, 0.8713462163065638}, {
+       5.62134425931305, 0.9042283421839961}, {5.48945658679239, 
+       0.9381267481971653}, {5.368644471162967, 0.9729983614873378}, {
+       5.256622743044652, 1.0088001091957792`}, {5.146386492113504, 
+       1.0502874837189258`}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{5.126853748418199, 1.0576386249842245`}, {
+       5.0589504493413395`, 1.083194007867469}, {4.89118137838029, 
+       1.161157400529883}, {4.748057202859336, 1.2425392435006692`}, {
+       4.664258710684754, 1.295771768323632}, {4.588843634712553, 
+       1.3502933612246992`}, {4.521760532654194, 1.4134416400472571`}, {
+       4.461932192431485, 1.478036220715991}, {4.436721342859311, 
+       1.5092244943644695`}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{4.423601391076805, 1.525455151140879}, {4.355411438738663, 
+       1.6098127562866444`}, {4.273053657514132, 1.746412223942367}, {
+       4.211098271880061, 1.8870919104774444`}, {4.15959398940411, 
+       2.0639393869069593`}, {4.1297005528193775`, 2.2440751319509875`}, {
+       4.1264925074343815`, 2.29028405592579}}]}, 
+     {Arrowheads[{{0.007100732773221872, 1.}}], 
+      ArrowBox[{{4.125047073600396, 2.3111041922173814`}, {4.117089289121634, 
+       2.4257287108438543`}, {4.119401901344548, 2.6072016984221276`}}]}}, 
+    {Hue[0.67, 0.6, 0.6], 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{0.6432937377587277, 7.651191902033141}, {0.6553792809254293, 
+       7.476083505621244}, {0.6637657249307904, 7.3640054754951105`}, {
+       0.6723170042269385, 7.255711365800877}, {0.6899140686915953, 
+       7.050474907708115}, {0.7081704743193998, 6.860374131342956}, {
+       0.7126093599057022, 6.8193157451594315`}}]}, 
+     {Arrowheads[{{0.020000000000000007`, 1.}}], 
+      ArrowBox[{{0.7148526033881425, 6.7985664026916}, {0.727086221110352, 
+       6.6854090367053995`}, {0.7466164003795789, 6.523095146843235}, {
+       0.7667161034422075, 6.370947984804251}, {0.787385330298238, 
+       6.228967550588447}, {0.8086240809476704, 6.097153844195823}, {
+       0.8310571817676201, 5.972101328918097}}]}, 
+     {Arrowheads[{{0.019999999999999993`, 1.}}], 
+      ArrowBox[{{0.8347422598761427, 5.951558993279154}, {0.8394735747777641, 
+       5.925184448192076}, {0.8713393501155712, 5.766575753787914}, {
+       0.9042214069610914, 5.621327760983338}, {0.938119745314325, 
+       5.489440469778346}, {0.9729912935376488, 5.368628714512934}, {
+       1.0087929799934396`, 5.2566073295271}, {1.0502828943225857`, 
+       5.146364519390416}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{1.057634046645888, 5.12683177985679}, {1.0831867676024234`, 
+       5.058935670394156}, {1.1611500679816187`, 4.8911671758015975`}, {
+       1.2425318409713684`, 4.748043529171504}, {1.2957641527349777`, 
+       4.664245636689746}, {1.350285534472607, 4.58883109027264}, {
+       1.413433751011047, 4.5217482988754725`}, {1.4780282831660039`, 
+       4.461920252408924}, {1.5092247030029398`, 4.436702937223991}}]}, 
+     {Arrowheads[{{0.02, 1.}}], 
+      ArrowBox[{{1.5254553901264059`, 4.423583022983836}, {
+       1.6098047503257031`, 4.355400057986207}, {1.7464042086881213`, 
+       4.273042788264144}, {1.8870839479611252`, 4.211087881836621}, {
+       2.0639316734324225`, 4.159584133974072}, {2.2440677632639003`, 
+       4.129691240257566}, {2.2902875521098705`, 4.126482590464029}}]}, 
+     {Arrowheads[{{0.007100493862823561, 1.}}], 
+      ArrowBox[{{2.3111076930661696`, 4.125037223822406}, {
+       2.4257217751318603`, 4.1170805355739555`}, {2.607195270593579, 
+       4.119393723795297}}]}}}},
+  AspectRatio->1,
+  Frame->True,
+  Method->{"TransparentPolygonMesh" -> True},
+  PlotRange->{{-0.21756261443547695`, 
+   10.217562614435478`}, {-0.21756261443547695`, 10.217562614435478`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{
+  3.560077455440896*^9, {3.5600801031469917`*^9, 3.560080123473828*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ParametricPlot", "[", 
+  RowBox[{
+   RowBox[{"Evaluate", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"n1", "[", "t", "]"}], ",", 
+       RowBox[{"n2", "[", "t", "]"}]}], "}"}], "/.", "sol"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "6.9"}], "}"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.560076963317402*^9, 3.5600769662538548`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1:eJxNyWkw1HEYwHFHFjkG/1UZR0LZUE14oZLnp6l0OBqZrdBWOymhmNgux24l
+yqYVMaVx5VwU2aYpuYshUqZjI021SWQyqdxLaTz574vvfF58l3BDvQNUlJSU
+PGb6ZyTzjtunM7Hw32LLT89M4mkXOIyW7U2h1fKZ4g6X0PLHW8yi39OaC9f3
+DblemHNTCoQk6cXNaZN1aCC/MR6Wo6/9AiyMh4TwCu2/7mG7CpKgD213vmJ6
+7k0ytKGaLW6nvM3SQB396uW+sOLuDfiCTnc31dSuyYRJlH3taW7PwxzwQdUS
+WJMayXmgisqg2OiCXRF8RIsizEf2G5dCAdqV2O7ybls5dKLB3WGHO8wlEIRG
+f0zQsHa6D1GogMOpybCshBhUEFQqShbXQAzK+yyJX9FaD+EoT/jz1sVvTyAc
+7eF21sTubAYZyrfkrvlR2AbR6Dk+f0/eqxcgQIO8RuKuil5CIPomTWzby5DC
+SxSYgvkpHV3gjE6K7Fc3W30A7aRZNzxoKg/eIYNj6Iih1MvU8wssWzCr9kTF
+wYGF/QCo65RRvn34d+ChsjYblSbmEMhRl8epwkSN38BGmRYMxxz7UbBBdz2X
+jdXdm4Bg1L26Ook1Pg3+KGcw1WTrHWUSgKqRrEZvl3lEC3Vo0hRl1zKIEyrn
+i4flazWJsmDWqrbTqo/fapFatGrlIt8CM11Si9pFvt5XYK0350mptqhQT5+c
+QnenbRQ0NugTX/Smm+5Arp/BnJ3s8rKNLQZEip6IGPujZUwRHno0Oz20158i
+Ieh5stSz9RJtOofTw0uglZ9lJS4WUmQSfWS6xDjsMkUqUfnlqK0M0cxHdY7k
+jqhfo4g2KpFsKQ3MoEgFqjzs2DGqoEVAsF1cJq0Vu+FSdhZFLFFDoyPy1hyK
+MFEng8V50/m0avXqhWcLaOvLAn+oFlKkDnXvyPRlFFFkO5rTYCdWKaaV6rLk
+fAV1HCsy5Aoe9zd98auEliW5xz1WSvt+wM+tT8F23cGYA7dp11ltnt+l4F9j
+kTU6
+     "]]}},
+  Axes->True,
+  AxesOrigin->{0, 0},
+  PlotRange->{All, All},
+  PlotRangeClipping->True,
+  PlotRangePadding->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.560076988566378*^9, 3.5600801701803102`*^9}]
+}, Open  ]]
+},
+WindowSize->{1015, 665},
+WindowMargins->{{-4, Automatic}, {Automatic, 14}},
+ShowSelection->True,
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 1.5, 1.5 Inherited],
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 94, 1, 43, "Input"],
+Cell[654, 23, 96, 1, 43, "Input"],
+Cell[753, 26, 798, 22, 71, "Input"],
+Cell[CellGroupData[{
+Cell[1576, 52, 533, 14, 98, "Input"],
+Cell[2112, 68, 7681, 201, 303, "Output"]
+}, Open  ]],
+Cell[9808, 272, 89, 1, 71, "Input"],
+Cell[9900, 275, 528, 14, 152, "Input"],
+Cell[CellGroupData[{
+Cell[10453, 293, 474, 13, 43, "Input"],
+Cell[10930, 308, 5757, 99, 384, "Output"]
+}, Open  ]],
+Cell[16702, 410, 179, 4, 43, "Input"],
+Cell[CellGroupData[{
+Cell[16906, 418, 94, 1, 43, "Input"],
+Cell[17003, 421, 598, 19, 42, "Output"]
+}, Open  ]],
+Cell[17616, 443, 2711, 71, 368, "Input"],
+Cell[CellGroupData[{
+Cell[20352, 518, 99, 1, 43, "Input"],
+Cell[20454, 521, 711, 24, 68, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21202, 550, 543, 14, 43, "Input"],
+Cell[21748, 566, 6824, 118, 370, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28609, 689, 388, 10, 43, "Input"],
+Cell[29000, 701, 132152, 2131, 565, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[161189, 2837, 454, 12, 43, "Input"],
+Cell[161646, 2851, 1352, 27, 577, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
